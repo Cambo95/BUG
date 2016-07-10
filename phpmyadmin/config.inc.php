@@ -14,7 +14,8 @@
  * This is needed for cookie based authentication to encrypt password in
  * cookie
  */
-$cfg['blowfish_secret'] = 'ba17c1e07d65123'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+/** $cfg['blowfish_secret'] = 'ba17c1e07d65123'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = 'b05411072e2e07'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -27,6 +28,7 @@ $i = 0;
 $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
+
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'eu-cdbr-azure-west-d.cloudapp.net';
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
