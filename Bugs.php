@@ -14,3 +14,9 @@ if($db->connect_errno){
 
 }
 else echo "Test Connection Successful";
+
+$sql_query = "SELECT * FROM  bug_comments ";
+// execute the SQL query
+$result = $db->query($sql_query);
+
+echo "Query Ran";
