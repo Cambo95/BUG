@@ -5,9 +5,10 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
-
+echo " About to do Test Connection";
 //test connection
 if($db->connect_errno){
     die('connection failed : '.$db->connect_error );
 
 }
+else echo "Test Connection Successful";
