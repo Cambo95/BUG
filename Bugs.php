@@ -15,8 +15,21 @@ if($db->connect_errno){
 }
 else echo "Test Connection Successful";
 
-$sql_query = "SELECT * FROM  bug_comments ";
+$sql_query = "SELECT com_comment FROM  bug_comments ";
 // execute the SQL query
 $result = $db->query($sql_query);
 
 echo "Query Ran";
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "comment: " . $row["com_comment"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$db->close();
+
+?>
+
