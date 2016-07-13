@@ -7,29 +7,36 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
-//echo " About to do Test Connection";
-//test connection
+$output = '';
+
+if(isset($_POST['User'])){
+   $searchq = $_POST['User'];
+    $searchq = preg_replace("#[^0-9a-z]#i","",$searching);
+
+    $sql_query = "SELECT * FROM  bug_comments WHERE Com_User LIKE '%$searchq%' OR Com_Comment LIKE '%$searchq%'";
+    $count = mysqli_num_rows($query);
+    if($count == 0){
+      $output = 'There was no search results';
+    }else{
+        while($row = mysqli_fetch_array($query)){
+            $username = $row['name'];
+            $time = $row['date and time'];
+            $comment = $row['comment'];
+
+            $output .= '<div>'.$username.''.$time.''.$comment.'</div>';
+        }
+    }
+// execute the SQL query
+    $result = $db->query($sql_query);
+}
+
 if($db->connect_errno){
     die('connection failed : '.$db->connect_error );
 
 }
-//else echo "Test Connection Successful";
 
-$sql_query = "SELECT * FROM  bug_comments";
-// execute the SQL query
-$result = $db->query($sql_query);
 
-//echo "Query Ran 2";
 
-//if ($result->num_rows > 0) {
-    // output data of each row
-    //while($row = $result->fetch_assoc()) {
-       //echo "comment: " . $row["com_comment"]. "<br>";
-    //}
-//} else {
-   // echo "0 results";
-//}
-//$db->close();
 
 ?>
 
@@ -38,21 +45,14 @@ $result = $db->query($sql_query);
     <title>Bug Site</title>
 </head>
 <body>
-<table width="600" border="1" cellpadding="1" cellspacing="1">
-    <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Comment</th>
-    </tr>
-        <?php
-            while($Com_Comments = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $Com_Comments['Com_User']."</td>";
-                echo "<td>" . $Com_Comments['Com_DateTime']."</td>";
-                echo "<td>" . $Com_Comments['Com_Comment']."</td>";
-                echo "</tr>";
-            }//end while
-    ?>
-</table>
+<form action ="bugs.php" method="post">
+    <input type="text" name="search" placeholder="Search for comments..."/>
+    <input type="submit" value=">>"/>
+<?php print ("$output");?>
+
+
+
+
+</form>
 </body>
 </html>
