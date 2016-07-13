@@ -47,9 +47,9 @@ $result = $db->query($sql_query);
         <?php
             while($Com_Comments = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td>" . $Com_Comments['User']."</td>";
-                echo "<td>" . $Com_Comments['Date']."</td>";
-                echo "<td>" . $Com_Comments['Comment']."</td>";
+                echo "<td>" . $Com_Comments['Com_User']."</td>";
+                echo "<td>" . $Com_Comments['Com_Date']."</td>";
+                echo "<td>" . $Com_Comments['Com_Comment']."</td>";
                 echo "</tr>";
             }//end while
     ?>
