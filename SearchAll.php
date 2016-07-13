@@ -14,7 +14,8 @@ $db = new mysqli(
 );
 
 $sql_query = "SELECT * FROM  bug_comments";
-$result = mysqli_query($sql_query);
+// execute the SQL query
+$result = $db->query($sql_query);
 
 
 ?>
