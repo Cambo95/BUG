@@ -45,11 +45,11 @@ $result = $db->query($sql_query);
         <th>Comment</th>
     </tr>
         <?php
-            while($Com_User = mysqli_fetch_assoc($result)) {
+            while($Com_Comments = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td>" . $Com_User['User'] . "</td>";
-                echo "<td>" . $Com_User['Date'] . "</td>";
-                echo "<td>" . $Com_User['Comment'] . "</td>";
+                echo "<td>" . $Com_Comments['User']."</td>";
+                echo "<td>" . $Com_Comments['Date']."</td>";
+                echo "<td>" . $Com_Comments['Comment']."</td>";
                 echo "</tr>";
             }//end while
     ?>
