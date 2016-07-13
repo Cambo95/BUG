@@ -15,7 +15,7 @@ if($db->connect_errno){
 }
 //else echo "Test Connection Successful";
 
-$sql_query = "SELECT com_comment FROM  bug_comments ";
+$sql_query = "SELECT * FROM  bug_comments";
 // execute the SQL query
 $result = $db->query($sql_query);
 
@@ -33,3 +33,26 @@ $db->close();
 
 ?>
 
+<html>
+<head>
+    <title>Bug Site</title>
+</head>
+<body>
+<table width="600" border="1" cellpadding="1" cellspacing="1">
+    <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comment</th>
+    </tr>
+        <?php
+            while($Com_User = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $Com_User['User'] . "</td>";
+                echo "<td>" . $Com_User['Date'] . "</td>";
+                echo "<td>" . $Com_User['Comment'] . "</td>";
+                echo "</tr>";
+            }//end while
+    ?>
+</table>
+</body>
+</html>
