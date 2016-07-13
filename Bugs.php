@@ -19,12 +19,6 @@ $sql_query = "SELECT com_comment FROM  bug_comments ";
 // execute the SQL query
 $result = $db->query($sql_query);
 
-while($row = $result->fetch_array())
-{
-    echo $row['FirstName'] . " " . $row['LastName'];
-    echo "<br />";
-}
-
 echo "Query Ran 2";
 
 if ($result->num_rows > 0) {
