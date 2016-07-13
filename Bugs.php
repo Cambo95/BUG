@@ -19,9 +19,9 @@ if(isset($_POST['User'])){
       $output = 'There was no search results';
     }else{
         while($row = mysqli_fetch_array($query)){
-            $username = $row['name'];
-            $time = $row['date and time'];
-            $comment = $row['comment'];
+            $username = $row['Com_User'];
+            $time = $row['Com_DateTime'];
+            $comment = $row['Com_Comment'];
 
             $output .= '<div>'.$username.''.$time.''.$comment.'</div>';
         }
@@ -48,7 +48,8 @@ if($db->connect_errno){
 <form action ="bugs.php" method="post">
     <input type="text" name="search" placeholder="Search for comments..."/>
     <input type="submit" value=">>"/>
-<?php print ("$output");?>
+
+    <?php print ("$output");?>
 
 
 
