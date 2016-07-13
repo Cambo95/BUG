@@ -21,15 +21,15 @@ $result = $db->query($sql_query);
 
 //echo "Query Ran 2";
 
-if ($result->num_rows > 0) {
+//if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "comment: " . $row["com_comment"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$db->close();
+    //while($row = $result->fetch_assoc()) {
+       //echo "comment: " . $row["com_comment"]. "<br>";
+    //}
+//} else {
+   // echo "0 results";
+//}
+//$db->close();
 
 ?>
 
