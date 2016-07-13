@@ -42,9 +42,5 @@ $result = mysqli_query($sql_query);
     ?>
 </table>
 
-
-
-
-</form>
 </body>
 </html>
