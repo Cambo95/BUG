@@ -15,7 +15,7 @@ if($db->connect_errno){
 }
 //else echo "Test Connection Successful";
 
-$sql_query = "SELECT * FROM  bug_comments ";
+$sql_query = "SELECT com_buguniqueid, com_datetime, come_user, com_comment FROM  bug_comments ";
 // execute the SQL query
 $result = $db->query($sql_query);
 
