@@ -5,6 +5,6 @@
     <title>SPLAT! Bug Catcher</title>
 </head>
 <body>
-<H1> Bug Site </H1>
+<H1> SPLAT! Bug Catcher</H1>
 </body>
 </html>
