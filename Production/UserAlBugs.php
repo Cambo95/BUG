@@ -20,11 +20,7 @@ $result = $db->query($sql_query);
 
 ?>
 
-<html>
-<head>
-    <title>Bug Site</title>
-</head>
-<body>
+<?php include 'TestHeader.php';?>
 
 <table width="600" border="1" cellpadding="1" cellspacing="1">
     <tr>
