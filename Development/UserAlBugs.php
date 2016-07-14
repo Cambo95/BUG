@@ -13,7 +13,7 @@ $db = new mysqli(
     "1301070"
 );
 
-$sql_query = "SELECT Inst_Title, Inst_Description, Inst_User, Inst_DatePosted FROM  bug_instances";
+$sql_query = "SELECT Inst_Title, Inst_Description, Inst_User, Inst_DatePosted FROM  bug_instances WHERE Inst_User = 'CAM'";
 // execute the SQL query
 $result = $db->query($sql_query);
 
