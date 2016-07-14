@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Deployment Test</title>
+    <title>SPLAT! Bug Catcher</title>
 </head>
 <body>
 <H1> Bug Site </H1>
