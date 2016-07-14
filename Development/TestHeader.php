@@ -1,5 +1,10 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Bug Site</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Deployment Test</title>
 </head>
 <body>
+<H1> Hello </H1>
+</body>
+</html>
