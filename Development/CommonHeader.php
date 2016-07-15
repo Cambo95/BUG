@@ -18,6 +18,9 @@
     <br>
     Password:<br>
     <input type="password" name="password">
+    <ul>
+        <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Go</a></li>
+    </ul>
 </form>
 </body>
 </html>
