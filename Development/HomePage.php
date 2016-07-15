@@ -44,7 +44,6 @@ $db = new mysqli(
         </tr>
     
     <?php
-    $weburl = '"http://1301070cameronbug.azurewebsites.net/production/useralbugs.php?Bug_UniqueID='
     while($Bug = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
