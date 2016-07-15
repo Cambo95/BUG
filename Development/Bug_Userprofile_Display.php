@@ -40,7 +40,7 @@ $result = $db->query($sql_query);
 
 <table width="600" border="1" cellpadding="1" cellspacing="1">
     <tr>
-        <th>Image</th>
+        <th>Image Not Working</th>
         <th>User</th>
         <th>Country</th>
         <th>Bio</th>
