@@ -31,3 +31,4 @@ $db = new mysqli(
         </ul>
     <?php include 'CommonFooter.php';?>
 </body>
+</html>
