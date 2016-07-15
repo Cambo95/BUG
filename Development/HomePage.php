@@ -54,8 +54,8 @@ $db = new mysqli(
     }//end while
     ?>
     </table>
-
-
+<br><br><br><br><br><br><br><br>
+    
     <?php include 'CommonFooter.php';?>
 </body>
 </html>
