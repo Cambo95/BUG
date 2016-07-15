@@ -10,16 +10,7 @@
 <ul>
     <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Test Link 1</a></li>
 </ul>
-
-<form>
-    Username:<br>
-    <input type ="text" name="username">
-    <br>
-    Password:<br>
-    <input type="password" name="password">
-    <br>
-    <input type ="submit" value ="Login">
-</form>
+    
 <p>Search for Bugs:</p>
 <form>
     <input type="text" name="search" placeholder="Search...">
