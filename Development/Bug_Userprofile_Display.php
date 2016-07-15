@@ -36,6 +36,9 @@ $result = $db->query($sql_query);
 </head>
 <body>
 
+<?php include 'CommonHeader.php';?>
+<?php include 'CommonLogin.php';?>
+
 <table width="600" border="1" cellpadding="1" cellspacing="1">
     <tr>
         <th>Image</th>
