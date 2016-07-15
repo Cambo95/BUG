@@ -50,7 +50,7 @@ $db = new mysqli(
         echo "<td>" . $Bug['Inst_BugUniqueID']."</td>";
         echo "<td>" . $Bug['Inst_User']."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
-        echo "<td>" . "<a href="useralbugs.php?key=$Bug['Inst_BugUniqueID']">View Bug</a>";
+        //echo "<td>" . "<a href="useralbugs.php?key=$Bug['Inst_BugUniqueID']">View Bug</a>";
         echo "</tr>";
     }//end while
     ?>
