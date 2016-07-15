@@ -15,6 +15,7 @@
 <form>
     Username:<br>
     <input type ="text" name="username">
+    <br>
     Password:<br>
     <input type="text" name="password">
 </form>
