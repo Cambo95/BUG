@@ -42,9 +42,8 @@ $db = new mysqli(
             <th>User</th>
             <th>Title</th>
         </tr>
-    </table>
-    <?php
     
+    <?php
     while($Bug = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
@@ -54,6 +53,7 @@ $db = new mysqli(
         echo "</tr>";
     }//end while
     ?>
+    </table>
 
 
     <?php include 'CommonFooter.php';?>
