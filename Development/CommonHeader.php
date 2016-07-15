@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <meta charset="UTF-8">
-    <title>SPLAT! Bug Catcher</title>
-</head>
+<html lang="en">
+<title>SPLAT! Bug Catcher</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
 <body>
-<H1> SPLAT! Bug Catcher</H1>
+    <header class="w3-container w3-teal">
+        <H1> SPLAT! Bug Catcher</H1>
+    </header>
 </body>
 </html>
