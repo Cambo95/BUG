@@ -101,14 +101,14 @@ body{
 }
 .header{
     height:50px;
-    background:#E0F8F7;
+    background:#ffffff;
     border: 1px solid #CCCCCC;
     width:960px;
     margin:0px auto;
 }
 .content{
     width: 960px;
-    background: #F0F0F0;
+    background: #ffffff;
     border: 2000px;
     margin: 20px auto;
 }
