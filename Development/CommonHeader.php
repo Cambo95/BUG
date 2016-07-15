@@ -16,9 +16,5 @@
     <input type="text" name="search" placeholder="Search...">
 </form>
 
-    <footer class="w3-container w3-teal">
-        <p>Website by Cameron Carroll</p>
-    </footer>
-
 </body>
 </html>
