@@ -34,7 +34,7 @@ $db = new mysqli(
         // execute the SQL query
             $result = $db->query($sql_query);
         ?>
-
+<h1>Recent Bugs</h1>
     <table class="w3-table w3-bordered w3-striped">
         <tr class="w3-teal">
             <th>Date</th>
@@ -44,12 +44,15 @@ $db = new mysqli(
         </tr>
     
     <?php
+    $weburl = '"http://1301070cameronbug.azurewebsites.net/production/useralbugs.php?Bug_UniqueID='
     while($Bug = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
         echo "<td>" . $Bug['Inst_BugUniqueID']."</td>";
         echo "<td>" . $Bug['Inst_User']."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
+        $dynamicurl = $weburl . $Bug['Inst_BugUniqueID'] . '"> GO </a></li>' ;
+        echo "<td>".$dynamicurl."</td>td>";
         echo "</tr>";
     }//end while
     ?>
