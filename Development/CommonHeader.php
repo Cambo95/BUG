@@ -9,7 +9,14 @@
         <H1> SPLAT! Bug Catcher</H1>
     </header>
 <ul>
-    <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">UserAllBugs</a> </li>
+    <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Test Link 1</a></li>
 </ul>
+
+<form>
+    Username:<br>
+    <input type ="text" name="username">
+    Password:<br>
+    <input type="text" name="password">
+</form>
 </body>
 </html>
