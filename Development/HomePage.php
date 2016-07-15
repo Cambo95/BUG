@@ -52,7 +52,6 @@ $db = new mysqli(
         echo "<td>" . $Bug['Inst_User']."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
         $dynamicurl = $weburl . $Bug['Inst_BugUniqueID'] . '"> GO </a></li>' ;
-        echo "<td>" . $dynamicurl."</td>";
         echo "</tr>";
     }//end while
     ?>
