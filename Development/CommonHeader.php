@@ -8,5 +8,8 @@
     <header class="w3-container w3-teal">
         <H1> SPLAT! Bug Catcher</H1>
     </header>
+<ul>
+    <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">UserAllBugs</a> </li>
+</ul>
 </body>
 </html>
