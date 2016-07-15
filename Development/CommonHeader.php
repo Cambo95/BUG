@@ -26,8 +26,7 @@
 </form>
 
     <footer class="w3-container w3-teal">
-        <h5>Footer</h5>
-        <p>Footer information goes here</p>
+        <p>Website by Cameron Carroll</p>
     </footer>
 
 </body>
