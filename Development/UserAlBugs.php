@@ -20,7 +20,7 @@ $result = $db->query($sql_query);
 
 ?>
 
-<?php include 'TestHeader.php';?>
+<?php include 'CommonHeader.php';?>
 
 <table width="600" border="1" cellpadding="1" cellspacing="1">
     <tr>
@@ -41,5 +41,3 @@ $result = $db->query($sql_query);
     ?>
 </table>
 
-</body>
-</html>
