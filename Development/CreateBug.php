@@ -26,10 +26,10 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 
 <form>
-    Username:<br>
+    Bug Title:<br>
     <input type ="text" name="Bug Title">
     <br>
-    Password:<br>
+    Description:<br>
     <input type="text" name="Description">
     <br>
     <input type ="submit" value ="Create Bug">
