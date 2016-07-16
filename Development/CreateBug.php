@@ -33,7 +33,11 @@ $db = new mysqli(
     <input type="text" name="Description">
     <br>
     <input type ="submit" value ="Create Bug">
+    <ul>
+        <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Add Attachment (Page Not linked yet)</a></li>
+    </ul>
 </form>
+
 
 <br><br><br><br><br><br><br><br>
 
