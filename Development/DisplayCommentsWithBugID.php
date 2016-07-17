@@ -28,15 +28,7 @@ $result1 = $db->query($sql_query1);
 <html>
 <head>
     <style>
-        h2{
-            color: blue;
-        }
-        h3{
-            color: blue;
-        }
-        h4{
-            color: blue;
-        }
+
         h5{
             color: blue;
         }
@@ -45,19 +37,19 @@ $result1 = $db->query($sql_query1);
 <body>
 <br><br><br>
 
-<h2>Title:</h2> <?php
+<h5>Title:</h5> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
 <br>
 <br>
-<h3>Description:</h3> <?php
+<h5>Description:</h5> <?php
 while($Describe = mysqli_fetch_assoc($resultDescribe)) {
     echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 <br>
-<h4>User:</h4> <?php
+<h5>User:</h5> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
     echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
