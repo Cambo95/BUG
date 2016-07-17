@@ -24,6 +24,9 @@ $db = new mysqli(
     </head>
     <body>
 <?php include 'CommonHeader.php';?>
+
+<br><br><br>
+
         <form>
             Name:<br>
             <input type="text" name="Name">
@@ -36,6 +39,9 @@ $db = new mysqli(
             <br>
             Bio:<br>
             <input type="text" name="Bio" maxlength="1000">
+            <br>
+            <input type="password" name="password">
         </form>
     </body>
+    <?php include 'CommonFooter.php';?>
 </html>
