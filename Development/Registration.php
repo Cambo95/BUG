@@ -42,6 +42,9 @@ $db = new mysqli(
             <br>
             Password:<br>
             <input type="password" name="password">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
         </form>
 <br><br><br><br><br><br><br><br>
 
