@@ -33,19 +33,19 @@ while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
-
+<br>
 Description: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $Bug['Inst_Description']."</td>"; 
 }?>
-
+<br>
 User: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $Bug['Inst_User']."</td>"; 
 }?>
-    
+<br>    
 Date Posted: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
