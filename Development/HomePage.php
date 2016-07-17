@@ -26,7 +26,7 @@ $db = new mysqli(
     <?php include 'CommonHeader.php';?>
     <?php include 'CommonLogin.php';?>
         <ul>
-            <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Register (Page Not linked yet)</a></li>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
         </ul>
 
 
