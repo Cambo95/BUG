@@ -28,10 +28,10 @@ $resultComments = $db->query($sql_queryComments);
     <style>
 
         h4{
-            color: blue;
+            color: #ff0000;
         }
         h5{
-            color: blue;
+            color: #ff0000;
         }
     </style>
 </head>
