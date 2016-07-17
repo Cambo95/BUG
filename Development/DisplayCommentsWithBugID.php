@@ -28,28 +28,28 @@ $result1 = $db->query($sql_query1);
 <body>
 <br><br><br>
 
-Title <br> <?php
+Title: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
 
-Description <br> <?php
+Description: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_Description']."</td>"; echo "</tr>";
+    echo "<td>" . $Bug['Inst_Description']."</td>"; 
 }?>
 
-User <br> <?php
+User: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_User']."</td>"; echo "</tr>";
+    echo "<td>" . $Bug['Inst_User']."</td>"; 
 }?>
     
-Date Posted <br> <?php
+Date Posted: <br> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_DatePosted']."</td>"; echo "</tr>";
+    echo "<td>" . $Bug['Inst_DatePosted']."</td>"; 
 }?>
 
 <br><br><br><br><br><br><br><br>
