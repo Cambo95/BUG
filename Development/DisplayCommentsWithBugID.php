@@ -19,7 +19,7 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
 ?>
 <?php include 'CommonHeader.php';?>
@@ -27,6 +27,9 @@ $resultComments = $db->query($sql_queryComments);
 <head>
     <style>
 
+        h4{
+            color: blue;
+        }
         h5{
             color: blue;
         }
@@ -58,7 +61,7 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
 }?>
 
-<h4>Recent Bugs</h4>
+<h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
