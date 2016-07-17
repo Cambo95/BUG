@@ -28,22 +28,29 @@ $result1 = $db->query($sql_query1);
 <body>
 <br><br><br>
 
-Title
-Description
-User
-Date Posted
+Title <br> <?php
+while($Bug = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
+}?>
+
+Description <br> <?php
+while($Bug = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $Bug['Inst_Description']."</td>"; echo "</tr>";
+}?>
+
+User <br> <?php
+while($Bug = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $Bug['Inst_User']."</td>"; echo "</tr>";
+}?>
     
-    <?php
-    while($Bug = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $Bug['Inst_Title']."</td>";
-        echo "<td>" . $Bug['Inst_Description']."</td>";
-        echo "<td>" . $Bug['Inst_User']."</td>";
-        echo "<td>" . $Bug['Inst_DatePosted']."</td>";
-        echo "</tr>";
-    }//end while
-    ?>
-</table>
+Date Posted <br> <?php
+while($Bug = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $Bug['Inst_DatePosted']."</td>"; echo "</tr>";
+}?>
 
 <br><br><br><br><br><br><br><br>
 
