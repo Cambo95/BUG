@@ -38,8 +38,8 @@ $result = $db->query($sql_query);
 <?php include 'CommonHeader.php';?>
 <?php include 'CommonLogin.php';?>
 
-<table width="600" border="1" cellpadding="1" cellspacing="1">
-    <tr>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
         <th>User</th>
         <th>Country</th>
         <th>Bio</th>
@@ -56,6 +56,7 @@ $result = $db->query($sql_query);
     }//end while
     ?>
 </table>
+<br><br><br><br><br><br><br><br>
 <?php include 'CommonFooter.php';?>
 </body>
 </html>
