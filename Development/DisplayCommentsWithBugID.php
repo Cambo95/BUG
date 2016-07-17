@@ -35,21 +35,21 @@ while($Bug = mysqli_fetch_assoc($result)) {
 }?>
 <br>
 Description: <br> <?php
-while($Bug = mysqli_fetch_assoc($result)) {
+while($Describe = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_Description']."</td>"; 
+    echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 User: <br> <?php
-while($Bug = mysqli_fetch_assoc($result)) {
+while($User = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_User']."</td>"; 
+    echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
 <br>    
 Date Posted: <br> <?php
-while($Bug = mysqli_fetch_assoc($result)) {
+while($Date = mysqli_fetch_assoc($result)) {
     echo "<tr>";
-    echo "<td>" . $Bug['Inst_DatePosted']."</td>"; 
+    echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
 }?>
 
 <br><br><br><br><br><br><br><br>
