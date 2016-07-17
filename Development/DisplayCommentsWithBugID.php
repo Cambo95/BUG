@@ -17,6 +17,10 @@ $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = '1'";
 $sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
 // execute the SQL query
 $result = $db->query($sql_query);
+$resultDescribe = $db->query($sql_query);
+$resultUser = $db->query($sql_query);
+$resultDate = $db->query($sql_query);
+
 $result1 = $db->query($sql_query1);
 
 ?>
@@ -35,19 +39,19 @@ while($Bug = mysqli_fetch_assoc($result)) {
 }?>
 <br>
 Description: <br> <?php
-while($Describe = mysqli_fetch_assoc($result)) {
+while($Describe = mysqli_fetch_assoc($resultDescribe)) {
     echo "<tr>";
     echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 User: <br> <?php
-while($User = mysqli_fetch_assoc($result)) {
+while($User = mysqli_fetch_assoc($resultUser)) {
     echo "<tr>";
     echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
 <br>    
 Date Posted: <br> <?php
-while($Date = mysqli_fetch_assoc($result)) {
+while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<tr>";
     echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
 }?>
