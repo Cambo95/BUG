@@ -19,7 +19,7 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' DESC limit 50";
+$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
 $result1 = $db->query($sql_query1);
 
 ?>
@@ -66,7 +66,6 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
         <th>Date+Time posted</th>
         <th>Comment</th>
     </tr>
-
     <?php
     while($Comment = mysqli_fetch_assoc($result1)) {
         echo "<tr>";
