@@ -26,14 +26,13 @@ $result1 = $db->query($sql_query1);
     <title>Bug Site</title>
 </head>
 <body>
+<br><br><br>
 
-<table class="w3-table w3-bordered w3-striped">
-    <tr class="w3-teal">
-        <th>Title</th>
-        <th>Description</th>
-        <th>User</th>
-        <th>Date Posted</th>
-    </tr>
+Title
+Description
+User
+Date Posted
+    
     <?php
     while($Bug = mysqli_fetch_assoc($result)) {
         echo "<tr>";
@@ -46,5 +45,8 @@ $result1 = $db->query($sql_query1);
     ?>
 </table>
 
+<br><br><br><br><br><br><br><br>
+
+<?php include 'CommonFooter.php';?>
 </body>
 </html>
