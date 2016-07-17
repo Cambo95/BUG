@@ -19,9 +19,8 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
-$result1 = $db->query($sql_query1);
-
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
+$resultComments = $db->query($sql_queryComments);
 ?>
 <?php include 'CommonHeader.php';?>
 <html>
@@ -67,7 +66,7 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
         <th>Comment</th>
     </tr>
     <?php
-    while($Comment = mysqli_fetch_assoc($result1)) {
+    while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
         echo "<td>" . $Comment['Com_User']."</td>";
         echo "<td>" . $Comment['Com_DateTime']."</td>";
