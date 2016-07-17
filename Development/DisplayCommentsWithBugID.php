@@ -47,26 +47,25 @@ $result1 = $db->query($sql_query1);
 
 <h2>Title:</h2> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
-    echo "<tr>";
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
 <br>
 <br>
-<h3>Description:</h3> <br> <?php
+<h3>Description:</h3> <?php
 while($Describe = mysqli_fetch_assoc($resultDescribe)) {
     echo "<tr>";
     echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 <br>
-<h4>User:</h4> <br> <?php
+<h4>User:</h4> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
     echo "<tr>";
     echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
 <br>
 <br>
-<h5>Date Posted:</h5> <br> <?php
+<h5>Date Posted:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<tr>";
     echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
