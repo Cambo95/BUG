@@ -53,21 +53,18 @@ while($Bug = mysqli_fetch_assoc($result)) {
 <br>
 <h3>Description:</h3> <?php
 while($Describe = mysqli_fetch_assoc($resultDescribe)) {
-    echo "<tr>";
     echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 <br>
 <h4>User:</h4> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
-    echo "<tr>";
     echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
 <br>
 <br>
 <h5>Date Posted:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
-    echo "<tr>";
     echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
 }?>
 
