@@ -40,7 +40,6 @@ $result = $db->query($sql_query);
 
 <table width="600" border="1" cellpadding="1" cellspacing="1">
     <tr>
-        <th>Image Not Working</th>
         <th>User</th>
         <th>Country</th>
         <th>Bio</th>
@@ -49,7 +48,6 @@ $result = $db->query($sql_query);
     <?php
     while($Row_Read = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>" . $Row_Read['Usr_Picture']."</td>";
         echo "<td>" . $Row_Read['Usr_User']."</td>";
         echo "<td>" . $Row_Read['Usr_Country']."</td>";
         echo "<td>" . $Row_Read['Usr_Bio']."</td>";
