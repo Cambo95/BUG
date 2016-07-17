@@ -27,33 +27,46 @@ $result1 = $db->query($sql_query1);
 <?php include 'CommonHeader.php';?>
 <html>
 <head>
-    <title>Bug Site</title>
+    <style>
+        h2{
+            color: blue;
+        }
+        h3{
+            color: blue;
+        }
+        h4{
+            color: blue;
+        }
+        h5{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 <br><br><br>
 
-Title: <br> <?php
+<h2>Title:</h2> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<tr>";
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
 <br>
 <br>
-Description: <br> <?php
+<h3>Description:</h3> <br> <?php
 while($Describe = mysqli_fetch_assoc($resultDescribe)) {
     echo "<tr>";
     echo "<td>" . $Describe['Inst_Description']."</td>"; 
 }?>
 <br>
 <br>
-User: <br> <?php
+<h4>User:</h4> <br> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
     echo "<tr>";
     echo "<td>" . $User['Inst_User']."</td>"; 
 }?>
 <br>
 <br>
-Date Posted: <br> <?php
+<h5>Date Posted:</h5> <br> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<tr>";
     echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
