@@ -14,13 +14,12 @@ $db = new mysqli(
 );
 
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = '1'";
-$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
-// execute the SQL query
 $result = $db->query($sql_query);
 $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
+$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' ORDER BY Com_DateTime DESC limit 50";
 $result1 = $db->query($sql_query1);
 
 ?>
@@ -57,9 +56,27 @@ while($User = mysqli_fetch_assoc($resultUser)) {
 <br>
 <h5>Date Posted:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
-    echo "<td>" . $Date['Inst_DatePosted']."</td>"; 
-}?>
+    echo "<td>" . $Date['Inst_DatePosted']."</td>";
+?>
 
+<h4>Recent Bugs</h4>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
+        <th>User</th>
+        <th>Date+Time posted</th>
+        <th>Comment</th>
+    </tr>
+
+    <?php
+    while($Comment = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $Comment['Com_User']."</td>";
+        echo "<td>" . $Comment['Com_DateTime']."</td>";
+        echo "<td>" . $Comment['Com_Comment']."</td>";
+        echo "</tr>";
+    }//end while
+    ?>
+</table>
 <br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
