@@ -68,7 +68,7 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     </tr>
 
     <?php
-    while($Comment = mysqli_fetch_assoc($result)) {
+    while($Comment = mysqli_fetch_assoc($result1)) {
         echo "<tr>";
         echo "<td>" . $Comment['Com_User']."</td>";
         echo "<td>" . $Comment['Com_DateTime']."</td>";
