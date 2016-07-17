@@ -19,7 +19,7 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' ORDER BY Com_DateTime DESC limit 50";
+$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' DESC limit 50";
 $result1 = $db->query($sql_query1);
 
 ?>
