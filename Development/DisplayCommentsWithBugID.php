@@ -14,9 +14,10 @@ $db = new mysqli(
 );
 
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = '1'";
+$sql_query1 = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1'";
 // execute the SQL query
 $result = $db->query($sql_query);
-
+$result1 = $db->query($sql_query1);
 
 ?>
 <?php include 'CommonHeader.php';?>
