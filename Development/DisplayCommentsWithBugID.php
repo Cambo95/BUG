@@ -26,7 +26,16 @@ $result1 = $db->query($sql_query1);
     <title>Bug Site</title>
 </head>
 <body>
-
+<?php
+($Bug = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $Bug['Inst_Title']."</td>";
+    echo "<td>" . $Bug['Inst_Description']."</td>";
+    echo "<td>" . $Bug['Inst_User']."</td>";
+    echo "<td>" . $Bug['Inst_DatePosted']."</td>";
+    echo "</tr>";
+}//end while
+?>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>Title</th>
