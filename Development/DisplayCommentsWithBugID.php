@@ -55,8 +55,8 @@ while($User = mysqli_fetch_assoc($resultUser)) {
 <br>
 <h5>Date Posted:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
-    echo "<td>" . $Date['Inst_DatePosted']."</td>";
-?>
+    echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
+}?>
 
 <h4>Recent Bugs</h4>
 <table class="w3-table w3-bordered w3-striped">
