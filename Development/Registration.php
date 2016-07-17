@@ -40,8 +40,11 @@ $db = new mysqli(
             Bio:<br>
             <input type="text" name="Bio" maxlength="1000">
             <br>
+            Password:<br>
             <input type="password" name="password">
         </form>
+<br><br><br><br><br><br><br><br>
+
+<?php include 'CommonFooter.php';?>
     </body>
-    <?php include 'CommonFooter.php';?>
 </html>
