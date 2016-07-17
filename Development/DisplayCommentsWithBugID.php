@@ -27,8 +27,8 @@ $result1 = $db->query($sql_query1);
 </head>
 <body>
 
-<table width="600" border="1" cellpadding="1" cellspacing="1">
-    <tr>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
         <th>Title</th>
         <th>Description</th>
         <th>User</th>
