@@ -25,24 +25,17 @@ $db = new mysqli(
     <body>
 <?php include 'CommonHeader.php';?>
 
-<?php $sql_queryAttachments = "SELECT * FROM  bug_attachment WHERE Att_BugUniqueID = '1'";
-// execute the SQL query
-$resultAttachments = $db->query($sql_queryAttachments);
+<?php $sqlimage = "SELECT Att_Object FROM bug_attachment where Att_BugUniqueID = '1'";
+$imageresult1 = mysqli_query($sqlimage);
+
+while($rows = mysqli_fetch_assoc($imageresult1))
+{
+    $image = $rows['image'];
+    print $image;
+}
 ?>
 
-<table class="w3-table w3-bordered w3-striped">
-    <tr class="w3-teal">
-        <th>Attachments</th>
-    </tr>
 
-    <?php
-    while($BugAttachments = mysqli_fetch_assoc($resultAttachments)) {
-        echo "<tr>";
-        echo "<td>" . $BugAttachments['Att_BugUniqueID']."</td>";
-        echo "</tr>";
-    }//end while
-    ?>
-</table>
 <br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
