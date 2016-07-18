@@ -25,7 +25,7 @@ $db = new mysqli(
     <body>
 <?php include 'CommonHeader.php';?>
 
-<?php $sql_queryAttachments = "SELECT * FROM  bug_attachment WHERE Att_BugUniqueID = '1' DESC limit 50";
+<?php $sql_queryAttachments = "SELECT * FROM  bug_attachment WHERE Att_BugUniqueID = '1'";
 // execute the SQL query
 $resultAttachments = $db->query($sql_queryAttachments);
 ?>
