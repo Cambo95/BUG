@@ -8,7 +8,7 @@
         <H1> SPLAT! Bug Catcher</H1>
     </header>
 <ul>
-    <li><a href="http://1301070cameronbug.azurewebsites.net/production/useralbugs.php">Test Link 1</a></li>
+    <li><a href="http://1301070cameronbug.azurewebsites.net/production/Bug_Userprofile_display.php">Profile</a></li>
 </ul>
     
 <p>Search for Bugs:</p>
