@@ -29,10 +29,10 @@ $db = new mysqli(
 // execute the SQL query
 $resultAttachments = $db->query($sql_queryAttachments);
 ?>
-<h1>Attachments</h1>
+
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
-        <th></th>
+        <th>Attachments</th>
     </tr>
 
     <?php
