@@ -29,7 +29,7 @@ $db = new mysqli(
 // execute the SQL query
 $resultAdmin = $db->query($sql_queryAdmin);
 ?>
-<h1>Recent Bugs</h1>
+<h1>Admin</h1>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
