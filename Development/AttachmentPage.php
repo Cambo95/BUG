@@ -33,7 +33,8 @@ $imageresult1 = mysqli_query($sqlimage);
 
 <h5>Attachments:</h5> <?php
 while($Bug = mysqli_fetch_assoc($imageresult1)) {
-    echo "<td>" . $Bug['Att_Object'] . "</td>";
+    $image = $row['Att_Object'];
+    echo '<img src="data:image/jpeg;base64,'.base64_encode($image->load()) .'" />';
     echo "</tr>";
 };
 ?>
