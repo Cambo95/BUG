@@ -25,7 +25,7 @@ $db = new mysqli(
     <body>
 <?php include 'CommonHeader.php';?>
 
-<?php $sqlimage = "SELECT Att_Object FROM bug_attachment where Att_BugUniqueID = '1'";
+<?php $sqlimage = "SELECT Att_Object FROM bug_attachment WHERE Att_BugUniqueID = '1'";
 $imageresult1 = mysqli_query($sqlimage);
 
 while($rows = mysqli_fetch_assoc($imageresult1))
