@@ -27,15 +27,16 @@ $db = new mysqli(
 
 <?php $sqlimage = "SELECT * FROM bug_attachment WHERE Att_BugUniqueID = '1'";
 $imageresult1 = mysqli_query($sqlimage);
-
-while($rows = mysqli_fetch_assoc($imageresult1))
-{
-    $image = $rows['Att_Object'];
-    echo "Hello";
-    echo'<img height="300" width="300" src="data:image;base64,'.$rows['Att_Object'].'">';
-}
 ?>
 
+
+
+<h5>Attachments:</h5> <?php
+while($Bug = mysqli_fetch_assoc($imageresult1)) {
+    echo "<td>" . $Bug['Att_Object'] . "</td>";
+    echo "</tr>";
+};
+?>
 
 <br><br><br><br><br><br><br><br>
 
