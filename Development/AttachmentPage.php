@@ -31,6 +31,7 @@ $imageresult1 = mysqli_query($sqlimage);
 while($rows = mysqli_fetch_assoc($imageresult1))
 {
     $image = $rows['Att_Object'];
+    echo "Hello";
     echo'<img height="300" width="300" src="data:image;base64,'.$rows['Att_Object'].'">';
 }
 ?>
