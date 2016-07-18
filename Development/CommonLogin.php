@@ -6,10 +6,10 @@
 <body>
 <form>
     Username:<br>
-    <input type ="text" name="username">
+    <input type ="text" name="username" placeholder="Username">
     <br>
     Password:<br>
-    <input type="password" name="password">
+    <input type="password" name="password" placeholder="Password">
     <br>
     <input type ="submit" value ="Login">
 </form>
