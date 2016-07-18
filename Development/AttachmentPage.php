@@ -31,7 +31,7 @@ $imageresult1 = mysqli_query($sqlimage);
 while($rows = mysqli_fetch_assoc($imageresult1))
 {
     $image = $rows['Att_Object'];
-    echo $image;
+    echo "<img src='$image' >";
 }
 ?>
 
