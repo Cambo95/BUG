@@ -40,7 +40,7 @@ $db = new mysqli(
         // execute the SQL query
             $result = $db->query($sql_query);
         ?>
-<h1>Recent Bugs</h1>
+<h3>Recent Bugs</h3>
     <table class="w3-table w3-bordered w3-striped">
         <tr class="w3-teal">
             <th>Date</th>
