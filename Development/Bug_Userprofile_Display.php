@@ -61,7 +61,7 @@ while($Bio = mysqli_fetch_assoc($resultBio)) {
 <br>
 <h5>Date Joined:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
-    echo "<td>" . $Date['Usr_Joined'] . "</td>";
+    echo "<td>" . $Date['Usr_JoinedDate'] . "</td>";
 }?>
 </table>
 <br><br><br><br><br><br><br><br>
