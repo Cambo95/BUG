@@ -21,14 +21,15 @@ $db = new mysqli(
 <meta charset="UTF-8">
 <head>
     <title>SPLAT! Bug Catcher</title>
-    <ul>
-        <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
-    </ul>
 </head>
 <body>
     <?php include 'CommonHeader.php';?>
     <?php include 'CommonLogin.php';?>
     
+        <ul>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
+        </ul>
+
     <p>Search for Bugs:</p>
     <form>
         <input type="text" name="search" placeholder="Search...">
