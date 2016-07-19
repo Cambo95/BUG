@@ -23,6 +23,9 @@ $db = new mysqli(
 $sql_query = "SELECT * FROM  bug_userprofile";
 // execute the SQL query
 $result = $db->query($sql_query);
+$resultCountry = $db->query($sql_query);
+$resultBio = $db->query($sql_query);
+$resultDate = $db->query($sql_query);
 
 /** ======================================================================= */
 
@@ -45,19 +48,19 @@ while($User = mysqli_fetch_assoc($result)) {
 <br>
 <br>
 <h5>Country:</h5> <?php
-while($Country = mysqli_fetch_assoc($result)) {
+while($Country = mysqli_fetch_assoc($resultCountry)) {
     echo "<td>" . $Country['Usr_Country']."</td>";
 }?>
 <br>
 <br>
 <h5>Bio:</h5> <?php
-while($Bio = mysqli_fetch_assoc($result)) {
+while($Bio = mysqli_fetch_assoc($resultBio)) {
     echo "<td>" . $Bio['Usr_Bio']."</td>";
 }?>
 <br>
 <br>
 <h5>Date Joined:</h5> <?php
-while($Date = mysqli_fetch_assoc($result)) {
+while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Usr_Joined'] . "</td>";
 }?>
 </table>
