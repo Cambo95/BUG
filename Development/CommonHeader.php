@@ -6,6 +6,10 @@
 <body>
     <header class="w3-container w3-teal">
         <H1> SPLAT! Bug Catcher</H1>
+        <H1> SPLAT! Bug Catcher</H1>
+        <ul>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Home</a></li>
+        </ul>
         <ul>
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/Bug_Userprofile_Display.php">Profile</a></li>
         </ul>
