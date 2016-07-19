@@ -60,7 +60,12 @@ while($User = mysqli_fetch_assoc($resultUser)) {
 while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
 }?>
-
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select attachment to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Add Attachment" name="submit">
+</form>
+<br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
@@ -78,13 +83,6 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     }//end while
     ?>
 </table>
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
 <br>
 <form method = 'post'>
 Comment:<br />
