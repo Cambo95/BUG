@@ -45,19 +45,19 @@ while($User = mysqli_fetch_assoc($result)) {
 <br>
 <br>
 <h5>Country:</h5> <?php
-while($Country = mysqli_fetch_assoc($resultCountry)) {
+while($Country = mysqli_fetch_assoc($result)) {
     echo "<td>" . $Country['Usr_Country']."</td>";
 }?>
 <br>
 <br>
 <h5>Bio:</h5> <?php
-while($Bio = mysqli_fetch_assoc($resultBio)) {
+while($Bio = mysqli_fetch_assoc($result)) {
     echo "<td>" . $Bio['Usr_Bio']."</td>";
 }?>
 <br>
 <br>
 <h5>Date Joined:</h5> <?php
-while($Date = mysqli_fetch_assoc($resultDate)) {
+while($Date = mysqli_fetch_assoc($result)) {
     echo "<td>" . $Date['Usr_Joined'] . "</td>";
 }?>
 </table>
