@@ -26,14 +26,14 @@ $db = new mysqli(
     <?php include 'CommonHeader.php';?>
     <?php include 'CommonLogin.php';?>
     
+        <ul>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
+        </ul>
+
     <p>Search for Bugs:</p>
     <form>
         <input type="text" name="search" placeholder="Search...">
     </form>
-    
-        <ul>
-            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
-        </ul>
 
 
         <?php $sql_query = "SELECT * FROM  bug_instances ORDER BY Inst_BugUniqueID DESC limit 5";
