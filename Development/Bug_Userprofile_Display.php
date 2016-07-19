@@ -36,6 +36,15 @@ $resultDate = $db->query($sql_query);
 <html>
 <head>
     <title>Bug Site</title>
+    <style>
+
+        h4{
+            color: #ff0000;
+        }
+        h5{
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
 <?php include 'CommonHeader.php';?>
