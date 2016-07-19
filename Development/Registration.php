@@ -46,6 +46,9 @@ $db = new mysqli(
             <br>
             <input type="submit" value="Submit">
         </form>
+<ul>
+    <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Cancel</a></li>
+</ul>
 <br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
