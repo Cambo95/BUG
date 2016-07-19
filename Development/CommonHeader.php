@@ -10,11 +10,5 @@
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/Bug_Userprofile_Display.php">Profile</a></li>
         </ul>
     </header>
-    
-<p>Search for Bugs:</p>
-<form>
-    <input type="text" name="search" placeholder="Search...">
-</form>
-
 </body>
 </html>
