@@ -25,6 +25,7 @@ $db = new mysqli(
 <body>
 <?php include 'CommonHeader.php';?>
 <br><br><br>
+Please Title your bug and provide a description. 
 <form>
     Bug Title:<br>
     <input type ="text" name="Bug Title">
