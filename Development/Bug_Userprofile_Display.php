@@ -36,25 +36,30 @@ $result = $db->query($sql_query);
 </head>
 <body>
 <?php include 'CommonHeader.php';?>
-<?php include 'CommonLogin.php';?>
+<br><br><br>
 
-<table class="w3-table w3-bordered w3-striped">
-    <tr class="w3-teal">
-        <th>User</th>
-        <th>Country</th>
-        <th>Bio</th>
-        <th>Date Joined</th>
-    </tr>
-    <?php
-    while($Row_Read = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $Row_Read['Usr_User']."</td>";
-        echo "<td>" . $Row_Read['Usr_Country']."</td>";
-        echo "<td>" . $Row_Read['Usr_Bio']."</td>";
-        echo "<td>" . $Row_Read['Usr_JoinedDate']."</td>";
-        echo "</tr>";
-    }//end while
-    ?>
+<h5>User:</h5> <?php
+while($User = mysqli_fetch_assoc($result)) {
+    echo "<td>" . $User['Usr_User']."</td>";  echo "</tr>";
+}?>
+<br>
+<br>
+<h5>Country:</h5> <?php
+while($Country = mysqli_fetch_assoc($resultCountry)) {
+    echo "<td>" . $Country['Usr_Country']."</td>";
+}?>
+<br>
+<br>
+<h5>Bio:</h5> <?php
+while($Bio = mysqli_fetch_assoc($resultBio)) {
+    echo "<td>" . $Bio['Usr_Bio']."</td>";
+}?>
+<br>
+<br>
+<h5>Date Joined:</h5> <?php
+while($Date = mysqli_fetch_assoc($resultDate)) {
+    echo "<td>" . $Date['Usr_Joined'] . "</td>";
+}?>
 </table>
 <br><br><br><br><br><br><br><br>
 <?php include 'CommonFooter.php';?>
