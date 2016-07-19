@@ -78,14 +78,14 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     }//end while
     ?>
 </table>
+<br>
 <form method = 'post'>
-    
 Comment:<br />
 <textarea name='comment' id='comment'><</textarea><br />
 <input type='hidden' name='Com_BugUniqueID' id='Com_BugUniqueID' value='<? echo $_GET["id"]; ?>' />
 <input type='submit' value='Submit' />
 </form>
-    <br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
 </body>
