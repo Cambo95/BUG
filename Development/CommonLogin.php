@@ -39,8 +39,8 @@ echo "password1";
 echo $pass;
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo "Entry point 1";
-        $username=mysqli_real_escape_string($db,$_POST['Username']);
-        $password=mysqli_real_escape_string($db,$_POST["Password"]);
+        $user=mysqli_real_escape_string($db,$_POST['Username']);
+        $pass=mysqli_real_escape_string($db,$_POST["Password"]);
         echo "username2";
         echo $user;
         echo "password2";
@@ -54,7 +54,7 @@ echo $pass;
         echo "Count rows returned = ";
         echo $count;
         if($count == 1){
-            $SESSION['login_user']= $username;
+            $SESSION['login_user']= $user;
             header("location: commonlogin.php");
         }
         else{
