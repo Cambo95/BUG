@@ -30,6 +30,8 @@ $db = new mysqli(
 
 session_start();
 
+$user=$_REQUEST['Username'];
+$pass=$_REQUEST['Password'];
 echo "username1";
 echo $user;
 echo "password1";
