@@ -53,7 +53,7 @@ $pass=$_REQUEST['Password'];
 
         if($count == 1){
             $SESSION['login_user']= $username;
-            header("location: bug_userprofile_display.php");
+            header("location: commonlogin.php");
         }else{
             $error = "Your Login Name or Password is invalid";
         }
