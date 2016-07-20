@@ -34,6 +34,7 @@ print $_SESSION['Username'];
     if(isset($_POST['Login']));{
     echo "Cam pressed Login";
 }
+?>
 </body>
 </html>
 
