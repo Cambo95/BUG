@@ -29,13 +29,7 @@ $db = new mysqli(
 <?php
 session_start();
 
-$user_check =$_SESSION['login_user'];
-$ses_sql = mysqli_query($db,"SELECT Usr_User FROM bug_userprofile WHERE Usr_User ='$user_check'");
-$row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-$login_session = $row['Usr_User'];
-if(!isset($_SESSION['login_user'])){
-    header("location: homepage.php");
-}
+
 
 $user=$_REQUEST['Username'];
 $pass=$_REQUEST['Password'];
@@ -54,7 +48,8 @@ $pass=$_REQUEST['Password'];
         if($count == 1){
             $SESSION['login_user']= $username;
             header("location: commonlogin.php");
-        }else{
+        }
+        else{
             $error = "Your Login Name or Password is invalid";
         }
 }
