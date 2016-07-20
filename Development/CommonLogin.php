@@ -38,7 +38,8 @@ $pass=$_REQUEST['Password'];
         echo "Entry point 1";
         $username=mysqli_real_escape_string($db,$_POST['Username']);
         $password=mysqli_real_escape_string($db,$_POST["Password"]);
-
+        echo "Username $username";
+        echo "Password $password";
         $sql = "SELECT Usr_User FROM bug_userprofile WHERE Usr_User = '$username' and Usr_Password ='$password'";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
