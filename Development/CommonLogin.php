@@ -30,6 +30,7 @@ $db = new mysqli(
 
 if(isset($_POST['submit'])){
     echo "You clicked Login";
+    echo "Username";
  }
 ?>
 </body>
