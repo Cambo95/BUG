@@ -33,14 +33,17 @@ session_start();
 
 $user=$_REQUEST['Username'];
 $pass=$_REQUEST['Password'];
-
+echo "username1";
+echo $username;
+echo "password1";
+echo $password;
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo "Entry point 1";
         $username=mysqli_real_escape_string($db,$_POST['Username']);
         $password=mysqli_real_escape_string($db,$_POST["Password"]);
-        echo "username";
+        echo "username2";
         echo $username;
-        echo "password";
+        echo "password2";
         echo $password;
         $sql = "SELECT Usr_User FROM bug_userprofile WHERE Usr_User = '$username' and Usr_Password ='$password'";
         $result = mysqli_query($db,$sql);
