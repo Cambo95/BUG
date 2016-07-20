@@ -12,17 +12,27 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
+$username="CAM";
+$password="zen123";
+setcookie('access_level','standarduser');
+
+function displayAccessLevelInformation($accessLevel){
+    if($accessLevel =="standarduser"){
+        echo"<p>You are currently logged in as a standard user</p>";
+    }
+    elseif($accessLevel =="root"){
+        echo"<p>You are currently logged in as a root user</p>";
+        echo"<p>You now have access to add bugs and comments</p>";
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
-<?php
-session_start();
-$Session['Usr_User']=$username;
-echo $Session['Usr_User'];
-?>
 <body>
 <form>
     Username:<br>
