@@ -21,45 +21,16 @@ $db = new mysqli(
 <meta charset="UTF-8">
 <body>
 
-<form action='' method="post">
+<form action="" method="post">
     <label>Username</label><input type=“text” name=“Username”>
     <label>Password</label><input type=“password” name=“Password”>
-    <input type="submit" name="submit">
+    <input type="submit" value="Login">
 </form>
 <?php
 
-session_start();
-
-$user=$_REQUEST['Username'];
-$pass=$_REQUEST['Password'];
-echo "username1";
-echo $user;
-echo "password1";
-echo $pass;
-    if($_SERVER["REQUEST_METHOD"]=="POST"){
-        echo "Entry point 1";
-        $user=mysqli_real_escape_string($db,$_POST['Username']);
-        $pass=mysqli_real_escape_string($db,$_POST["Password"]);
-        echo "username2";
-        echo $user;
-        echo "password2";
-        echo $pass;
-        $sql = "SELECT Usr_User FROM bug_userprofile WHERE Usr_User = 'CAM' and Usr_Password ='zen123'";
-        $result = mysqli_query($db,$sql);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
-
-        $count = mysqli_num_rows($result);
-        echo "Count rows returned = ";
-        echo $count;
-        if($count == 1){
-            $SESSION['login_user']= $user;
-            header("location: bug_userprofile_display.php");
-        }
-        else{
-            $error = "Your Login Name or Password is invalid";
-        }
-}
+if(isset($_POST['Login'])){
+    echo("You clicked Login");
+ }
 ?>
 </body>
 </html>
