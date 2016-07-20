@@ -35,6 +35,7 @@ $user=$_REQUEST['Username'];
 $pass=$_REQUEST['Password'];
 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
+        echo "Entry point 1";
         $username=mysqli_real_escape_string($db,$_POST['Username']);
         $password=mysqli_real_escape_string($db,$_POST["Password"]);
 
@@ -44,7 +45,8 @@ $pass=$_REQUEST['Password'];
         $active = $row['active'];
 
         $count = mysqli_num_rows($result);
-
+        echo "Count rows returned = ";
+        echo $count;
         if($count == 1){
             $SESSION['login_user']= $username;
             header("location: commonlogin.php");
