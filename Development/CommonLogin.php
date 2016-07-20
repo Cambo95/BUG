@@ -25,12 +25,15 @@ print $_SESSION['Username'];
 <meta charset="UTF-8">
 <body>
 
-<form action="LoginExecute.php" method="post">
+<form action="" method="post">
     <label>Username</label><input type=“text” name=“Username”>
     <label>Password</label><input type=“password” name=“Password”>
     <input type="submit" value="Login">
 </form>
-
+<?php 
+    if(isset($_POST['Login']));{
+    echo "Cam pressed Login";
+}
 </body>
 </html>
 
