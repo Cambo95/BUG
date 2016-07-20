@@ -29,7 +29,7 @@ $resultDate = $db->query($sql_query);
 
 /** ======================================================================= */
 
-print $_SESSION['Username'];
+
 ?>
 
 
@@ -48,6 +48,7 @@ print $_SESSION['Username'];
 </head>
 <body>
 <?php include 'CommonHeader.php';?>
+<?php print $_SESSION['Username'];?>
 <br><br><br>
 
 <h5>User:</h5> <?php
