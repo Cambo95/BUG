@@ -45,7 +45,7 @@ echo $pass;
         echo $user;
         echo "password2";
         echo $pass;
-        $sql = "SELECT Usr_User FROM bug_userprofile WHERE Usr_User = '$user' and Usr_Password ='$pass'";
+        $sql = "SELECT Usr_User FROM bug_userprofile WHERE Usr_User = 'CAM' and Usr_Password ='zen123'";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $active = $row['active'];
