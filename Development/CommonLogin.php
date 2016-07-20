@@ -28,7 +28,7 @@ print $_SESSION['Username'];
 <form action="" method="post">
     <label>Username</label><input type=“text” name=“Username”>
     <label>Password</label><input type=“password” name=“Password”>
-    <input type="submit" value="Login">
+    <input type="submit" name="Login">
 </form>
 <?php 
     if(isset($_POST['Login']));{
