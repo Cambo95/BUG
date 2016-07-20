@@ -24,12 +24,12 @@ $db = new mysqli(
 <form action='' method="post">
     <label>Username</label><input type=“text” name=“Username”>
     <label>Password</label><input type=“password” name=“Password”>
-    <input type="submit" value="submit">
+    <input type="submit" name="submit">
 </form>
 <?php
 
 if(isset($_POST['submit'])){
-    echo("You clicked Login");
+    echo "You clicked Login";
  }
 ?>
 </body>
