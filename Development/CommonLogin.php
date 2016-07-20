@@ -12,11 +12,10 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
-$_SESSION['var']=$val;
+session_start();
 $_SESSION['Username']="CAM";
 
-$_SESSION['foo'] = 'bar';
-print $_SESSION['foo'];
+print $_SESSION['Username'];
 
 ?>
 
