@@ -32,6 +32,12 @@ print $_SESSION['Username'];
     <input type="password" name="password" placeholder="Password">
     <br>
     <input type ="submit" value ="Login">
+    
+    <?php
+    if(isset($_POST['Login'])){
+        echo("You clicked Login");
+    }
+    ?>
 </form>
 </body>
 </html>
