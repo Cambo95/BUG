@@ -24,20 +24,13 @@ print $_SESSION['Username'];
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <body>
-<form>
-    Username:<br>
-    <input type ="text" name="username" placeholder="Username">
-    <br>
-    Password:<br>
-    <input type="password" name="password" placeholder="Password">
-    <br>
-    <input type ="submit" value ="Login">
+
+<form action="LoginExecute.php" method="post">
+    <label>Username</label><input type=“text” name=“Username”>
+    <label>Password</label><input type=“password” name=“Password”>
+    <input type="submit" value="Login">
 </form>
+
 </body>
 </html>
 
-<?php
-if(isset($_POST['Login'])){
-    echo("You clicked Login");
-}
-?>
