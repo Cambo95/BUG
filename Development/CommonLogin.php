@@ -27,12 +27,9 @@ $db = new mysqli(
     <input type="submit" name="submit">
 </form>
 <?php
+
 session_start();
 
-
-
-$user=$_REQUEST['Username'];
-$pass=$_REQUEST['Password'];
 echo "username1";
 echo $user;
 echo "password1";
