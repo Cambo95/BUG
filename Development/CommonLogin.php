@@ -19,12 +19,6 @@ print $_SESSION['Username'];
 
 ?>
 
-<?php
-if(isset($_POST['Login'])){
-    echo("You clicked Login");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
@@ -41,3 +35,9 @@ if(isset($_POST['Login'])){
 </form>
 </body>
 </html>
+
+<?php
+if(isset($_POST['Login'])){
+    echo("You clicked Login");
+}
+?>
