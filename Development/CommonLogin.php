@@ -19,6 +19,12 @@ print $_SESSION['Username'];
 
 ?>
 
+<?php
+if(isset($_POST['Login'])){
+    echo("You clicked Login");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
@@ -32,12 +38,6 @@ print $_SESSION['Username'];
     <input type="password" name="password" placeholder="Password">
     <br>
     <input type ="submit" value ="Login">
-    
-    <?php
-    if(isset($_POST['Login'])){
-        echo("You clicked Login");
-    }
-    ?>
 </form>
 </body>
 </html>
