@@ -48,6 +48,7 @@ $resultDate = $db->query($sql_query);
 </head>
 <body>
 <?php include 'CommonHeader.php';?>
+session_start();
 <?php print $_SESSION['Username'];?>
 <br><br><br>
 
