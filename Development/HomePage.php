@@ -12,7 +12,7 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
-
+session_start();
 ?>
 
 <!DOCTYPE html>
