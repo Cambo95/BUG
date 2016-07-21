@@ -30,7 +30,6 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result)==1){
         $_SESSION['username']= $username;
         header('Location: welcome.php');
-        echo $result;
     }
     else
         echo "Account is invalid";
