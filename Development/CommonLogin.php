@@ -21,7 +21,7 @@ $db = new mysqli(
 <meta charset="UTF-8">
 <body>
 
-<form action='checklogindb.php' method="POST">
+<form action='validatelogin.php' method="POST">
     <label>Username</label><input type="text" name="username">
     <label>Password</label><input type="password" name="password">
     <input type="submit" name="submit">
