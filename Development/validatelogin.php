@@ -1,3 +1,12 @@
+<?php
+$db = new mysqli(
+"eu-cdbr-azure-west-d.cloudapp.net",
+"b05411072e2e07",
+"2e5e5133",
+"1301070"
+);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
@@ -8,6 +17,7 @@ Welcome <?php
 $username = $_POST['username'];
 $password = $_POST['password'];
 $allfieldsfull = 'Y';
+
 if(empty($username)){
     echo'Username is empty';
     $allfieldsfull = 'N';
@@ -21,14 +31,10 @@ if(empty($password)){
     echo $password;
 };
 echo $allfieldsfull;
-if ($allfieldsfull == 'N'){
-    echo 'One or both fields is empty. Click here to try again.';
-    echo '<FORM METHOD="LINK" ACTION="homepage.php">
-            <INPUT TYPE="submit" VALUE="Try Again">
-            </FORM>';
-}else{
-    echo 'Retrieving login from database';
-};
+if ($username&&$password);{
+    mysqli_select_db("1301070");
+    $query = mysqli_query("SELECT * FROM ")
+}
 ?>
 </body>
 </html>
