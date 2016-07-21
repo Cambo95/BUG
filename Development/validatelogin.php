@@ -35,7 +35,7 @@ if ($username&&$password);
 {
     mysqli_select_db("1301070");
     $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$username'");
-
+echo $query;
     $numrows = mysqli_num_rows($query);
     if ($numrows != 0) ;
     {
