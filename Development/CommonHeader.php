@@ -13,7 +13,7 @@
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/Bug_Userprofile_Display.php">Profile</a></li>
         </ul>
         <ul>
-            <li><a href="http://1301070cameronbug.azurewebsites.net/development/CommonLogin.php">Profile</a></li>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/CommonLogin.php">Login</a></li>
         </ul>
     </header>
 </body>
