@@ -20,6 +20,7 @@ if(empty($password)){
 }else{
     echo $password;
 };
+echo $allfieldsfull;
 if ($allfieldsfull = 'N'){
     echo 'One or both fields is empty. Click here to try again.';
 }else{
