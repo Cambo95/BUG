@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <body>
 
-Welcome <?php echo $_POST["username"];
+Welcome <?
+var_dump($_POST);
+php echo $_POST["username"];
 
 ?>
 
