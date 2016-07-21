@@ -21,19 +21,12 @@ $db = new mysqli(
 <meta charset="UTF-8">
 <body>
 
-<form action='' method="post">
-    <label>Username</label><input type=“text” name=“Username”>
-    <label>Password</label><input type=“password” name=“Password”>
+<form action='validatelogin' method="post">
+    <label>Username</label><input type=“text” name=“username”>
+    <label>Password</label><input type=“password” name=“password”>
     <input type="submit" name="submit">
 </form>
-<?php
 
-if(isset($_POST['submit'])){
-    echo "You clicked Login";
-    $user = $_POST['Username'];
-    echo "hello".$user;
- }
-?>
 </body>
 </html>
 
