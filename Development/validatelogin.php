@@ -21,7 +21,7 @@ if(empty($password)){
     echo $password;
 };
 echo $allfieldsfull;
-if ($allfieldsfull = 'N'){
+if ($allfieldsfull == 'N'){
     echo 'One or both fields is empty. Click here to try again.';
 }else{
     echo 'Retrieving login from database';
