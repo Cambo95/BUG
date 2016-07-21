@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <body>
 
-Welcome <?php echo $_POST["username"];
+<?php echo "Welcome".$_POST["username"];
     if(empty($_POST['username']))
 {
     $this->HandleError("UserName is empty!");
