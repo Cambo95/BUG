@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($db, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" AND Usr_Password="'.$password.'"');
     if(mysqli_num_rows($result)==1){
         $_SESSION['username']= $username;
-        header('Location: welcome.php');
+        header('Location: homepage.php');
     }
     else
         echo "Account is invalid";
