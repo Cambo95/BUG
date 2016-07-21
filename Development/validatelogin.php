@@ -5,11 +5,11 @@
 <body>
 
 Welcome <?php
-$_POST = 'username';
-if(empty($_POST)){
-    echo [$_POST] . 'is empty';
+$username = $_POST['username'];
+if(empty($username)){
+    echo'Username is empty';
     }else{
-        echo $_POST['username'];
+        echo $username;
     }
 ?>
 </body>
