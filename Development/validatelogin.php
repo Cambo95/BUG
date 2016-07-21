@@ -29,24 +29,16 @@ if(empty($password)){
     $allfieldsfull = 'N';
 }else{
     echo $password;
-};
-echo $allfieldsfull;
-if ($username&&$password);
-{
-    mysqli_select_db("1301070");
-    $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$username'");
-echo $query;
-    $numrows = mysqli_num_rows($query);
-    if ($numrows != 0) ;
-    {
-        while ($row = mysqli_fetch_assoc($query)) ;
-        {
-            $dbusername = $row['username'];
-            $dbpassword = $row['password'];
-        }
-    }
 }
-
+echo $allfieldsfull;
+if ($allfieldsfull == 'N'){
+    echo 'One or both fields is empty. Click here to try again.';
+    echo '<FORM METHOD="LINK" ACTION="homepage.php">
+            <INPUT TYPE="submit" VALUE="Try Again">
+            </FORM>';
+}else{
+    ;
+};
 ?>
 </body>
 </html>
