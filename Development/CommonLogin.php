@@ -20,13 +20,29 @@ $db = new mysqli(
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <body>
-
-<form action='validatelogin.php' method="POST">
+<?php
+session_start();
+if(isset($_POST['submit'])){
+    require 'connect.php';
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $result = mysqli_query($con, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" and Usr_Password="'.$password.'"');
+    if(mysqli_num_rows($result)==1){
+        $_SESSION['username']= $username;
+        header('Location: welcome.php');
+    }
+    else
+        echo "Account is invalid";
+}
+?>
+<form action='commonlogin.php?action=login' method="POST">
     <label>Username</label><input type="text" name="username">
     <label>Password</label><input type="password" name="password">
     <input type="submit" name="submit">
 </form>
 
 </body>
+
+
 </html>
 
