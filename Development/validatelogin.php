@@ -20,8 +20,11 @@ if(empty($password)){
 }else{
     echo $password;
 }
-
-
+if ($allfieldsfull = 'Y'){
+    echo 'One or both fields is empty. Click here to try again.';
+}else{
+    echo 'Retrieving login from database';
+}
 ?>
 </body>
 </html>
