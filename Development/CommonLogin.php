@@ -26,10 +26,11 @@ if(isset($_POST['submit'])){
     require 'connect.php';
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $result = mysqli_query($con, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" and Usr_Password="'.$password.'"');
+    $result = mysqli_query($con, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" AND Usr_Password="'.$password.'"');
     if(mysqli_num_rows($result)==1){
         $_SESSION['username']= $username;
         header('Location: welcome.php');
+        echo $result;
     }
     else
         echo "Account is invalid";
