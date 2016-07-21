@@ -31,10 +31,22 @@ if(empty($password)){
     echo $password;
 };
 echo $allfieldsfull;
-if ($username&&$password);{
+if ($username&&$password);
+{
     mysqli_select_db("1301070");
-    $query = mysqli_query("SELECT * FROM ")
+    $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$username'");
+
+    $numrows = mysqli_num_rows($query);
+    if ($numrows != 0) ;
+    {
+        while ($row = mysqli_fetch_assoc($query)) ;
+        {
+            $dbusername = $row['username'];
+            $dbpassword = $row['password'];
+        }
+    }
 }
+
 ?>
 </body>
 </html>
