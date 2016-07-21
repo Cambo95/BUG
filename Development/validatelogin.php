@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <body>
 
-Welcome <?
+Welcome <?php
 $_POST = 'username';
 if(empty($_POST)){
     echo'$_POST is empty';
