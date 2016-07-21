@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
         echo "Account is invalid";
 }
 ?>
-<form action='commonlogin.php?action=login' method="POST">
+<form action='CommonLogin.php?action=login' method="POST">
     <label>Username</label><input type="text" name="username">
     <label>Password</label><input type="password" name="password">
     <input type="submit" name="submit">
