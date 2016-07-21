@@ -5,9 +5,12 @@
 <body>
 
 Welcome <?
-
-echo $_POST['username'];
-
+if(empty($_POST)){
+    echo'$_POST was not entered. Please try again';
+else{
+        echo $_POST['username'];
+    }
+}
 ?>
 
 
