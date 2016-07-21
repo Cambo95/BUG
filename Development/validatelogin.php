@@ -6,7 +6,7 @@
 
 Welcome <?
 var_dump($_POST);
-php echo $_POST["username"];
+echo $_POST["username"];
 
 ?>
 
