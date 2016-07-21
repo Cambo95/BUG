@@ -23,6 +23,9 @@ if(empty($password)){
 echo $allfieldsfull;
 if ($allfieldsfull == 'N'){
     echo 'One or both fields is empty. Click here to try again.';
+    echo '<FORM METHOD="LINK" ACTION="homepage.php">
+            <INPUT TYPE="submit" VALUE="Try Again">
+            </FORM>';
 }else{
     echo 'Retrieving login from database';
 };
