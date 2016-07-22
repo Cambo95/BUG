@@ -46,6 +46,29 @@ $db = new mysqli(
             <br>
             <input type="submit" value="Submit">
         </form>
+
+<?php
+    if (isset($_POST['submit'])){
+        $first=$_POST['Name'];
+        $last=$_POST['Surname'];
+        $country=$_POST['Country'];
+        $bio=$_POST['Bio'];
+        $password=$_POST['Password'];
+            if(empty($first)||empty($last)||empty($country)||empty($bio)||empty($password)){
+                echo "Can't leave any field blank";
+            }
+        else{
+            $db="INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)"."VALUES('$first','$last','$country','$bio','$password')";
+            $result=mysqli_query($db);
+            if(!$result){
+                die("query failed!");
+            }
+        else{
+            echo "Data inserted successfully";
+        }
+        }
+    }
+?>
 <ul>
     <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Cancel</a></li>
 </ul>
