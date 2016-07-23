@@ -53,8 +53,8 @@ $db = new mysqli(
             echo "You cannot have leave fields blank";
         }
         else{
-            $sql="INSERT INTO bug_userprofile(Usr_User,Usr_Surname,Usr_Country,Usr_Bio,Usr_Password) values('".$_REQUEST['Name']."', '".$_REQUEST['Surname']."','".$_REQUEST['Country']."','".$_REQUEST['Bio']."','".$_REQUEST['Password']."')";
-            $result =msqli_query($sql);
+            $sql="INSERT INTO bug_userprofile(Usr_User,Usr_Surname,Usr_Country,Usr_Bio,Usr_Password) values('".$_REQUEST['Name']."','".$_REQUEST['Surname']."','".$_REQUEST['Country']."','".$_REQUEST['Bio']."','".$_REQUEST['Password']."')";
+            $result =mysqli_query($sql);
             If($result){
                 echo "Records successfully inserted";
             }
