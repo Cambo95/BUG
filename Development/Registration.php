@@ -62,7 +62,7 @@ echo $password;
 
 if(isset($_POST['submit'])){
     echo "inside isset";
-    $result = mysqli_query($db, 'INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)VALUES["' . $name . '","' . $surname . '","' . $country . '","' . $bio . '","' . $password . '"]');
+    $result = mysqli_query($db, 'INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) WHERE Usr_User="'.$name.'" AND Usr_Surname="'.$surname.'" AND Usr_Country="'.$country.'" AND Usr_Bio="'.$bio.'" AND Usr_Password="'.$password.'"');
 
 }
 
