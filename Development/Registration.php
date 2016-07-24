@@ -47,7 +47,10 @@ if(isset($_POST['submit'])) {
     $bio = mysqli_real_escape_string($conn, $_POST['Bio']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-
+if($name == "" OR $password == "") {
+    echo "Password or Username is blank. Please enter."
+}
+else{
     $sql = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)
 VALUES('$name','$surname','$country','$bio','$password')";
 
