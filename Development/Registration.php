@@ -48,16 +48,14 @@ $db = new mysqli(
         </form>
 
 <?php
+if(isset($_POST['submit'])){
 $name = $_POST['Name'];
 $surname = $_POST['Surname'];
 $country = $_POST['Country'];
 $bio = $_POST['Bio'];
-$password = $_POST['password'];
+$password = $_POST['Password'];
 
-$insert = 'INSERT into bug_userprofile (Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)VALUES("'.$name.'","'.$surname.'","'.$country.'","'.$bio.'","'.$password.'")';
-
-mysqli_query($insert);
-
+$result = mysqli_query($db,'INSERT INTO bug_userprofile(Usr_User)VALUES["'.$name.'"]');
 
 
 ?>
