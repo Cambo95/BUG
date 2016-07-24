@@ -48,12 +48,18 @@ $con=mysqli_connect($db);
      $country = $_POST['Country'];
      $bio = $_POST['Bio'];
      $password = $_POST['Password'];
+     echo $name;
+     echo $surname;
+     echo $country;
+     echo $bio;
+     echo $password;
      $query = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) VALUES ('$name','$surname','$country','$bio','$password')";
      $data = mysqli_query($query)or die(mysqli_error());
-     if($data);
+     if($data)
      {
          echo "YOUR REGISTRATION IS COMPLETED";
      }
+     else {echo 'SQL FAILED';}
  }
 
 function SignUp()
