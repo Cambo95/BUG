@@ -54,7 +54,7 @@ $con=mysqli_connect($db);
      echo $bio;
      echo $password;
      $query = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) VALUES ('$name','$surname','$country','$bio','$password')";
-     $data = mysqli_query($query)or die(mysqli_error());
+     $data = mysqli_query($query);
      if($data)
      {
          echo "YOUR REGISTRATION IS COMPLETED";
