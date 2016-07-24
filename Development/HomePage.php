@@ -24,12 +24,6 @@ session_start();
 </head>
 <body>
     <?php include 'CommonHeader.php';?>
-    
-    
-        <ul>
-            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
-        </ul>
-
     <p>Search for Bugs:</p>
     <form>
         <input type="text" name="search" placeholder="Search...">
