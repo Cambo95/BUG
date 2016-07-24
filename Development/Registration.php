@@ -27,7 +27,7 @@ $db = new mysqli(
 
 <br><br><br>
 
-        <form>
+        <form action='' method="POST">
             Name:<br>
             <input type="text" name="Name">
             <br>
