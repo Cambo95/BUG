@@ -54,6 +54,8 @@ $surname = $_POST['Surname'];
 $country = $_POST['Country'];
 $bio = $_POST['Bio'];
 $password = $_POST['Password'];
+echo "button posted";
+echo $name;
 
 $result = mysqli_query($db,'INSERT INTO bug_userprofile(Usr_User)VALUES["'.$name.'"]');
 
