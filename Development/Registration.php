@@ -40,21 +40,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
+if(isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['Name']);
+    $surname = mysqli_real_escape_string($conn, $_POST['Surname']);
+    $country = mysqli_real_escape_string($conn, $_POST['Country']);
+    $bio = mysqli_real_escape_string($conn, $_POST['Bio']);
+    $password = mysqli_real_escape_string($conn, $_POST['Password']);
 
-$name = mysqli_real_escape_string($conn, $_POST['Name']);
-$surname = mysqli_real_escape_string($conn, $_POST['Surname']);
-$country = mysqli_real_escape_string($conn, $_POST['Country']);
-$bio = mysqli_real_escape_string($conn, $_POST['Bio']);
-$password= mysqli_real_escape_string($conn, $_POST['Password']);
 
-$sql = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)
+    $sql = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)
 VALUES('$name','$surname','$country','$bio','$password')";
 
-if(mysqli_query($conn,$sql)){
-    echo "Records added successfully";
-}
-else{
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if (mysqli_query($conn, $sql)) {
+        echo "Records added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 $conn->close();
 ?>
