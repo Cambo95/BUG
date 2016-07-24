@@ -42,7 +42,7 @@ $db = new mysqli(
 $con=mysqli_connect($db);
 
  function NewUser(){
-    echo 'in new user function';
+    echo 'In new user function';
      $name = $_POST['Name'];
      $surname = $_POST['Surname'];
      $country = $_POST['Country'];
@@ -58,11 +58,12 @@ $con=mysqli_connect($db);
 
 function SignUp()
 {
-    echo 'in signup function';
+    echo 'In signup function';
     if (!empty($_POST['Name'])) {
         $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$_POST[Name]'AND Usr_Password = '$_POST[Password]'");
 
         if (!$row = mysqli_fetch_array($query)) {
+            echo 'Test says im a new user';
             NewUser();
         } else {
             echo "SORRY, YOU ARE ALREADY A REGISTERED USER";
@@ -70,7 +71,7 @@ function SignUp()
     }
 }
         if(isset($_POST['submit'])){
-            echo 'about to execute signup';
+            echo 'About to execute signup';
             SignUp();
     
 }
