@@ -1,20 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
- */
-
-$db = new mysqli(
-    "eu-cdbr-azure-west-d.cloudapp.net",
-    "b05411072e2e07",
-    "2e5e5133",
-    "1301070"
-);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <title>SPLAT! Bug Catcher</title>
@@ -49,25 +32,44 @@ $db = new mysqli(
 
 <?php
 
-$name = $_POST['Name'];
-$surname = $_POST['Surname'];
-$country = $_POST['Country'];
-$bio = $_POST['Bio'];
-$password = $_POST['Password'];
-echo $name;
-echo $surname;
-echo $country;
-echo $bio;
-echo $password;
+$con=mysqli_connect($db);
+$db = new mysqli(
+    "eu-cdbr-azure-west-d.cloudapp.net",
+    "b05411072e2e07",
+    "2e5e5133",
+    "1301070"
+);
 
-if(isset($_POST['submit'])){
-    echo "inside isset";
-    $result = mysqli_query($db, 'INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) WHERE Usr_User="'.$name.'" AND Usr_Surname="'.$surname.'" AND Usr_Country="'.$country.'" AND Usr_Bio="'.$bio.'" AND Usr_Password="'.$password.'"');
+ function NewUser(){
+     $name = $_POST['Name'];
+     $surname = $_POST['Surname'];
+     $country = $_POST['Country'];
+     $bio = $_POST['Bio'];
+     $password = $_POST['Password'];
+     $query = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) VALUES ('$name','$surname','$country','$bio','$password')";
+     $data = mysqli_query($query)or die(mysqli_error());
+     if($data);
+     {
+         echo "YOUR REGISTRATION IS COMPLETED";
+     }
+ }
 
+function SignUp()
+{
+    if (!empty($_POST['Name'])) {
+        $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$_POST[Name]'AND Usr_Password = '$_POST[Password]'");
+
+        if (!$row = mysqli_fetch_array($query)) {
+            NewUser();
+        } else {
+            echo "SORRY, YOU ARE ALREADY A REGISTERED USER";
+        }
+    }
 }
-
-echo "Result = ";
-echo $result;
+        if(isset($_POST['submit'])){
+            SignUp();
+    
+}
 
 ?>
 <ul>
