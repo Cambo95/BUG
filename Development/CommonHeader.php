@@ -15,6 +15,9 @@
         <ul>
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/CommonLogin.php">Login</a></li>
         </ul>
+        <ul>
+            <li><a href="http://1301070cameronbug.azurewebsites.net/development/registration.php">Register</a></li>
+        </ul>
     </header>
 </body>
 </html>
