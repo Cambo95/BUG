@@ -44,7 +44,7 @@ $db = new mysqli(
             <input type="password" name="password">
             <br>
             <br>
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit">
         </form>
 
 <?php
