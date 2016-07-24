@@ -11,7 +11,7 @@
 <br><br><br>
 
         <form action='' method="POST">
-            Name:<br>
+            Unique Username:<br>
             <input type="text" name="Name">
             <br>
             Surname:<br>
