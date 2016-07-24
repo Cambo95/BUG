@@ -50,7 +50,7 @@ $password= mysqli_real_escape_string($conn, $_POST['Password']);
 $sql = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)
 VALUES('$name','$surname','$country','$bio','$password')";
 
-if(mysqli_query($conn, $sql)){
+if(mysqli_query($conn,$sql)){
     echo "Records added successfully";
 }
 else{
