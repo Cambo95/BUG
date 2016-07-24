@@ -56,7 +56,8 @@ $bio = $_POST['Bio'];
 $password = $_POST['Password'];
 echo "button posted";
 echo $name;
-
+}
+echo "after if statement";
 $result = mysqli_query($db,'INSERT INTO bug_userprofile(Usr_User)VALUES["'.$name.'"]');
 
 
@@ -67,5 +68,6 @@ $result = mysqli_query($db,'INSERT INTO bug_userprofile(Usr_User)VALUES["'.$name
 <br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
+    
     </body>
 </html>
