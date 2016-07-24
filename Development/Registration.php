@@ -24,7 +24,7 @@
             <input type="text" name="Bio" maxlength="1000">
             <br>
             Password:<br>
-            <input type="password" name="password">
+            <input type="text" name="password">
             <br>
             <br>
             <input type="submit" name="submit">
