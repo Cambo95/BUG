@@ -47,14 +47,13 @@ $db = new mysqli(
      $bio = $_POST['Bio'];
      $password = $_POST['Password'];
      $query = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password) VALUES ('$name','$surname','$country','$bio','$password')";
-     $data = mysqli_query($query)or die(mysqli_error());
-     if($data);
+     if($query);
      {
          echo "YOUR REGISTRATION IS COMPLETED";
      }
  }
 
-function SignUp()
+/*/function SignUp()
 {
     if (!empty($_POST['Name'])) {
         $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$_POST[Name]'AND Usr_Password = '$_POST[Password]'");
@@ -69,7 +68,7 @@ function SignUp()
         if(isset($_POST['submit'])){
             SignUp();
     
-}
+}/*/
 
 ?>
 <ul>
