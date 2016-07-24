@@ -48,20 +48,18 @@ $db = new mysqli(
         </form>
 
 <?php
-    If(isset($_REQUEST['submit'])!=''){
-        if($_REQUEST['Name']=='' || $_REQUEST['Surname']=='' || $_REQUEST['Country']=='' || $_REQUEST['Bio']==''|| $_REQUEST['password']==''){
-            echo "You cannot have leave fields blank";
-        }
-        else{
-            $result = mysqli_query($db, "INSERT INTO bug_userprofile(Usr_User,Usr_Surname,Usr_Country,Usr_Bio,Usr_Password) values('".$_REQUEST['Name']."','".$_REQUEST['Surname']."','".$_REQUEST['Country']."','".$_REQUEST['Bio']."','".$_REQUEST['Password']."'");
-            If($result){
-                echo "Records successfully inserted";
-            }
-            else{
-                echo "There is some problem in inserting record";
-            }
-        }
-    }
+$name = $_POST['Name'];
+$surname = $_POST['Surname'];
+$country = $_POST['Country'];
+$bio = $_POST['Bio'];
+$password = $_POST['password'];
+
+$insert = 'INSERT into bug_userprofile (Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)VALUES("'.$name.'","'.$surname.'","'.$country.'","'.$bio.'","'.$password.'")';
+
+mysqli_query($insert);
+
+
+
 ?>
 <ul>
     <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Cancel</a></li>
