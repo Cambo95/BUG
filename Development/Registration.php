@@ -42,6 +42,7 @@ $db = new mysqli(
 $con=mysqli_connect($db);
 
  function NewUser(){
+    echo 'in new user function';
      $name = $_POST['Name'];
      $surname = $_POST['Surname'];
      $country = $_POST['Country'];
@@ -57,6 +58,7 @@ $con=mysqli_connect($db);
 
 function SignUp()
 {
+    echo 'in signup function';
     if (!empty($_POST['Name'])) {
         $query = mysqli_query("SELECT * FROM bug_userprofile WHERE Usr_User = '$_POST[Name]'AND Usr_Password = '$_POST[Password]'");
 
@@ -68,6 +70,7 @@ function SignUp()
     }
 }
         if(isset($_POST['submit'])){
+            echo 'about to execute signup';
             SignUp();
     
 }
