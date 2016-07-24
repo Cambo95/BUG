@@ -24,7 +24,7 @@
             <input type="text" name="Bio" maxlength="1000">
             <br>
             Password:<br>
-            <input type="text" name="password">
+            <input type="password" name="password">
             <br>
             <br>
             <input type="submit" name="submit">
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])) {
     $surname = mysqli_real_escape_string($conn, $_POST['Surname']);
     $country = mysqli_real_escape_string($conn, $_POST['Country']);
     $bio = mysqli_real_escape_string($conn, $_POST['Bio']);
-    $password = mysqli_real_escape_string($conn, $_POST['Password']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
 
     $sql = "INSERT INTO bug_userprofile(Usr_User, Usr_Surname, Usr_Country, Usr_Bio, Usr_Password)
