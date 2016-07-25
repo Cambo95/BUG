@@ -33,6 +33,9 @@ if(isset($_POST['submit'])){
     else
         echo "Account is invalid";
 }
+if(isset($_GET['logout'])){
+    unset($_SESSION['username']);
+}
 ?>
 <form action='CommonLogin.php?action=login' method="POST">
     <label>Username</label><input type="text" name="username">
