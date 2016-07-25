@@ -12,7 +12,7 @@ $db = new mysqli(
     "2e5e5133",
     "1301070"
 );
-
+$bugid=$_GET["bugid"];
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = .$bugid";
 echo "Sql query is ";
 echo $sql_query;
@@ -21,7 +21,7 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$bugid=$_GET["bugid"];
+
 
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '.$bugid.' ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
