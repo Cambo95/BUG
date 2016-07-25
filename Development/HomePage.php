@@ -28,8 +28,6 @@ session_start();
     <form>
         <input type="text" name="search" placeholder="Search...">
     </form>
-
-
         <?php $sql_query = "SELECT * FROM  bug_instances ORDER BY Inst_BugUniqueID DESC limit 5";
         // execute the SQL query
             $result = $db->query($sql_query);
@@ -44,12 +42,15 @@ session_start();
         </tr>
     
     <?php
+    
     while($Bug = mysqli_fetch_assoc($result)) {
+        $bugid=$Bug['Inst_BugUniqueID'];
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
         echo "<td>" . $Bug['Inst_BugUniqueID']."</td>";
         echo "<td>" . $Bug['Inst_User']."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
+        echo '<a href="BugWithComments.php?bugid=$bugid">Edit</a>';
         //echo "<td>" . "<a href="useralbugs.php?key=$Bug['Inst_BugUniqueID']">View Bug</a>";
         echo "</tr>";
     }//end while
