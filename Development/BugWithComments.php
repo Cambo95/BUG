@@ -40,9 +40,10 @@ $resultComments = $db->query($sql_queryComments);
 </head>
 <body>
 <br><br><br>
+
 <h5>Bug ID:</h5> <?php
 while($bugid = mysqli_fetch_assoc($resultBugID)) {
-    echo "<td>" . $resultBugID['Inst_BugUniqueID']."</td>";
+    echo "<td>" . $bugid['Inst_BugUniqueID']."</td>";
 }?>
 <br>
 <br>
