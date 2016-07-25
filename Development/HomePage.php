@@ -50,7 +50,7 @@ session_start();
         echo "<td>" . $Bug['Inst_BugUniqueID']."</td>";
         echo "<td>" . $Bug['Inst_User']."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
-        echo "<td>" . '<a href="BugWithComments.php?bugid=$bugid">Edit</a>'."</td>";
+        echo "<td>" . '<a href="BugWithComments.php?bugid=$bugid">More...</a>'."</td>";
         echo "</tr>";
     }//end while
     ?>
