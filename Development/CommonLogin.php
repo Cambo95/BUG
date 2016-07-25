@@ -20,6 +20,7 @@ $db = new mysqli(
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <body>
+<?php include 'CommonHeader.php';?>
 <?php
 session_start();
 if(isset($_POST['submit'])){
@@ -39,9 +40,9 @@ if(isset($_POST['submit'])){
     <label>Password</label><input type="password" name="password">
     <input type="submit" name="submit">
 </form>
+<br><br><br><br><br><br><br><br>
 
+<?php include 'CommonFooter.php';?>
 </body>
-
-
 </html>
 
