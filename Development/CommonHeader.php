@@ -1,6 +1,7 @@
 <?php session_start();?>
 <li class='active' style='float:right; color: white; border: none;'>
     <?php
+    var_dump($_SESSION);
     if ($_SESSION["username"]== ''){
         echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
     }
