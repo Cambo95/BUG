@@ -1,5 +1,5 @@
 <?php session_start();?>
-<li class='active' style='float:right; color: white; border: none;'>
+<li class='active' style='color: white; border: none;'>
     <?php
     var_dump($_SESSION);
     if ($_SESSION["username"]== ''){
