@@ -32,18 +32,18 @@ session_start();
 var_dump($_SESSION);
 if ($_SESSION["username"]== ''){
     echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
-    echo '  ';
+    echo ' point 1 ';
 }
 else{
     echo '<a href="Logout.php"><span>Logout</span></a></li>';
-    echo '  ';
+    echo 'point 2  ';
 }
 if ($_SESSION["isadmin"]== '1'){
     echo '<a href="AdminPage.php"><span>Administrative Page</span></a></li>';
-    echo '  ';
+    echo ' point3 ';
 }
 if ($_SESSION["isverified"]== '1'){
     echo '<a href="CreateBug.php"><span>Add a bug</span></a></li>';
-    echo '  ';
+    echo 'point 4  ';
 }
 ?>
