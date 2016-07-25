@@ -5,6 +5,7 @@
 <body>
 
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
@@ -22,6 +23,18 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 echo $username;
 echo $password;
+
+if($count==1){
+    $_SESSION['logged']=true;
+    $_SESSION['username']=$username;
+    header("Location: CommonHeader.php");
+    exit();
+}
+else{
+$_SESSION['logged']=false;
+header("Location: CommonLogin.php");
+exit();
+
 ?>
 
 <?php
