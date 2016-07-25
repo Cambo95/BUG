@@ -2,6 +2,7 @@
 <li class='active' style='float:right; color: white; padding: 14px 20px; margin 8px 0; border: none;'>
     <?php
     echo "Just before if statement";
+    echo $_SESSION["username"];
     var_dump($_SESSION);
     if ($_SESSION["username"]== ''){
         echo $_SESSION["username"];
