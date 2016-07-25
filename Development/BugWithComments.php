@@ -128,6 +128,7 @@ VALUES('$bugid','$UserLoggedOn','$Comment')";
         if (mysqli_query($conn, $sql)) {
             echo "Comment added successfully";
             $Comment = "";
+            header('Location: BugWithComments.php?bugid=$bugid');
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
