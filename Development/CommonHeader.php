@@ -1,5 +1,5 @@
 <?php session_start();?>
-<li class='active' style='float:right; color: white; padding: 14px 20px; margin 8px 0; border: none;'>
+<li class='active' style='float:right; color: white; border: none;'>
     <?php
     if ($_SESSION["username"]== ''){
         echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
