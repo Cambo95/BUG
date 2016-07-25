@@ -41,8 +41,8 @@ $resultComments = $db->query($sql_queryComments);
 <br><br><br>
 
 <h5>Bug ID:</h5> <?php
-while($bugid = mysqli_fetch_assoc($resultBugID)) {
-    echo "<td>" . $bugid['Inst_BugUniqueID']."</td>";
+while($bugbug = mysqli_fetch_assoc($resultBugID)) {
+    echo "<td>" . $bugbug['Inst_BugUniqueID']."</td>";
 }?>
 <br>
 <br>
@@ -110,6 +110,8 @@ $password = "2e5e5133";
 $dbname = "1301070";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+$bugid=$_GET["bugid"];
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
