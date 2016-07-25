@@ -29,11 +29,13 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($db, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" AND Usr_Password="'.$password.'"');
     $row = mysqli_fetch_array($result);
     if(mysqli_num_rows($result)==1){
-        $_SESSION['username']= $username;
-        $_SESSION['isadmin'] = $row['Usr_IsAdministrator'];
-        $_SESSION['isverified'] = $row['Usr_IsVerified'];
-        header('Location: homepage.php');
-        
+     if ($row['Usr_IsVerified'] == '1') {
+         $_SESSION['username'] = $username;
+         $_SESSION['isadmin'] = $row['Usr_IsAdministrator'];
+         $_SESSION['isverified'] = $row['Usr_IsVerified'];
+         header('Location: homepage.php');
+     }
+        else echo 'You are not yet verified - please contact the administrator at bigadmin@splat.com';
     }
     else
         echo "Account is invalid";
