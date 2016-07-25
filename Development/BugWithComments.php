@@ -15,6 +15,7 @@ $db = new mysqli(
 $bugid=$_GET["bugid"];
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = $bugid";
 $result = $db->query($sql_query);
+$resultBugID = $db->query($sql_query);
 $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
@@ -40,8 +41,8 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br><br><br>
 <h5>Bug ID:</h5> <?php
-while($bugid = mysqli_fetch_assoc($result)) {
-    echo "<td>" . $result['Inst_BugUniqueID']."</td>";
+while($bugid = mysqli_fetch_assoc($resultBugID)) {
+    echo "<td>" . $resultBugID['Inst_BugUniqueID']."</td>";
 }?>
 <br>
 <br>
