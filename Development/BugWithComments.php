@@ -118,7 +118,7 @@ if ($conn->connect_error) {
 if(isset($_POST['submit'])) {
     $UserLoggedOn = $_SESSION["username"];
     $Comment = $_POST['Comment'];
-if ($UserLoggedOn = ""){
+if ($UserLoggedOn == ""){
     echo "Please log on to add comments";
 }
     else {
