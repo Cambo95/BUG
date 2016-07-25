@@ -3,8 +3,8 @@
     <?php
     echo "Just before if statement";
     var_dump($_SESSION);
-    if ($_SESSION['username']== ""){
-        echo $_SESSION['username'];
+    if ($_SESSION["username"]== ""){
+        echo $_SESSION["username"];
         echo '<a href="HomePage.php"><span>Not Signed in</span></a></li>';
     }
     else{
