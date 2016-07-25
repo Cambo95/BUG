@@ -8,6 +8,9 @@
     else{
         echo '<a href="Logout.php"><span>Logout</span></a></li>';  
     }
+    if ($_SESSION["isadmin"]== '1'){
+        echo '<a href="AdminPage.php"><span>Administrative Page</span></a></li>';
+    }
     ?>
 <!DOCTYPE html>
 <html lang="en">
