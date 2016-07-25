@@ -20,10 +20,6 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-
-
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
-$resultComments = $db->query($sql_queryComments);
 ?>
 <?php include 'CommonHeader.php';?>
     <html>
@@ -101,6 +97,39 @@ Comment:<br />
 <input type='hidden' name='Com_BugUniqueID' id='Com_BugUniqueID' value='<? echo $_GET["id"]; ?>' />
 <input type='submit' value='Submit' />
 </form>
+
+<?php
+$servername =  "eu-cdbr-azure-west-d.cloudapp.net";
+$username = "b05411072e2e07";
+$password = "2e5e5133";
+$dbname = "1301070";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if(isset($_POST['submit'])) {
+    $bugid = mysqli_real_escape_string($conn, $_POST['bugid']);
+    $User = mysqli_real_escape_string($conn, $_POST['User']);
+    $Date = mysqli_real_escape_string($conn, $_POST['Date+Time posted']);
+    $Comment = mysqli_real_escape_string($conn, $_POST['Comment']);
+
+    if ($Comment == ""){
+        echo "Please insert a comment";
+    } else {
+        $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_DateTime, Com_Comment)
+VALUES('$bugid','$User','$Date','$Comment')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Comment added successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+$conn->close();
+?>
+?>
 <br><br><br><br><br><br><br><br>
 
 <?php include 'CommonFooter.php';?>
