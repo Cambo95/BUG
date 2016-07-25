@@ -20,6 +20,9 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
+$resultComments = $db->query($sql_queryComments);
+
 ?>
 <?php include 'CommonHeader.php';?>
     <html>
@@ -91,12 +94,12 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     ?>
 </table>
 <br>
-<form method = 'post'>
-Comment:<br />
-<textarea name='comment' id='comment'></textarea><br />
-<input type='hidden' name='Com_BugUniqueID' id='Com_BugUniqueID' value='<? echo $_GET["id"]; ?>' />
-<input type='submit' value='Submit' />
-</form>
+
+<form action='' method="POST">
+    Unique Username:<br>
+    <input type="text" name="Comment">
+    <br>
+</form>    
 
 <?php
 $servername =  "eu-cdbr-azure-west-d.cloudapp.net";
@@ -128,7 +131,6 @@ VALUES('$bugid','$User','$Date','$Comment')";
     }
 }
 $conn->close();
-?>
 ?>
 <br><br><br><br><br><br><br><br>
 
