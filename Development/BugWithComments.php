@@ -114,16 +114,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 if(isset($_POST['submit'])) {
-    $bugid = mysqli_real_escape_string($conn, $_POST['bugid']);
-    $User = mysqli_real_escape_string($conn, $_POST['User']);
-    $Date = mysqli_real_escape_string($conn, $_POST['Date+Time posted']);
-    $Comment = mysqli_real_escape_string($conn, $_POST['Comment']);
+    $UserLoggedOn = $_SESSION["username"];
+    $Comment = $_POST['Comment'];
 
     if ($Comment == ""){
         echo "Please insert a comment";
     } else {
-        $sql = "INSERT INTO bug_comments(Com_BugUniqueID,Com_Comment)
-VALUES('$bugid','$Comment')";
+        $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_Comment)
+VALUES('$bugid','$UserLoggedOn''$Comment')";
 
         if (mysqli_query($conn, $sql)) {
             echo "Comment added successfully";
