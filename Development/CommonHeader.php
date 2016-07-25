@@ -1,11 +1,11 @@
 <?php session_start();?>
 <li class='active' style='float:right; color: white; padding: 14px 20px; margin 8px 0; border: none;'>
     <?php
-    if($_SESSION['logged']==true){
+    if($_SESSION['active']==true){
         echo $_SESSION["username"];
         echo '<a href="HomePage.php"><span>Not Signed in</span></a></li>';
     }
-    elseif($_SESSION['logged']==false){
+    elseif($_SESSION['active']==false){
         echo '<a href="HomePage.php"><span>Logout</span></a></li>';
     }
     ?>
