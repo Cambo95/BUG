@@ -9,7 +9,7 @@
         echo '<a href="HomePage.php"><span>Not Signed in</span></a></li>';
     }
     else{
-        echo '<a href="HomePage.php"><span>Logout</span></a></li>';  
+        echo '<a href="Logout.php"><span>Logout</span></a></li>';  
     }
     ?>
 <!DOCTYPE html>
