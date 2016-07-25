@@ -13,7 +13,9 @@ $db = new mysqli(
     "1301070"
 );
 
-$sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = '.$bugid.'";
+$sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = .$bugid";
+echo "Sql query is ";
+echo $sql_query;
 $result = $db->query($sql_query);
 $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
