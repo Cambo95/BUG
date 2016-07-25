@@ -96,9 +96,11 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
 <br>
 
 <form action='' method="POST">
-    Unique Username:<br>
+    Add comment:<br>
     <input type="text" name="Comment">
     <br>
+    <br>
+    <input type="submit" name="submit">
 </form>    
 
 <?php
