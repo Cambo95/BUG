@@ -11,6 +11,9 @@
     if ($_SESSION["isadmin"]== '1'){
         echo '<a href="AdminPage.php"><span>Administrative Page</span></a></li>';
     }
+    if ($_SESSION["isverified"]== '1'){
+        echo '<a href="CreateBug.php"><span>Add a bug</span></a></li>';
+    }
     ?>
 <!DOCTYPE html>
 <html lang="en">
