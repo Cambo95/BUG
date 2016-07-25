@@ -27,9 +27,13 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = mysqli_query($db, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" AND Usr_Password="'.$password.'"');
+    $row = mysqli_fetch_object($result);
     if(mysqli_num_rows($result)==1){
         $_SESSION['username']= $username;
+        $_SESSION['isadmin'] = $row['Usr_IsAdministrator'];
+        $_SESSION['isverified'] = $row['Usr_IsVerified'];
         header('Location: homepage.php');
+        vardump($_SESSION);
     }
     else
         echo "Account is invalid";
