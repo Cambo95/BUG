@@ -1,3 +1,14 @@
+<?php session_start();?>
+<li class='active' style='float:right;'>
+    <?php
+    if($_SESSION['logged']==true){
+        echo $_SESSION["username"];
+        echo '<a href="Logout.php"><span>Logout</span></a></li>';
+    }
+    elseif($_SESSION['logged']==false){
+        echo '<a href="Registration.php"><span>Logout</span></a></li>';
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
