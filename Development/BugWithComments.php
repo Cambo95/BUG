@@ -19,7 +19,9 @@ $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
 
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '1' ORDER BY Com_BugUniqueID DESC limit 50";
+$bugid=$_GET["bugid"];
+
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '.$bugid.'";
 $resultComments = $db->query($sql_queryComments);
 ?>
 <?php include 'CommonHeader.php';?>
