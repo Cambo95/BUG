@@ -3,7 +3,7 @@
     <?php
     if ($_SESSION["username"]== ''){
         echo $_SESSION["username"];
-        echo "Not Signed in";
+        echo '<a href="HomePage.php"><span>Not Signed in</span></a></li>';
     }
     else{
         echo '<a href="Logout.php"><span>Logout</span></a></li>';  
