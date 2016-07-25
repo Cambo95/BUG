@@ -15,7 +15,11 @@ session_destroy();
         <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Home</a></li>
     </ul>
 </header> 
-<h2> Successfully logged out. Click HOME to return to the Homepage</h2>
+<h5> Successfully logged out. Click HOME to return to the Homepage</h5>
+
+<br><br><br><br><br><br><br><br>
+
+<?php include 'CommonFooter.php';?>
 </body>
 </html>
 
