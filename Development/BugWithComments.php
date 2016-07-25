@@ -23,7 +23,7 @@ $resultDate = $db->query($sql_query);
 
 
 
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = '.$bugid.' ORDER BY Com_BugUniqueID DESC limit 50";
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
 ?>
 <?php include 'CommonHeader.php';?>
