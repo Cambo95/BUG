@@ -30,11 +30,11 @@ if(isset($_POST['submit'])){
     $row = mysqli_fetch_object($result);
     echo 'Just about to run SQL';
     if(mysqli_num_rows($result)==1){
+        echo 'inside the sql if statement 1';
         $_SESSION['username']= $username;
         $_SESSION['isadmin'] = $row['Usr_IsAdministrator'];
         $_SESSION['isverified'] = $row['Usr_IsVerified'];
-        var_dump($_SESSION);
-        echo 'inside the sql if statement';
+        echo 'inside the sql if statement 2';
         header('Location: homepage.php');
         
     }
