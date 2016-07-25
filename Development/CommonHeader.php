@@ -1,6 +1,7 @@
 <?php session_start();?>
 <li class='active' style='float:right; color: white; padding: 14px 20px; margin 8px 0; border: none;'>
     <?php
+    echo "Just before if statement";
     if ($_SESSION['username']== ""){
         echo $_SESSION['username'];
         echo '<a href="HomePage.php"><span>Not Signed in</span></a></li>';
