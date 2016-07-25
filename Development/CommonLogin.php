@@ -33,8 +33,10 @@ if(isset($_POST['submit'])){
         $_SESSION['username']= $username;
         $_SESSION['isadmin'] = $row['Usr_IsAdministrator'];
         $_SESSION['isverified'] = $row['Usr_IsVerified'];
-        header('Location: homepage.php');
         var_dump($_SESSION);
+        echo 'inside the sql if statement';
+        header('Location: homepage.php');
+        
     }
     else
         echo "Account is invalid";
