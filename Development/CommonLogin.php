@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = mysqli_query($db, 'SELECT * FROM bug_userprofile WHERE Usr_User="'.$username.'" AND Usr_Password="'.$password.'"');
-    $row = mysqli_fetch_object($result);
+    $row = mysqli_fetch_array($result);
     echo 'Just about to run SQL';
     if(mysqli_num_rows($result)==1){
         echo 'inside the sql if statement 1';
