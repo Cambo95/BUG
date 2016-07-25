@@ -1,7 +1,6 @@
 <?php
 session_start();
 session_destroy();
-echo "Successfully logged out. Click HOME to return to the Homepage"
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,8 @@ echo "Successfully logged out. Click HOME to return to the Homepage"
     <ul>
         <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Home</a></li>
     </ul>
-</header>    
+</header> 
+<h2> Successfully logged out. Click HOME to return to the Homepage</h2>
 </body>
 </html>
 
