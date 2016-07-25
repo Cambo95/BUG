@@ -122,8 +122,8 @@ if(isset($_POST['submit'])) {
     if ($Comment == ""){
         echo "Please insert a comment";
     } else {
-        $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_DateTime, Com_Comment)
-VALUES('$bugid','$User','$Date','$Comment')";
+        $sql = "INSERT INTO bug_comments(Com_Comment)
+VALUES('$Comment')";
 
         if (mysqli_query($conn, $sql)) {
             echo "Comment added successfully";
