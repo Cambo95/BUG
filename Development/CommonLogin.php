@@ -38,7 +38,9 @@ if(isset($_POST['submit'])){
         else echo 'You are not yet verified - please contact the administrator at bigadmin@splat.com';
     }
     else
-        echo "Account is invalid";
+        echo "<br>";
+        echo "Username or Password incorrect. Please correct and try again or if not registered please press Register button above.";
+        echo "<br>";
 }
 ?>
 <style>
