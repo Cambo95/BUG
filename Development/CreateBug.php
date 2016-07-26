@@ -49,15 +49,18 @@ if ($conn->connect_error){
 die("Connection failed: " . $conn->connect_error);
 }
 if(isset($_POST['submit'])) {
-$BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
-$BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
+echo "Submit button pressed<br>";
+    $BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
+    $BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
 
 if ($BugTitle == "" OR $BugDescription == "") {
 echo "Bug Title and Description must be filled in to submit";
 } else {
+    echo "About to execute SQL<br>";
 $sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description)
 VALUES('$BugTitle','$BugDescription')";
-
+    echo $sql;
+    echo "<br>";
 if (mysqli_query($conn, $sql)) {
 echo "Records added successfully";
 } else {
