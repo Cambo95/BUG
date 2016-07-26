@@ -30,7 +30,7 @@ Please title your bug and provide a description...
 <br><br>
 <form action='' method="POST">
     Bug Title:<br>
-    <input type ="text" name="Bug Title">
+    <input type ="text" name="BugTitle">
     <br>
     Description:<br>
     <input type="text" name="Description">
@@ -42,7 +42,7 @@ Please title your bug and provide a description...
 var_dump($_POST);
 if(isset($_POST['submit'])) {
 echo "Submit button pressed<br>";
-    $BugTitle = mysqli_real_escape_string($db, $_POST["Bug Title"]);
+    $BugTitle = mysqli_real_escape_string($db, $_POST["BugTitle"]);
     $BugDescription = mysqli_real_escape_string($db, $_POST["Description"]);
 
 if ($BugTitle == "" OR $BugDescription == "") {
