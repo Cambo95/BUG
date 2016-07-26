@@ -42,8 +42,8 @@ Please title your bug and provide a description...
 var_dump($_POST);
 if(isset($_POST['submit'])) {
 echo "Submit button pressed<br>";
-    $BugTitle = mysqli_real_escape_string($db, $_POST['Bug Title']);
-    $BugDescription = mysqli_real_escape_string($db, $_POST['Description']);
+    $BugTitle = mysqli_real_escape_string($db, $_POST["Bug Title"]);
+    $BugDescription = mysqli_real_escape_string($db, $_POST["Description"]);
 
 if ($BugTitle == "" OR $BugDescription == "") {
 echo "Bug Title and Description must be filled in to submit";
