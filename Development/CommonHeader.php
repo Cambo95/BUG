@@ -1,4 +1,14 @@
 <?php session_start();?>
+    <li class='active' style='float:right; color: white; border: none;'>
+<?php
+if ($_SESSION["username"]== ''){
+    echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
+}
+else{
+    echo '<a href="Logout.php"><span>Logout</span></a></li>';
+}
+?>
+
     <!DOCTYPE html>
     <html lang="en">
     <title>SPLAT! Bug Catcher</title>
@@ -22,14 +32,10 @@
     </header>
     </body>
     </html>
+   
     <li class='active' style='float:right; color: white; border: none;'>
+
 <?php
-if ($_SESSION["username"]== ''){
-    echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
-}
-else{
-    echo '<a href="Logout.php"><span>Logout</span></a></li>';
-}
 if ($_SESSION["isadmin"]== '1'){
     echo '<a href="AdminPage.php"><span>Administrative Page</span></a></li>';
 }
