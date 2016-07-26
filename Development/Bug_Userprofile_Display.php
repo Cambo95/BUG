@@ -21,7 +21,7 @@ $db = new mysqli(
 
 /** Select ALL records from table */
 /** ======================================================================= */
-$sql_query = "SELECT * FROM  bug_userprofile";
+$sql_query = "SELECT * FROM  bug_userprofile WHERE '$_SESSION'";
 if ($_SESSION["username"]== '1'){
     echo $sql_query;
 }
