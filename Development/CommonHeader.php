@@ -32,8 +32,6 @@ else{
     </header>
     </body>
     </html>
-   
-    <li class='active' style='float:right; color: white; border: none;'>
 
 <?php
 if ($_SESSION["isadmin"]== '1'){
