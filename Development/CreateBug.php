@@ -39,17 +39,11 @@ Please title your bug and provide a description...
 </form>
 
 <?php
-$servername =  "eu-cdbr-azure-west-d.cloudapp.net";
-$username = "b05411072e2e07";
-$password = "2e5e5133";
-$dbname = "1301070";
-echo "At start of PHP";
-$conn = new mysqli($servername, $username, $password, $dbname);
-echo "After connection string";
+
 if(isset($_POST['submit'])) {
 echo "Submit button pressed<br>";
-    $BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
-    $BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
+    $BugTitle = mysqli_real_escape_string($db, $_POST['Bug Title']);
+    $BugDescription = mysqli_real_escape_string($db, $_POST['Description']);
 
 if ($BugTitle == "" OR $BugDescription == "") {
 echo "Bug Title and Description must be filled in to submit";
@@ -59,14 +53,14 @@ $sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description)
 VALUES('$BugTitle','$BugDescription')";
     echo $sql;
     echo "<br>";
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($db, $sql)) {
 echo "Records added successfully";
 } else {
-echo "Error: " . $sql . "<br>" . $conn->error;
+echo "Error: " . $sql . "<br>" . $db->error;
 }
 }
 }
-$conn->close();
+$db->close();
 ?>
 
 <br><br><br><br><br><br><br><br>
