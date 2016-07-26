@@ -76,12 +76,12 @@ $dispisadmin = $row['Usr_IsAdministrator'];
 ?>
 <br>
 <br>
-<h5>Date Joined:</h5> <?php
+<h5>User is Verified?</h5> <?php
 echo "<td>" .$dispisverified."</td>";
 ?>
 <br>
 <br>
-<h5>Date Joined:</h5> <?php
+<h5>User is Administrator?</h5> <?php
 echo "<td>" .$dispisadmin."</td>";
 ?>
 
