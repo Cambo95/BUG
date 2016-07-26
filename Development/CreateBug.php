@@ -48,7 +48,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
 die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['submit'])) {
+if(isset($_POST['Create Bug'])) {
 $BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
 $BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
 
