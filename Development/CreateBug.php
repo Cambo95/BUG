@@ -35,7 +35,7 @@ Please title your bug and provide a description...
     Description:<br>
     <input type="text" name="Description">
     <br>
-    <input type ="submit" value ="submit">
+    <input type="submit" name="submit">
 </form>
 
 <?php
