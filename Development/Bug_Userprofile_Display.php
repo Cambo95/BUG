@@ -57,13 +57,12 @@ echo $dispuser;
 <body>
 <?php include 'CommonHeader.php';?>
 
-<?php print $_SESSION['Username'];?>
+<?php print $username];?>
 <br><br><br>
 
 <h5>User:</h5> <?php
-while($User = mysqli_fetch_assoc($result)) {
-    echo "<td>" . $User['Usr_User']."</td>";  echo "</tr>";
-}?>
+    echo "<td>" . $dispuser."</td>";  echo "</tr>";
+?>
 <br>
 <br>
 <h5>Country:</h5> <?php
