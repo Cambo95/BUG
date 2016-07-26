@@ -39,20 +39,17 @@ Please title your bug and provide a description...
 </form>
 
 <?php
-var_dump($_POST);
+
 if(isset($_POST['submit'])) {
-echo "Submit button pressed<br>";
     $BugTitle = mysqli_real_escape_string($db, $_POST["BugTitle"]);
     $BugDescription = mysqli_real_escape_string($db, $_POST["Description"]);
     $UserLoggedOn = $_SESSION["username"];
 if ($BugTitle == "" OR $BugDescription == "") {
 echo "Bug Title and Description must be filled in to submit";
 } else {
-    echo "About to execute SQL<br>";
 $sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description, Inst_User)
-VALUES('$BugTitle','$BugDescription','$UserLoggedOn')";
-    echo $sql;
-    echo "<br>";
+        VALUES('$BugTitle','$BugDescription','$UserLoggedOn')";
+  
 if (mysqli_query($db, $sql)) {
 echo "Records added successfully";
 } else {
