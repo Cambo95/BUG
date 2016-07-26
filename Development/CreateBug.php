@@ -35,7 +35,7 @@ Please title your bug and provide a description...
     Description:<br>
     <input type="text" name="Description">
     <br>
-    <input type ="submit" value ="Create Bug">
+    <input type ="submit" value ="submit">
 </form>
 
 <?php
@@ -48,7 +48,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error){
 die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['Create Bug'])) {
+if(isset($_POST['submit'])) {
 $BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
 $BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
 
