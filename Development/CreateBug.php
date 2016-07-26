@@ -37,6 +37,35 @@ Please title your bug and provide a description...
     <input type ="submit" value ="Create Bug">
 </form>
 
+<?php
+$servername =  "eu-cdbr-azure-west-d.cloudapp.net";
+$username = "b05411072e2e07";
+$password = "2e5e5133";
+$dbname = "1301070";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error){
+die("Connection failed: " . $conn->connect_error);
+}
+if(isset($_POST['submit'])) {
+$BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
+$BugDescription = mysqli_real_escape_string($conn, $_POST['Description']);
+
+if ($BugTitle == "" OR $BugDescription == "") {
+echo "Bug Title and Description must be filled in to submit";
+} else {
+$sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description)
+VALUES('$BugTitle','$BugDescription')";
+
+if (mysqli_query($conn, $sql)) {
+echo "Records added successfully";
+} else {
+echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
+}
+$conn->close();
+?>
 
 <br><br><br><br><br><br><br><br>
 
