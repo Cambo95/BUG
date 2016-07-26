@@ -39,7 +39,7 @@ Please title your bug and provide a description...
 </form>
 
 <?php
-
+var_dump($_POST);
 if(isset($_POST['submit'])) {
 echo "Submit button pressed<br>";
     $BugTitle = mysqli_real_escape_string($db, $_POST['Bug Title']);
