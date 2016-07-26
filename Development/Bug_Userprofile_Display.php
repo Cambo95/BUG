@@ -21,17 +21,22 @@ $db = new mysqli(
 
 /** Select ALL records from table */
 /** ======================================================================= */
-$sql_query = "SELECT * FROM  bug_userprofile WHERE '$_SESSION'";
-if ($_SESSION["username"]== '1'){
-    echo $sql_query;
-}
+$username = $_SESSION['username'];
+$query = "SELECT * FROM  bug_userprofile WHERE Usr_User == '$username'";
+echo 'SQL Statement being used is ';
+echo $query;
+$result = mysqli_query($db,$query);
+$row = mysqli_fetch_assoc($result);
 
-// execute the SQL query
-$result = $db->query($sql_query);
-$resultCountry = $db->query($sql_query);
-$resultBio = $db->query($sql_query);
-$resultDate = $db->query($sql_query);
+$dispuser = $row['Usr_User'];
+$discountry = $row['Usr_Country'];
+$dispbio = $row['Usr_Bio'];
+$dispjoindate = $row['Usr_JoinedDate'];
+$dispisverified = $row['Usr_IsVerified'];
+$dispisadmin = $row['Usr_IsAdministrator'];
 
+echo 'User retrieved from SQL is ';
+echo $dispuser;
 /** ======================================================================= */
 
 ?>
