@@ -57,10 +57,10 @@ echo $dispuser;
 <body>
 <?php include 'CommonHeader.php';?>
 
-<?php print $username];?>
 <br><br><br>
 
 <h5>User:</h5> <?php
+    echo 'about to print user ';
     echo "<td>" . $dispuser."</td>";  echo "</tr>";
 ?>
 <br>
