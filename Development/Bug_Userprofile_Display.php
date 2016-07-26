@@ -23,8 +23,6 @@ $db = new mysqli(
 /** ======================================================================= */
 $username = $_SESSION['username'];
 $query = "SELECT * FROM  bug_userprofile WHERE Usr_User = '$username'";
-echo 'SQL Statement being used is ';
-echo $query;
 $result = mysqli_query($db,$query);
 $row = mysqli_fetch_assoc($result);
 
@@ -35,8 +33,7 @@ $dispjoindate = $row['Usr_JoinedDate'];
 $dispisverified = $row['Usr_IsVerified'];
 $dispisadmin = $row['Usr_IsAdministrator'];
 
-echo 'User retrieved from SQL is ';
-echo $dispuser;
+
 /** ======================================================================= */
 
 ?>
@@ -60,28 +57,34 @@ echo $dispuser;
 <br><br><br>
 
 <h5>User:</h5> <?php
-    echo 'about to print user ';
-    echo "<td>" . $dispuser."</td>";  echo "</tr>";
+    echo "<td>" .$dispuser."</td>";
 ?>
 <br>
 <br>
 <h5>Country:</h5> <?php
-while($Country = mysqli_fetch_assoc($resultCountry)) {
-    echo "<td>" . $Country['Usr_Country']."</td>";
-}?>
+    echo "<td>" .$discountry."</td>";
+?>
 <br>
 <br>
 <h5>Bio:</h5> <?php
-while($Bio = mysqli_fetch_assoc($resultBio)) {
-    echo "<td>" . $Bio['Usr_Bio']."</td>";
-}?>
+    echo "<td>" .$dispbio."</td>";
+?>
 <br>
 <br>
 <h5>Date Joined:</h5> <?php
-while($Date = mysqli_fetch_assoc($resultDate)) {
-    echo "<td>" . $Date['Usr_JoinedDate'] . "</td>";
-}?>
-</table>
+    echo "<td>" .$dispjoindate."</td>";
+?>
+<br>
+<br>
+<h5>Date Joined:</h5> <?php
+echo "<td>" .$dispisverified."</td>";
+?>
+<br>
+<br>
+<h5>Date Joined:</h5> <?php
+echo "<td>" .$dispisadmin."</td>";
+?>
+
 <br><br><br><br><br><br><br><br>
 <?php include 'CommonFooter.php';?>
 </body>
