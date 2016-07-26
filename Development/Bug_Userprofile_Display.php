@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
@@ -21,6 +22,10 @@ $db = new mysqli(
 /** Select ALL records from table */
 /** ======================================================================= */
 $sql_query = "SELECT * FROM  bug_userprofile";
+if ($_SESSION["username"]== '1'){
+    echo $sql_query;
+}
+
 // execute the SQL query
 $result = $db->query($sql_query);
 $resultCountry = $db->query($sql_query);
