@@ -84,7 +84,11 @@ echo "<td>" .$dispisverified."</td>";
 <h5>User is Administrator?</h5> <?php
 echo "<td>" .$dispisadmin."</td>";
 ?>
-
+<br>
+<br>
+1 = Yes
+<br>
+0 = No
 <br><br><br><br><br><br><br><br>
 <?php include 'CommonFooter.php';?>
 </body>
