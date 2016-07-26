@@ -45,9 +45,7 @@ $password = "2e5e5133";
 $dbname = "1301070";
 echo "At start of PHP";
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error){
-die("Connection failed: " . $conn->connect_error);
-}
+echo "After connection string";
 if(isset($_POST['submit'])) {
 echo "Submit button pressed<br>";
     $BugTitle = mysqli_real_escape_string($conn, $_POST['Bug Title']);
