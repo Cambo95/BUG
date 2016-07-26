@@ -22,7 +22,7 @@ $db = new mysqli(
 /** Select ALL records from table */
 /** ======================================================================= */
 $username = $_SESSION['username'];
-$query = "SELECT * FROM  bug_userprofile WHERE Usr_User == '$username'";
+$query = "SELECT * FROM  bug_userprofile WHERE Usr_User = '$username'";
 echo 'SQL Statement being used is ';
 echo $query;
 $result = mysqli_query($db,$query);
