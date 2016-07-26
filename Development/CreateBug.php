@@ -28,7 +28,7 @@ $db = new mysqli(
 <br><br><br>
 Please title your bug and provide a description... 
 <br><br>
-<form>
+<form action='' method="POST">
     Bug Title:<br>
     <input type ="text" name="Bug Title">
     <br>
