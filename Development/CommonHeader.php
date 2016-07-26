@@ -1,13 +1,4 @@
 <?php session_start();?>
-    <li class='active' style='float:right; color: white; border: none;'>
-<?php
-if ($_SESSION["username"]== ''){
-    echo '<a href="CommonLogin.php"><span>Not Signed in</span></a></li>';
-}
-else{
-    echo '<a href="Logout.php"><span>Logout</span></a></li>';
-}
-?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -19,9 +10,6 @@ else{
         <H1> SPLAT! Bug Catcher</H1>
         <ul>
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/homepage.php">Home</a></li>
-        </ul>
-        <ul>
-            <li><a href="http://1301070cameronbug.azurewebsites.net/development/Bug_Userprofile_Display.php">Profile</a></li>
         </ul>
         <ul>
             <li><a href="http://1301070cameronbug.azurewebsites.net/development/CommonLogin.php">Login</a></li>
@@ -38,6 +26,13 @@ if ($_SESSION["isadmin"]== '1'){
     echo '<a href="AdminPage.php"><span>Administrative Page<br></span></a></li>';
 }
 if ($_SESSION["isverified"]== '1'){
-    echo '<a href="CreateBug.php"><span>Add a bug</span></a></li>';
+    echo '<a href="CreateBug.php"><span>Add a bug<br></span></a></li>';
+    echo '<a href="Bug_Userprofile_Display.php"><span>Profile<br></span></a></li>';
+}
+if ($_SESSION["username"]== ''){
+    echo '<a href="CommonLogin.php"><span>Login<br></span></a></li>';
+}
+else{
+    echo '<a href="Logout.php"><span>Logout<br></span></a></li>';
 }
 ?>
