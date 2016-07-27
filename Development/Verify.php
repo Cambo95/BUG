@@ -36,7 +36,6 @@ echo $verifyusername;
 
 <?php
 $testsql ="UPDATE bug_userprofile SET Usr_IsVerified= 1 WHERE Usr_User= '$verifyusername'";
-echo $testsql;
 if(isset($_POST['submit'])) {
 $UserIsAdmin =  $_SESSION['isadmin'];
 if ($UserIsAdmin !== "1"){
