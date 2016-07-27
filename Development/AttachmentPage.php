@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
@@ -41,8 +42,9 @@ $db = new mysqli(
 <?php
 if(isset($_POST['submit'])) {
     $ImageSubmit = mysqli_real_escape_string($db, $_POST["txt_image"]);
-    $sql = "INSERT INTO bug_attachment(Att_Object)
-            VALUES('$ImageSubmit')";
+    $UserLoggedOn = $_SESSION["username"];
+    $sql = "INSERT INTO bug_attachment(Att_User, Att_Object)
+            VALUES('$UserLoggedOn','$ImageSubmit')";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
     }
