@@ -40,12 +40,13 @@ $db = new mysqli(
 </form>
 
 <?php
+$buguniqueid=$_GET["buguniqueid"];
 if(isset($_POST["submit"])) {
-    $ImageSubmit = mysqli_real_escape_string($db, $_POST["txt_image"]);
+    $ImageSubmit =  $_POST["txt_image"];
     $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
-    $sql = "INSERT INTO bug_attachment(Att_User, Att_Object)
-            VALUES('$UserLoggedOn','$ImageSubmit')";
+    $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object)
+            VALUES('$buguniqueid','$UserLoggedOn','$ImageSubmit')";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
     }else{
