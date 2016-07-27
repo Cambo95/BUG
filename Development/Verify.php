@@ -30,9 +30,30 @@ $verifyusername=$_GET["verifyusername"];
 echo "Press submit to confirm verification of user ";
 echo $verifyusername;
 ?>
-<form action='AdminPage.php' method="POST">
+<form action='' method="POST">
     <input type="submit" name="submit">
 </form>
+
+<?php
+$testsql ='UPDATE bug_userprofile SET Usr_IsVerified= 1 WHERE Usr_User="'.$verifyusername.'"';
+echo $testsql;
+if(isset($_POST['submit'])) {
+$UserIsAdmin =  $_SESSION['isadmin'];
+
+if ($UserIsAdmin !== "1"){
+echo "You are not an admin. You do not have permission to verify accounts.";
+    else{
+        $result = mysqli_query($db, 'UPDATE bug_userprofile SET Usr_IsVerified= 1 WHERE Usr_User='.$verifyusername.'');
+    }
+}
+}
+
+
+
+
+
+
+?>
 
 <br><br><br><br><br><br><br><br>
 
