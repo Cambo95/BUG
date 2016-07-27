@@ -70,33 +70,6 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
 }?>
 <br><br>
-
-<form action="" method="post" enctype="multipart/form-data">
-    <table border = "1" width = "80%">
-        <tr>
-            <th width = "50%">Upload Image</th>
-            <td width = "50%"><input type ="file" name = "txt_image"</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type = "submit" name = "submit" value = "Save"></td>
-        </tr>
-    </table>
-</form>
-
-<?php
-if(isset($_POST['submit'])) {
-    $ImageSubmit = mysqli_real_escape_string($db, $_POST["txt_image"]);
-    $sql = "INSERT INTO bug_attachment(Att_Object)
-        VALUES('$ImageSubmit')";
-    if (mysqli_query($db, $sql)) {
-        echo "Records added successfully";
-    }
-}
-
-?>
-
-
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
