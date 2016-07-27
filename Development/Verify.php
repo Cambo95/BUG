@@ -16,8 +16,8 @@ $db = new mysqli(
 
 ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <title>SPLAT! Bug Catcher</title>
     <meta charset="UTF-8">
     <head>
@@ -25,6 +25,14 @@ $db = new mysqli(
     </head>
     <body>
 <?php include 'CommonHeader.php';?>
+<?php
+$verifyusername=$_GET["verifyusername"];
+echo "Press submit to confirm verification of user ";
+echo $verifyusername;
+?>
+<form action='AdminPage.php' method="POST">
+    <input type="submit" name="submit">
+</form>
 
 <br><br><br><br><br><br><br><br>
 
