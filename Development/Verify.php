@@ -43,6 +43,7 @@ if ($UserIsAdmin !== "1"){
 echo "You are not an admin. You do not have permission to verify accounts.";}
     else{
         $result = mysqli_query($db, $testsql);
+        header("Location: AdminPage.php");
     }
 }
 
