@@ -37,9 +37,8 @@ $resultAdmin = $db->query($sql_queryAdmin);
         <th>Surname</th>
         <th>User Country</th>
         <th>User Joined</th>
-        <th>User is Admin (Yes/No)</th>
-        <th>User Is Verified? (Yes/No)</th>
-        <th>User is Suspended? (Yes/No)</th>
+        <th>User is Admin (1=Yes/0=No)</th>
+        <th>User Is Verified? (1=Yes/=No)</th>
     </tr>
 
     <?php
@@ -49,10 +48,9 @@ $resultAdmin = $db->query($sql_queryAdmin);
         echo "<td>" . $Admin['Usr_User']."</td>";
         echo "<td>" . $Admin['Usr_Surname']."</td>";
         echo "<td>" . $Admin['Usr_Country']."</td>";
-        echo "<td>" . $Admin['Usr_Joined']."</td>";
+        echo "<td>" . $Admin['Usr_JoinedDate']."</td>";
         echo "<td>" . $Admin['Usr_IsAdministrator']."</td>";
         echo "<td>" . $Admin['Usr_IsVerified']."</td>";
-        echo "<td>" . $Admin['Usr_IsSuspended']."</td>";
         echo "<td>" . '<a href="Verify.php?verifyusername='.$verifyusername.'">Verify User</a>'."</td>";
         echo "</tr>";
     }//end while
