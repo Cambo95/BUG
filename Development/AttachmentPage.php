@@ -42,7 +42,7 @@ $db = new mysqli(
 <?php
 $buguniqueid=$_GET["buguniqueid"];
 if(isset($_POST["submit"])) {
-    $ImageSubmit =  $_POST["txt_image"];
+    $ImageSubmit =  $_files["txt_image"];
     $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
     $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object)
