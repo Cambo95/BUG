@@ -27,11 +27,11 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 <?php
 $verifyusername=$_GET["verifyusername"];
-echo "Press submit to confirm verification of user ";
+echo "Press Verify to confirm verification of user ";
 echo $verifyusername;
 ?>
 <form action='' method="POST">
-    <input type="submit" name="submit">
+    <input type="submit" name="Verify">
 </form>
 
 <?php
