@@ -79,10 +79,22 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
         </tr>
         <tr>
             <td></td>
-            <td><input type = "submit" name = "Submit" value = "Save"></td>
+            <td><input type = "submit" name = "submit" value = "Save"></td>
         </tr>
     </table>
 </form>
+
+<?php
+if(isset($_POST['submit'])) {
+    $ImageSubmit = mysqli_real_escape_string($db, $_POST["txt_image"]);
+    $sql = "INSERT INTO bug_attachment(Att_Object)
+        VALUES('$ImageSubmit')";
+    if (mysqli_query($db, $sql)) {
+        echo "Records added successfully";
+    }
+}
+
+?>
 
 
 <br><br>
