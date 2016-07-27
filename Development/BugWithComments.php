@@ -71,11 +71,6 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
 }?>
 <br><br>
 
-<?php
-if ($_SESSION["isverified"]== '1'){
-echo '<a href="AttachmentPage.php"><span>Add a bug<br></span></a></li>';
-?>
-
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
