@@ -48,8 +48,11 @@ if(isset($_POST["submit"])) {
             VALUES('$UserLoggedOn','$ImageSubmit')";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
+    }else{
+        echo "Error: " . $sql . "<br>" . $db->error;
     }
 }
+$db->close();
 ?>
 
 <br><br><br><br><br><br><br><br>
