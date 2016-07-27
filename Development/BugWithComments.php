@@ -5,7 +5,7 @@
  * Date: 13/07/2016
  * Time: 16:25
  */
-
+start_session();
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
