@@ -25,18 +25,28 @@ $db = new mysqli(
     <body>
 <?php include 'CommonHeader.php';?>
 
-<?php $sqlimage = "SELECT * FROM bug_attachment WHERE Att_BugUniqueID = '1'";
-$imageresult1 = mysqli_query($sqlimage);
-?>
+<form action="" method="post" enctype="multipart/form-data">
+<table border = "1" width = "80%">
+    <tr>
+        <th width = "50%">Upload Image</th>
+        <td width = "50%"><input type ="file" name = "txt_image"</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type = "submit" name = "submit" value = "Save"></td>
+    </tr>
+</table>
+</form>
 
-
-
-<h5>Attachments:</h5> <?php
-while($Bug = mysqli_fetch_assoc($imageresult1)) {
-    $image = $row['Att_Object'];
-    echo '<img src="data:image/jpeg;base64,'.base64_encode($image->load()) .'" />';
-    echo "</tr>";
-};
+<?php
+if(isset($_POST['submit'])) {
+    $ImageSubmit = mysqli_real_escape_string($db, $_POST["txt_image"]);
+    $sql = "INSERT INTO bug_attachment(Att_Object)
+            VALUES('$ImageSubmit')";
+    if (mysqli_query($db, $sql)) {
+        echo "Records added successfully";
+    }
+}
 ?>
 
 <br><br><br><br><br><br><br><br>
