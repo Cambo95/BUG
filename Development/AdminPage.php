@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
@@ -43,6 +44,7 @@ $resultAdmin = $db->query($sql_queryAdmin);
 
     <?php
     while($Admin = mysqli_fetch_assoc($resultAdmin)) {
+        $verify=$Admin['Usr_IsVerified'];
         echo "<tr>";
         echo "<td>" . $Admin['Usr_User']."</td>";
         echo "<td>" . $Admin['Usr_Surname']."</td>";
@@ -51,6 +53,7 @@ $resultAdmin = $db->query($sql_queryAdmin);
         echo "<td>" . $Admin['Usr_IsAdministrator']."</td>";
         echo "<td>" . $Admin['Usr_IsVerified']."</td>";
         echo "<td>" . $Admin['Usr_IsSuspended']."</td>";
+        echo "<td>" . '<a href="Verify.php?verifyusername='.$verify.'">Verify User</a>'."</td>";
         echo "</tr>";
     }//end while
     ?>
