@@ -70,11 +70,21 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
 }?>
 <br><br>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select attachment to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Add Attachment" name="submit">
+
+<form action="" method="post" enctype="multipart/form-data">
+    <table border = "1" width = "80%">
+        <tr>
+            <th width = "50%">Upload Image</th>
+            <td width = "50%"><input type ="file" name = "txt_image"</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type = "submit" name = "Submit" value = "Save"></td>
+        </tr>
+    </table>
 </form>
+
+
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
