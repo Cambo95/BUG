@@ -26,6 +26,6 @@ if ($_SESSION["username"]== ''){
     echo '<a href="Registration.php"><span>Register<br></span></a></li>';
 }
 else{
-    echo '<a href="Logout.php"><span>Logout<br></span></a></li>';
+    echo '<a href="HomePage.php"><span>Logout<br></span></a></li>';
 }
 ?>
