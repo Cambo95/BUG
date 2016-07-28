@@ -31,11 +31,17 @@ $db = new mysqli(
 $bugid=$_GET["bugid"];
 $comuser = $_GET["comuser"];
 $comdatetime = $_GET["comdatetime"];
-
-if (isset($_POST['DeleteSingle'])){
-    $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid AND Com_User = '$comuser' AND Com_DateTime = '$comdatetime'";
-    $result = mysqli_query($db, $deletesql);
-    header("Location: BugWithComments.php?bugid=$bugid");
+if ($UserLoggedOn == $comuser) {
+    if (isset($_POST['DeleteSingle'])) {
+        $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid AND Com_User = '$comuser' AND Com_DateTime = '$comdatetime'";
+        $result = mysqli_query($db, $deletesql);
+        header("Location: BugWithComments.php?bugid=$bugid");
+    }
+}
+if ($UserLoggedOn !== $comuser) {
+    $errormessage = "Sorry, you are not authorised to delete this comment as you are not the author of it. Press return to continue. ";
+    echo "<br>";
+    echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.'Return'.'</a>'."</td>";
 }
 ?>
 
