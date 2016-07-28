@@ -42,7 +42,6 @@ $resultComments = $db->query($sql_queryComments);
 
 <h5>Bug ID:</h5> <?php
 while($bugbug = mysqli_fetch_assoc($resultBugID)) {
-    $buguniqueid = $bugbug['Inst_BugUniqueID'];
     echo "<td>" . $bugbug['Inst_BugUniqueID']."</td>";
 }?>
 <br>
@@ -72,12 +71,12 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
         echo "Bug was Fixed on";
         echo $datefixed['Inst_DateFixed'];
         $bugfixed ='Y';
-        $buttontext = 'Flag as Fixed';
+        $buttontext = 'Flag as Unfixed';
     }
     if (!$datefixed['Inst_DateFixed']){
         echo "Bug is currently unfixed";
         $bugfixed ='N';
-        $buttontext = 'Flag as Unfixed';
+        $buttontext = 'Flag as Fixed';
     }
    
 }?>
@@ -87,6 +86,7 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 </form>
 
 <?php
+$buguniqueid = $bugbug['Inst_BugUniqueID'];
 echo "Just about to go into post if";
 if(isset($_POST['Fixed'])) {
     if ($bugfixed == 'Y') {
@@ -99,10 +99,10 @@ if(isset($_POST['Fixed'])) {
         echo "If it is N";
         echo $bugfixed;
     }
-    
-    $testsql = "UPDATE bug_instances SET Inst_DateFixed = '$curdatetime' WHERE Inst_BugUniqueID = '$buguniqueid'";
-    echo $testsql;
-    $result = mysqli_query($db, $testsql);
+    $updatesql = "UPDATE bug_instances SET Inst_DateFixed = $curdatetime WHERE Inst_BugUniqueID = $buguniqueid";
+    echo "Sql statement = ";
+    echo $updatesql;
+    $result = mysqli_query($db, $updatesql);
 }
 
 ?>
