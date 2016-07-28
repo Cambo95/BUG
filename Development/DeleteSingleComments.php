@@ -26,21 +26,14 @@ You have requested to delete this bug.
 <?php endif; ?>
 
 <?php
-
 $bugid=$_GET["bugid"];
 $comuser = $_GET["comuser"];
 $comdatetime = $_GET["comdatetime"];
-echo "Com Date Time = ";
-echo $comdatetime;
+
 if (isset($_POST['DeleteSingle'])){
-    echo("About to dump array POST");
-    var_dump($_POST);
     $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid AND Com_User = '$comuser' AND Com_DateTime = '$comdatetime'";
-    echo $deletesql;
     $result = mysqli_query($db, $deletesql);
-    echo "About to echo sql";
-    echo $result;
-    
+    header("Location: BugWithComments.php?bugid=$bugid");
 }
 ?>
 
