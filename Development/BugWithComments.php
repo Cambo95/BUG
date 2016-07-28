@@ -158,6 +158,11 @@ $bugid=$_GET["bugid"];
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+if (isset($_POST['DeleteAll'])) {
+        $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
+    $result = mysqli_query($db, $updatesql);
+    header("Location: BugWithComments.php?bugid=$bugid");
+}
 if(isset($_POST['submit'])) {
     $UserLoggedOn = $_SESSION["username"];
     $Comment = $_POST['Comment'];
