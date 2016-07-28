@@ -68,7 +68,7 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
 <h5>Date Fixed:</h5> <?php
 while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
     if ($datefixed['Inst_DateFixed']){
-        echo "Bug was Fixed on";
+        echo "Bug was Fixed on ";
         echo $datefixed['Inst_DateFixed'];
         $bugfixed ='Y';
         $buttontext = 'Flag as Unfixed';
@@ -82,7 +82,7 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 }?>
 <br>
 <form action='' method="POST">
-    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
+    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>" onClick="window.location.reload()">
 </form>
 
 <?php
