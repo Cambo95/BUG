@@ -48,7 +48,7 @@ session_start();
         $buguser=$Bug['Inst_User'];
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
-        echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.$bugid.'</a>'."</td>";
+        echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'"></a>'."</td>";
         echo "<td>" . '<a href="Bug_Userprofile_Display.php?paramuser='.$buguser.'">'.$buguser.'</a>'."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
         echo "</tr>";
