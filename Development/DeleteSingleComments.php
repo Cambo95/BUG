@@ -39,16 +39,16 @@ if ($UserLoggedOn == $comuser) {
         header("Location: BugWithComments.php?bugid=$bugid");
     }
 }
-echo "Com user = ";
-echo $comuser;
-echo "User logged on";
-echo $UserLoggedOn;
+
 
 if ($UserLoggedOn !== $comuser) {
     $errormessage = "Sorry, you are not authorised to delete this comment as you are not the author of it. Press return to continue. ";
+    echo "<br>";
+    echo "<strong>";
     echo $errormessage;
     echo "<br>";
     echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.'Return'.'</a>'."</td>";
+    echo "</strong>";
 }
 ?>
 
