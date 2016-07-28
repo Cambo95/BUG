@@ -71,7 +71,10 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
 <br><br>
 
 <form action='' method="POST">
-    <input type="submit" name="Fixed" value = "Flag as fixed">
+    <input type="submit" name="Fixed" value = "Flag as Fixed">
+</form>
+<form action='' method="POST">
+    <input type="submit" name="Unfixed" value = "Flag as Unfixed">
 </form>
 
 
