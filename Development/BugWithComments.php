@@ -129,7 +129,7 @@ if ($buguser ==$UserLoggedOn ) {
         echo "<td>" . $comuser."</td>";
         echo "<td>" . $comdatetime."</td>";
         echo "<td>" . $Comment['Com_Comment']."</td>";
-        echo "<td>" . '<a href="DeleteSingleComments.php?bugid='.$bugid.'?comuser='.$comuser.'?comdatetime='.$comdatetime.'"></a>'."</td>";
+        echo "<td>" . '<a href="DeleteSingleComments.php?bugid='.$bugid.'?comuser='.$comuser.'?comdatetime='.$comdatetime.'">Delete</a>'."</td>";
         echo "</tr>";
     }//end while
     ?>
