@@ -18,6 +18,7 @@ $resultBugID = $db->query($sql_query);
 $resultDescribe = $db->query($sql_query);
 $resultUser = $db->query($sql_query);
 $resultDate = $db->query($sql_query);
+$resultDateFixed = $db->query($sql_query);
 
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
@@ -44,39 +45,45 @@ while($bugbug = mysqli_fetch_assoc($resultBugID)) {
     echo "<td>" . $bugbug['Inst_BugUniqueID']."</td>";
 }?>
 <br>
-<br>
-
 <h5>Title:</h5> <?php
 while($Bug = mysqli_fetch_assoc($result)) {
     echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
 }?>
-<br>
 <br>
 <h5>Description:</h5> <?php
 while($Describe = mysqli_fetch_assoc($resultDescribe)) {
     echo "<td>" . $Describe['Inst_Description']."</td>";
 }?>
 <br>
-<br>
 <h5>User:</h5> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
     echo "<td>" . $User['Inst_User']."</td>";
 }?>
 <br>
-<br>
 <h5>Date Posted:</h5> <?php
 while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
 }?>
-<br><br>
-
+<br>
+<h5>Date Fixed:</h5> <?php
+while($DateFixed = mysqli_fetch_assoc($resultDateFixed)) {
+    if ($DateFixed['Inst_DateFixed']){
+        echo "Bug was Fixed on";
+        echo $DateFixed['Inst_DateFixed'];
+        $bugFixed ='Y';
+        $buttontext = 'Flag as Fixed';
+    }
+    if (!$DateFixed['Inst_DateFixed']){
+        echo "Bug is currently unfixed";
+        $bugFixed ='N';
+        $buttontext = 'Flag as Unfixed';
+    }
+   
+}?>
+<br>
 <form action='' method="POST">
-    <input type="submit" name="Fixed" value = "Flag as Fixed">
+    <input type="submit" name="Fixed" value = "$buttontext">
 </form>
-<form action='' method="POST">
-    <input type="submit" name="Unfixed" value = "Flag as Unfixed">
-</form>
-
 
 <br><br>
 <h4>Comments</h4>
