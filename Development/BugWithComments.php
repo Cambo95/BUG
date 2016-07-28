@@ -87,7 +87,7 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 
 <?php
 $buguniqueid = $bugbug['Inst_BugUniqueID'];
-echo "Just about to go into post if";
+echo "Just about to go into post if ";
 if(isset($_POST['Fixed'])) {
     if ($bugfixed == 'Y') {
         $curdatetime = NULL;
