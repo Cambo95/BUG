@@ -99,6 +99,8 @@ if(isset($_POST['Fixed'])) {
         echo "If it is N";
         echo $bugfixed;
     }
+    echo "Bug unique ID = ";
+    echo $buguniqueid;
     $updatesql = "UPDATE bug_instances SET Inst_DateFixed = $curdatetime WHERE Inst_BugUniqueID = $buguniqueid";
     echo "Sql statement = ";
     echo $updatesql;
