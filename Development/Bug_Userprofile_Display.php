@@ -21,7 +21,15 @@ $db = new mysqli(
 
 /** Select ALL records from table */
 /** ======================================================================= */
+
+$paramuser = $_GET['paramuser'];
+if ($paramuser == ''){
+    $username = $_SESSION['username'];
+}else{
+    $username = $paramuser;
+}
 $username = $_SESSION['username'];
+
 $query = "SELECT * FROM  bug_userprofile WHERE Usr_User = '$username'";
 $result = mysqli_query($db,$query);
 $row = mysqli_fetch_assoc($result);
