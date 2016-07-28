@@ -101,7 +101,7 @@ if(isset($_POST['Fixed'])) {
         
     }
     echo "About to set up update sequal";
-    $updatesql = "UPDATE bug_instances SET Inst_DateFixed = $curdatetime = '{$curdatetime ->format('Y-m-d H:i:s')}'WHERE Inst_BugUniqueID = $bugid";
+    $updatesql = "UPDATE bug_instances SET Inst_DateFixed = $curdatetime = WHERE Inst_BugUniqueID = $bugid";
     echo "Sql statement = ";
     echo $updatesql;
     $result = mysqli_query($db, $updatesql);
