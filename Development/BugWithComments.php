@@ -87,7 +87,7 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 $UserLoggedOn = $_SESSION["username"];
 if ($buguser ==$UserLoggedOn ) {
     
-    echo "<input type= 'Submit' name='Fixed' value= $buttontext>";
+    echo "<input type= 'Submit' name='Fixed' value= $buttontext formmethod='POST'>";
 
 
     if (isset($_POST['Fixed'])) {
