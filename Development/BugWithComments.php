@@ -90,18 +90,13 @@ $buguniqueid = $bugbug['Inst_BugUniqueID'];
 echo "Just about to go into post if ";
 if(isset($_POST['Fixed'])) {
     if ($bugfixed == 'Y') {
-        $curdatetime = NULL;
-        echo "If it is Y";
-        echo $bugfixed;
+        $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NULL WHERE Inst_BugUniqueID = $bugid";
     }
     if ($bugfixed == 'N') {
-        $curdatetime = new DateTime("NOW");
-        echo "If it is N";
-        echo $bugfixed;
+        $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NOW() WHERE Inst_BugUniqueID = $bugid";
         
     }
     echo "About to set up update sequal";
-    $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NOW() WHERE Inst_BugUniqueID = $bugid";
     echo "Sql statement = ";
     echo $updatesql;
     $result = mysqli_query($db, $updatesql);
