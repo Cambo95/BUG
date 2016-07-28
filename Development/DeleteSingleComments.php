@@ -19,9 +19,18 @@ $db = new mysqli(
 
 <?php if($UserLoggedOn!==''): ?>
     <form action='' method="POST">
-        <input type="submit" name="Delete" value="Confirm deletion of comment">
+        <input type="submit" name="DeleteSingle" value="Confirm deletion of comment">
     </form>
 <?php endif; ?>
+
+<?php
+$bugid=$_GET["bugid"];
+if (isset($_POST['DeleteSingle'])) {
+    $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
+    $result = mysqli_query($db, $deletesql);
+    header("Location: BugWithComments.php?bugid=$bugid");
+}
+?>
 
 <br><br><br><br>
 <?php include 'CommonFooter.php';?>
