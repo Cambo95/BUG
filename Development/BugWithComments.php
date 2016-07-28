@@ -86,8 +86,6 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 </form>
 
 <?php
-$buguniqueid = $bugbug['Inst_BugUniqueID'];
-echo "Just about to go into post if ";
 if(isset($_POST['Fixed'])) {
     if ($bugfixed == 'Y') {
         $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NULL WHERE Inst_BugUniqueID = $bugid";
@@ -96,10 +94,8 @@ if(isset($_POST['Fixed'])) {
         $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NOW() WHERE Inst_BugUniqueID = $bugid";
         
     }
-    echo "About to set up update sequal";
-    echo "Sql statement = ";
-    echo $updatesql;
     $result = mysqli_query($db, $updatesql);
+    header("Location: BugWithComments.php");
 }
 
 ?>
