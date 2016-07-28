@@ -82,7 +82,7 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 }?>
 <br>
 <form action='' method="POST">
-    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>" onClick="window.location.reload()">
+    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
 
 <?php
@@ -95,6 +95,7 @@ if(isset($_POST['Fixed'])) {
         
     }
     $result = mysqli_query($db, $updatesql);
+    header("Location: BugWithComments.php?bugid=$bugid");
 }
 
 ?>
