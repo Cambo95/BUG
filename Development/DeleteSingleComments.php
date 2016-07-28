@@ -1,6 +1,9 @@
 <?php
 session_start();
 $UserLoggedOn = $_SESSION["username"];
+$bugid=$_GET["bugid"];
+$comuser = $_GET["comuser"];
+$comdatetime = $_GET["comdatetime"];
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
@@ -22,16 +25,13 @@ $db = new mysqli(
 <br>
 <br>
 
-<?php if($UserLoggedOn!==''): ?>
+<?php if($UserLoggedOn == $comuser): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteSingle" value="Confirm deletion of comment">
     </form>
 <?php endif; ?>
 
 <?php
-$bugid=$_GET["bugid"];
-$comuser = $_GET["comuser"];
-$comdatetime = $_GET["comdatetime"];
 if ($UserLoggedOn == $comuser) {
     if (isset($_POST['DeleteSingle'])) {
         $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid AND Com_User = '$comuser' AND Com_DateTime = '$comdatetime'";
