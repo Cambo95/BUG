@@ -89,7 +89,7 @@ if ($buguser ==$UserLoggedOn ) {
     
     echo "<input type= 'Submit' name='Fixed' value= $buttontext formmethod='POST'>";
 
-
+var_dump($_post);
     if (isset($_POST['Fixed'])) {
         if ($bugfixed == 'Y') {
             $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NULL WHERE Inst_BugUniqueID = $bugid";
