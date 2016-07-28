@@ -95,6 +95,7 @@ if(isset($_POST['Fixed'])) {
         
     }
     $result = mysqli_query($db, $updatesql);
+    header("Location: BugWithComments.php?bugid=");
 }
 
 ?>
