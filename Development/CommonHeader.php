@@ -14,16 +14,13 @@
 
 <?php
     echo '<a href="HomePage.php"><span>Home<br></span></a></li>';
-if ($_SESSION["username"]==''){
-    session_destroy();
-    session_start();
-}
+
 if ($_SESSION["isadmin"]== '1'){
     echo '<a href="AdminPage.php"><span>Administrative Page<br></span></a></li>';
 }
 if ($_SESSION["isverified"]== '1'){
     echo '<a href="CreateBug.php"><span>Add a bug<br></span></a></li>';
-    echo '<a href="Bug_Userprofile_Display.php?paramuser=><span>Profile<br></span></a></li>';
+    echo '<a href="Bug_Userprofile_Display.php?paramuser="><span>Profile<br></span></a></li>';
 }
 if ($_SESSION["username"]== ''){
     echo '<a href="CommonLogin.php"><span>Login<br></span></a></li>';
