@@ -45,13 +45,12 @@ session_start();
     
     while($Bug = mysqli_fetch_assoc($result)) {
         $bugid=$Bug['Inst_BugUniqueID'];
+        $buguser=$Bug['Inst_User'];
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
-        echo "<td>" . $Bug['Inst_BugUniqueID']."</td>";
-        echo "<td>" . $Bug['Inst_User']."</td>";
-        echo "<td>" . $Bug['Inst_Title']."</td>";
-        echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">More...</a>'."</td>";
         echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.$bugid.'</a>'."</td>";
+        echo "<td>" . '<a href="Bug_Userprofile_Display.php?paramuser='.$buguser.'">'.$buguser.'</a>'."</td>";
+        echo "<td>" . $Bug['Inst_Title']."</td>";
         echo "</tr>";
     }//end while
     ?>
