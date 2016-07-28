@@ -70,6 +70,11 @@ while($Date = mysqli_fetch_assoc($resultDate)) {
 }?>
 <br><br>
 
+<form action='' method="POST">
+    <input type="submit" name="Flag as fixed">
+</form>
+
+
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
