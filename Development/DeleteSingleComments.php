@@ -36,6 +36,7 @@ if (isset($_POST['DeleteSingle'])){
     echo("About to dump array POST");
     var_dump($_POST);
     $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid AND Com_User = 'CAM' AND Com_DateTime = $comdatetime";
+    $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = 62 AND Com_User = 'CAM' AND Com_DateTime = '2016-07-28 20:33:17'";
     echo $deletesql;
     $result = mysqli_query($db, $deletesql);
     echo "About to echo sql";
