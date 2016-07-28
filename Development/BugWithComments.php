@@ -100,6 +100,7 @@ if(isset($_POST['Fixed'])) {
         echo $bugfixed;
         
     }
+    echo "About to set up update sequal";
     $updatesql = "UPDATE bug_instances SET Inst_DateFixed = $curdatetime WHERE Inst_BugUniqueID = $bugid";
     echo "Sql statement = ";
     echo $updatesql;
