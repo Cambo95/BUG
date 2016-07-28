@@ -89,9 +89,6 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 <form action='' method="POST">
     <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
-    <form action='' method="POST">
-        <input type="submit" name="DeleteAll" value = "Delete All Comments">
-    </form>
 <?php endif; ?>
 
 
@@ -133,13 +130,21 @@ if ($buguser ==$UserLoggedOn ) {
 </table>
 <br>
 
+<?php if($UserLoggedOn!==''): ?>
 <form action='' method="POST">
     Add comment:<br>
     <input type="text" name="Comment">
     <br>
     <br>
     <input type="submit" name="submit">
-</form>    
+</form>
+<?php endif; ?>
+
+<?php if($buguser ==$UserLoggedOn): ?>
+    <form action='' method="POST">
+        <input type="submit" name="DeleteAll" value = "Delete All Comments">
+    </form>
+<?php endif; ?>
 
 <?php
 $servername =  "eu-cdbr-azure-west-d.cloudapp.net";
