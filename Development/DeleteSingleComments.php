@@ -25,7 +25,8 @@ $db = new mysqli(
 
 <?php
 $bugid=$_GET["bugid"];
-if (isset($_POST['DeleteSingle'])) {
+if (isset($_POST['DeleteSingle'])){
+    echo("About to dump array POST");
     var_dump($_POST);
     $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
     $result = mysqli_query($db, $deletesql);
