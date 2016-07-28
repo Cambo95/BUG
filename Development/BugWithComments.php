@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
@@ -57,6 +58,7 @@ while($Describe = mysqli_fetch_assoc($resultDescribe)) {
 <br>
 <h5>User:</h5> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
+    $buguser=$User['Inst_User'];
     echo "<td>" . $User['Inst_User']."</td>";
 }?>
 <br>
@@ -86,18 +88,24 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 </form>
 
 <?php
-if(isset($_POST['Fixed'])) {
-    if ($bugfixed == 'Y') {
-        $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NULL WHERE Inst_BugUniqueID = $bugid";
-    }
-    if ($bugfixed == 'N') {
-        $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NOW() WHERE Inst_BugUniqueID = $bugid";
-        
-    }
-    $result = mysqli_query($db, $updatesql);
-    header("Location: BugWithComments.php?bugid=$bugid");
-}
+$UserLoggedOn = $_SESSION["username"];
+if ($buguser ==$UserLoggedOn ) {
+    
+    echo "<input id='Submit' name='Fixed' value = $buttontext type='button'>";
 
+
+    if (isset($_POST['Fixed'])) {
+        if ($bugfixed == 'Y') {
+            $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NULL WHERE Inst_BugUniqueID = $bugid";
+        }
+        if ($bugfixed == 'N') {
+            $updatesql = "UPDATE bug_instances SET Inst_DateFixed = NOW() WHERE Inst_BugUniqueID = $bugid";
+
+        }
+        $result = mysqli_query($db, $updatesql);
+        header("Location: BugWithComments.php?bugid=$bugid");
+    }
+}
 ?>
 
 <br><br>
