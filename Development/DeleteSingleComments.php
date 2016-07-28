@@ -30,6 +30,9 @@ if (isset($_POST['DeleteSingle'])){
     var_dump($_POST);
     $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
     $result = mysqli_query($db, $deletesql);
+    echo "About to echo sql";
+    echo $result;
+    
 }
 ?>
 
