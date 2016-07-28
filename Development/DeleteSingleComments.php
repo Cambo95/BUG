@@ -17,6 +17,8 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 <br><br><br><br>
 
+You have requested to delete this bug.
+
 <?php if($UserLoggedOn!==''): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteSingle" value="Confirm deletion of comment">
@@ -24,7 +26,10 @@ $db = new mysqli(
 <?php endif; ?>
 
 <?php
+echo "Bug ID equals...";
 $bugid=$_GET["bugid"];
+echo $bugid;
+echo "<br>";
 if (isset($_POST['DeleteSingle'])){
     echo("About to dump array POST");
     var_dump($_POST);
