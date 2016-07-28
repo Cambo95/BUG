@@ -59,6 +59,7 @@ while($Describe = mysqli_fetch_assoc($resultDescribe)) {
 <h5>User:</h5> <?php
 while($User = mysqli_fetch_assoc($resultUser)) {
     $buguser=$User['Inst_User'];
+    $UserLoggedOn = $_SESSION["username"];
     echo "<td>" . $User['Inst_User']."</td>";
 }?>
 <br>
@@ -83,12 +84,16 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
    
 }?>
 <br>
+
+<?php if($buguser ==$UserLoggedOn): ?>
 <form action='' method="POST">
     <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
+<?php endif; ?>
+
 
 <?php
-$UserLoggedOn = $_SESSION["username"];
+
 if ($buguser ==$UserLoggedOn ) {
     
     if (isset($_POST['Fixed'])) {
