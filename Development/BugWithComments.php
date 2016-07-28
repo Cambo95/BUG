@@ -13,6 +13,7 @@ $db = new mysqli(
     "1301070"
 );
 $bugid=$_GET["bugid"];
+$isadmin = $_SESSION['isadmin'];
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = $bugid";
 $result = $db->query($sql_query);
 $resultBugID = $db->query($sql_query);
@@ -121,9 +122,14 @@ if ($buguser ==$UserLoggedOn ) {
     <?php
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
-        echo "<td>" . $Comment['Com_User']."</td>";
-        echo "<td>" . $Comment['Com_DateTime']."</td>";
+        $comuser = $Comment['Com_User'];
+        $comdatetime = $Comment['Com_DateTime'];
+        
+        
+        echo "<td>" . $comuser."</td>";
+        echo "<td>" . $comdatetime."</td>";
         echo "<td>" . $Comment['Com_Comment']."</td>";
+        echo "<td>" . '<a href="DeleteSingleComments.php?bugid='.$bugid.'?comuser='.$comuser.'?comdatetime='.$comdatetime.'"></a>'."</td>";
         echo "</tr>";
     }//end while
     ?>
@@ -140,7 +146,7 @@ if ($buguser ==$UserLoggedOn ) {
 </form>
 <?php endif; ?>
 
-<?php if($buguser ==$UserLoggedOn): ?>
+<?php if($isadmin == 1): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteAll" value = "Delete All Comments">
     </form>
