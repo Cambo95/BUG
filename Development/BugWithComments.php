@@ -87,15 +87,21 @@ while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
 </form>
 
 <?php
-
+echo "Just about to go into post if";
 if(isset($_POST['Fixed'])) {
     if ($bugfixed == 'Y') {
         $curdatetime = NULL;
+        echo "If it is Y";
+        echo $bugfixed;
     }
     if ($bugfixed == 'N') {
         $curdatetime = new DateTime();
+        echo "If it is N";
+        echo $bugfixed;
     }
+    
     $testsql = "UPDATE bug_instances SET Inst_DateFixed = '$curdatetime' WHERE Inst_BugUniqueID = '$buguniqueid'";
+    echo $testsql;
     $result = mysqli_query($db, $testsql);
 }
 
