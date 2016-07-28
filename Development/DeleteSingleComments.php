@@ -17,7 +17,9 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 <br><br><br><br>
 
-You have requested to delete this bug.
+<h3>You have requested to delete this comment</h3>
+<br>
+<br>
 
 <?php if($UserLoggedOn!==''): ?>
     <form action='' method="POST">
