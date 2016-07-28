@@ -1,5 +1,6 @@
 <?php
 session_start();
+$UserLoggedOn = $_SESSION["username"];
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
