@@ -82,7 +82,7 @@ while($DateFixed = mysqli_fetch_assoc($resultDateFixed)) {
 }?>
 <br>
 <form action='' method="POST">
-    <input type="submit" name="Fixed" value = "$buttontext">
+    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
 
 <br><br>
