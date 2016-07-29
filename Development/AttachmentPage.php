@@ -43,7 +43,7 @@ $db = new mysqli(
 $buguniqueid=$_GET["buguniqueid"];
 var_dump($_FILES);
 if(isset($_POST["submit"])) {
-    if $_FILES['submit']['size'] > 0){
+    if ($_FILES['submit']['size'] > 0){
         echo 'dumping the FILES content - ';
     $ImageSubmit =  $_files["txt_image"];
     $UserLoggedOn = $_SESSION["username"];
