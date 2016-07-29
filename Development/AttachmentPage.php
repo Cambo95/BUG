@@ -41,9 +41,10 @@ $db = new mysqli(
 
 <?php
 $buguniqueid=$_GET["buguniqueid"];
-echo 'dumping the FILES content - ';
 var_dump($_FILES);
 if(isset($_POST["submit"])) {
+    if $_FILES['submit']['size'] > 0){
+        echo 'dumping the FILES content - ';
     $ImageSubmit =  $_files["txt_image"];
     $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
@@ -54,6 +55,7 @@ if(isset($_POST["submit"])) {
     }else{
         echo "Error: " . $sql . "<br>" . $db->error;
     }
+}
 }
 $db->close();
 ?>
