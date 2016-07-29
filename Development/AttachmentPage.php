@@ -58,11 +58,15 @@ if(isset($_POST['submit'])) {
         $content = fread($fp, filesize($tmpName));
         $content = addslashes($content);
         fclose($fp);
+        if(!get_magic_quotes_gpc())
+        {
+            $fileName = addslashes($fileName);
+        }
         echo 'finished getting file details from S_FILE';
         $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
     $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object)
-            VALUES($buguniqueid,$UserLoggedOn,$content)";
+            VALUES('$buguniqueid','$UserLoggedOn','$content')";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
     }else{
