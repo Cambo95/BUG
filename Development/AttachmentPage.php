@@ -49,10 +49,10 @@ if(isset($_POST['submit'])) {
     echo ']';
     if ($_FILES['txt_image']['size'] > 0){
         echo 'about to get file details from S_FILE';
-        $fileName = $_FILES['submit']['name'];
-        $tmpName  = $_FILES['submit']['tmp_name'];
-        $fileSize = $_FILES['submit']['size'];
-        $fileType = $_FILES['submit']['type'];
+        $fileName = $_FILES['txt_image']['name'];
+        $tmpName  = $_FILES['txt_image']['tmp_name'];
+        $fileSize = $_FILES['txt_image']['size'];
+        $fileType = $_FILES['txt_image']['type'];
 
         $fp      = fopen($tmpName, 'r');
         $content = fread($fp, filesize($tmpName));
