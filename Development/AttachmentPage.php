@@ -65,8 +65,8 @@ if(isset($_POST['submit'])) {
         echo 'finished getting file details from S_FILE';
         $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
-    $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object)
-            VALUES('$buguniqueid','$UserLoggedOn','$content')";
+    $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object, Att_Objectname, Att_Objecttype, Att_Objectsize)
+            VALUES('$buguniqueid','$UserLoggedOn','$content','$fileName','$fileType','$fileSize')";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
     }else{
