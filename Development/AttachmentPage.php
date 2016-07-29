@@ -58,7 +58,6 @@ if(isset($_POST['submit'])) {
         {
             $fileName = addslashes($fileName);
         }
-        echo 'finished getting file details from S_FILE';
         $UserLoggedOn = $_SESSION["username"];
     $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object, Att_Objectname, Att_Objecttype, Att_Objectsize)
             VALUES('$buguniqueid','$UserLoggedOn','$content','$fileName','$fileType','$fileSize')";
