@@ -53,7 +53,9 @@ if(isset($_POST['submit'])) {
         $tmpName  = $_FILES['txt_image']['tmp_name'];
         $fileSize = $_FILES['txt_image']['size'];
         $fileType = $_FILES['txt_image']['type'];
-
+echo "File name =(";
+        echo $fileName;
+        echo ")";
         $fp      = fopen($tmpName, 'r');
         $content = fread($fp, filesize($tmpName));
         $content = addslashes($content);
