@@ -45,9 +45,9 @@ var_dump($_FILES);
 var_dump($_POST);
 if(isset($_POST['submit'])) {
     echo 'FILES SIZE =  [';
-    echo $_FILES['submit']["size"];
+    echo $_FILES['txt_image']["size"];
     echo ']';
-    if ($_FILES['submit']['size'] > 0){
+    if ($_FILES['txt_image']['size'] > 0){
         echo 'about to get file details from S_FILE';
         $fileName = $_FILES['submit']['name'];
         $tmpName  = $_FILES['submit']['tmp_name'];
