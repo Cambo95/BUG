@@ -41,21 +41,15 @@ $db = new mysqli(
 
 <?php
 $buguniqueid=$_GET["buguniqueid"];
-var_dump($_FILES);
-var_dump($_POST);
+
 if(isset($_POST['submit'])) {
-    echo 'FILES SIZE =  [';
-    echo $_FILES['txt_image']["size"];
-    echo ']';
     if ($_FILES['txt_image']['size'] > 0){
-        echo 'about to get file details from S_FILE';
+        
         $fileName = $_FILES['txt_image']['name'];
         $tmpName  = $_FILES['txt_image']['tmp_name'];
         $fileSize = $_FILES['txt_image']['size'];
         $fileType = $_FILES['txt_image']['type'];
-echo "File name =(";
-        echo $fileName;
-        echo ")";
+
         $fp      = fopen($tmpName, 'r');
         $content = fread($fp, filesize($tmpName));
         $content = addslashes($content);
@@ -66,7 +60,6 @@ echo "File name =(";
         }
         echo 'finished getting file details from S_FILE';
         $UserLoggedOn = $_SESSION["username"];
-    echo "User pressed Save";
     $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object, Att_Objectname, Att_Objecttype, Att_Objectsize)
             VALUES('$buguniqueid','$UserLoggedOn','$content','$fileName','$fileType','$fileSize')";
     if (mysqli_query($db, $sql)) {
