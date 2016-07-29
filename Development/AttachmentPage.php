@@ -44,7 +44,7 @@ $buguniqueid=$_GET["buguniqueid"];
 var_dump($_FILES);
 var_dump($_POST);
 if(isset($_POST['submit'])) {
-    echo 'FILES SIZE = [';
+    echo 'FILES SIZE =  [';
     echo $_FILES['submit']['size'];
     echo ']';
     if ($_FILES['submit']['size'] > 0){
