@@ -44,6 +44,7 @@ $buguniqueid=$_GET["buguniqueid"];
 var_dump($_FILES);
 if(isset($_POST["submit"])) {
     if ($_FILES['submit']['size'] > 0){
+        echo 'about to get file details from S_FILE';
         $fileName = $_FILES['submit']['name'];
         $tmpName  = $_FILES['submit']['tmp_name'];
         $fileSize = $_FILES['submit']['size'];
@@ -53,12 +54,11 @@ if(isset($_POST["submit"])) {
         $content = fread($fp, filesize($tmpName));
         $content = addslashes($content);
         fclose($fp);
-
-        echo 'dumping the FILES content - ';
-    $UserLoggedOn = $_SESSION["username"];
+        echo 'finished getting file details from S_FILE';
+        $UserLoggedOn = $_SESSION["username"];
     echo "User pressed Save";
     $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object)
-            VALUES('$buguniqueid','$UserLoggedOn','$content')";
+            VALUES($buguniqueid,$UserLoggedOn,$content)";
     if (mysqli_query($db, $sql)) {
         echo "Records added successfully";
     }else{
