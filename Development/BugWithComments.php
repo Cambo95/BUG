@@ -110,8 +110,9 @@ if ($buguser ==$UserLoggedOn ) {
     }
 }
 ?>
-
+<br><br>
 <?php
+
 if ($buguser ==$UserLoggedOn ) {
     echo "<td>" . '<a href="AttachmentPage.php?bugid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>"; 
 }
