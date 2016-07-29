@@ -41,6 +41,8 @@ $db = new mysqli(
 
 <?php
 $buguniqueid=$_GET["buguniqueid"];
+echo 'dumping the FILES content - ';
+var_dump($_FILES);
 if(isset($_POST["submit"])) {
     $ImageSubmit =  $_files["txt_image"];
     $UserLoggedOn = $_SESSION["username"];
