@@ -111,6 +111,13 @@ if ($buguser ==$UserLoggedOn ) {
 }
 ?>
 
+<?php
+if ($buguser ==$UserLoggedOn ) {
+    echo "<td>" . '<a href="AttachmentPage.php?bugid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>"; 
+}
+?>
+
+
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
