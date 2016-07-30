@@ -7,11 +7,11 @@ session_start();
 /**
  * Created by PhpStorm.
  * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
  *
- * PURPOSE : This is the Administration Page - It allows administrators to Verify Users
- * SECURITY : This page is only available to Users who are tagged as "UserIsAdmin"
+ * PURPOSE : This is the Attachment Page - It allows the person who created a bug to select
+ *           and upload attachments against the Bug they have created
+ *
+ * SECURITY : This page is only available to Users who are logged in
  */
 /** =====================================================================================*/
 
