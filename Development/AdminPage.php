@@ -1,12 +1,12 @@
 <?php
+
+/** Resume the session to retrieve the parameters setup at login */
 session_start();
 /** =====================================================================================*/
 /**
  * Created by PhpStorm.
  * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
- *
+ * 
  * PURPOSE : This is the Administration Page - It allows administrators to Verify Users
  * SECURITY : This page is only available to Users who are tagged as "UserIsAdmin"
  */
@@ -37,7 +37,7 @@ $db = new mysqli(
 
     <!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
-    <!-- ============================================================================== -->
+
 
     <!-- Set up the sql string to select all Users -->
 <?php $sql_queryAdmin = "SELECT * FROM  bug_userprofile ORDER BY Usr_IsVerified";
