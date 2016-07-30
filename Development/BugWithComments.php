@@ -94,7 +94,7 @@ $resultComments = $db->query($sql_queryComments);
 <h5>Date Fixed:</h5> <?php
     if ($datefixed){
         echo "Bug was Fixed on ";
-        echo $datefixed['Inst_DateFixed'];
+        echo $datefixed;
         $bugfixed ='Y';
         $buttontext = 'Flag as Unfixed';
     }
