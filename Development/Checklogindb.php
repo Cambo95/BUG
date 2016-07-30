@@ -1,24 +1,39 @@
+
+
+<!-- ============================================================================== -->
+<!-- Set up the Tab name -->
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <body>
+<!-- ============================================================================== --> 
 
 <?php
+
+/** =====================================================================================*/
 /**
  * Created by PhpStorm.
  * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
+ *
+ * PURPOSE : This is the CheckLogin script - it is called from login page and
+ *           its purpose is to check the user profile and password are valid in the
+ *           database.
+ * SECURITY : This page is only available to Users who are tagged as "UserIsAdmin"
  */
+/** =====================================================================================*/
 
+/** Setup the SQL login credentials*/
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
     "2e5e5133",
     "1301070"
 );
+
+/** Retrieve the username */
 $username = $_POST['username'];
+/** Retrieve the password */
 $password = $_POST['password'];
 echo $username;
 echo $password;
