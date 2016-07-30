@@ -74,22 +74,21 @@ $resultComments = $db->query($sql_queryComments);
 ?>
 <br>
 <h5>Title:</h5> <?php
-
-    echo "<td>" . $Bug."</td>";  echo "</tr>";
+    echo "<td>" . $bug."</td>";  echo "</tr>";
 ?>
 <br>
 <h5>Description:</h5> <?php
-    echo "<td>" . $Describe."</td>";
+    echo "<td>" . $describe."</td>";
 ?>
 <br>
 <h5>User:</h5> <?php
     $buguser=$User;
     $UserLoggedOn = $_SESSION["username"];
-    echo "<td>" . $User."</td>";
+    echo "<td>" . $user."</td>";
 ?>
 <br>
 <h5>Date Posted:</h5> <?php
-    echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
+    echo "<td>" . $date['Inst_DatePosted'] . "</td>";
 ?>
 <br>
 <h5>Date Fixed:</h5> <?php
