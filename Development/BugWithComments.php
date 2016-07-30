@@ -1,26 +1,53 @@
 <?php
+
+/** Resume the session to retrieve the parameters setup at login */
 session_start();
+
+
+/** =====================================================================================*/
 /**
  * Created by PhpStorm.
  * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
+ *
+ * PURPOSE  : This is the page for a single bug showing the details of that bug AND
+ *            all the comments linked to that bug.  Comments are added on this page.
+ *            Existing comments can be deleted from this page too 
+ *            Also the Bug can be flagged as Fixed or Unfixed on this page.
+ * SECURITY : This page is available to Public/Developers/Admin.
+ *            Add Comments is only available to Developers/Admin (must be logged in)
+ *            The Fixed/Unfixed button is only shown if the person logged in is also the
+ *            creator of the Bug.
+ *            Comments can be deleted by Admin users.
+ *            Comments can be deleted by the creator of the comment.
  */
+/** =====================================================================================*/
+
+/** Setup the SQL login credentials*/
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
     "2e5e5133",
     "1301070"
 );
+
+/** Retrieve the bugid from the URL parameter */
 $bugid=$_GET["bugid"];
+/** Retrieve from the session whether the user logged in is an administrator */
 $isadmin = $_SESSION['isadmin'];
+
+/** Setup the SQL statement */
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = $bugid";
+
+/** Retrieve the record from the table */
 $result = $db->query($sql_query);
-$resultBugID = $db->query($sql_query);
-$resultDescribe = $db->query($sql_query);
-$resultUser = $db->query($sql_query);
-$resultDate = $db->query($sql_query);
-$resultdatefixed = $db->query($sql_query);
+
+$sqlrow   = mysqli_fetch_assoc($result);
+$bugbug   = $sqlrow['Inst_BugUniqueID'];
+$bug      = $sqlrow['Inst_Title'];
+$describe = $sqlrow['Inst_Description'];
+$user     = $sqlrow['Inst_User'];
+$date     = $sqlrow['Inst_DatePosted'];
+$datefixed= $sqlrow['Inst_DateFixed'];
 
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
@@ -43,47 +70,41 @@ $resultComments = $db->query($sql_queryComments);
 <br><br><br>
 
 <h5>Bug ID:</h5> <?php
-while($bugbug = mysqli_fetch_assoc($resultBugID)) {
-    echo "<td>" . $bugbug['Inst_BugUniqueID']."</td>";
-}?>
+    echo "<td>" . $bugbug."</td>";
+?>
 <br>
 <h5>Title:</h5> <?php
-while($Bug = mysqli_fetch_assoc($result)) {
-    echo "<td>" . $Bug['Inst_Title']."</td>";  echo "</tr>";
-}?>
+
+    echo "<td>" . $Bug."</td>";  echo "</tr>";
+?>
 <br>
 <h5>Description:</h5> <?php
-while($Describe = mysqli_fetch_assoc($resultDescribe)) {
-    echo "<td>" . $Describe['Inst_Description']."</td>";
-}?>
+    echo "<td>" . $Describe."</td>";
+?>
 <br>
 <h5>User:</h5> <?php
-while($User = mysqli_fetch_assoc($resultUser)) {
-    $buguser=$User['Inst_User'];
+    $buguser=$User;
     $UserLoggedOn = $_SESSION["username"];
-    echo "<td>" . $User['Inst_User']."</td>";
-}?>
+    echo "<td>" . $User."</td>";
+?>
 <br>
 <h5>Date Posted:</h5> <?php
-while($Date = mysqli_fetch_assoc($resultDate)) {
     echo "<td>" . $Date['Inst_DatePosted'] . "</td>";
-}?>
+?>
 <br>
 <h5>Date Fixed:</h5> <?php
-while($datefixed = mysqli_fetch_assoc($resultdatefixed)) {
-    if ($datefixed['Inst_DateFixed']){
+    if ($datefixed){
         echo "Bug was Fixed on ";
         echo $datefixed['Inst_DateFixed'];
         $bugfixed ='Y';
         $buttontext = 'Flag as Unfixed';
     }
-    if (!$datefixed['Inst_DateFixed']){
+    if (!$datefixed){
         echo "Bug is currently unfixed";
         $bugfixed ='N';
         $buttontext = 'Flag as Fixed';
     }
-   
-}?>
+?>
 <br>
 
 <?php if($buguser ==$UserLoggedOn): ?>
