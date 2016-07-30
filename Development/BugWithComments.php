@@ -88,7 +88,7 @@ $resultComments = $db->query($sql_queryComments);
 ?>
 <br>
 <h5>Date Posted:</h5> <?php
-    echo "<td>" . $date['Inst_DatePosted'] . "</td>";
+    echo "<td>" . $date . "</td>";
 ?>
 <br>
 <h5>Date Fixed:</h5> <?php
