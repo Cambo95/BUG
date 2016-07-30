@@ -40,8 +40,9 @@ $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = $bugid";
 
 /** Retrieve the record from the table */
 $result = $db->query($sql_query);
-
 $sqlrow   = mysqli_fetch_assoc($result);
+
+/** load up the display variables */
 $bugbug   = $sqlrow['Inst_BugUniqueID'];
 $bug      = $sqlrow['Inst_Title'];
 $describe = $sqlrow['Inst_Description'];
@@ -49,6 +50,8 @@ $user     = $sqlrow['Inst_User'];
 $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 
+
+/** Retrieve all the comments rows into resultsComments ready for display further down */
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
 
@@ -91,6 +94,11 @@ $resultComments = $db->query($sql_queryComments);
     echo "<td>" . $date . "</td>";
 ?>
 <br>
+
+<!-- If the date fixed field is not empty that means the bug is fixed.  Setup the button   -->
+<!-- text to say FLAG AS UNFIXED so that user can set the bug status to UNFIXED -->
+<!-- If the date fixed field IS empty that means the bug is NOT fixed.  Setup the button   -->
+<!-- text to say FLAG AS FIXED so that user can set the bug status to FIXED -->
 <h5>Date Fixed:</h5> <?php
     if ($datefixed){
         echo "Bug was Fixed on ";
@@ -106,6 +114,9 @@ $resultComments = $db->query($sql_queryComments);
 ?>
 <br>
 
+
+<!-- If the person logged on is also the person who created the bug then display the  -->
+<!-- Fix/Unfix button  -->
 <?php if($buguser ==$UserLoggedOn): ?>
 <form action='' method="POST">
     <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
@@ -115,6 +126,8 @@ $resultComments = $db->query($sql_queryComments);
 
 <?php
 
+/** If the person logged on is also the person who created the bug AND */
+/** they pressed the button then toggle the Inst_DateFixed */
 if ($buguser ==$UserLoggedOn ) {
     
     if (isset($_POST['Fixed'])) {
@@ -133,12 +146,21 @@ if ($buguser ==$UserLoggedOn ) {
 <br><br>
 <?php
 
+/** If the person logged on is also the person who created the bug then */
+/** display the Add Attachment link to allow bug creator to upload an attachment */
 if ($buguser ==$UserLoggedOn ) {
     echo "<td>" . '<a href="AttachmentPage.php?bugid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>"; 
 }
 ?>
 
 
+
+<!-- Setup the Comments table headers then display all rows retrieved -->
+<!-- At the end of each row put a DELETE link to allow user to delete that comment  -->
+<!-- If the DELETED is clicked then the record key fields are passed in the URL to  -->
+<!-- DeleteSingleComments.php which will check that the person trying to delete  -->
+<!-- the comment is the person who created it - if they arent the same they wont be -->
+<!-- able to delete the comment  -->
 <br><br>
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
@@ -164,6 +186,8 @@ if ($buguser ==$UserLoggedOn ) {
 </table>
 <br>
 
+
+<!-- If the User is logged on then display the Add Comments box and button  -->
 <?php if($UserLoggedOn!==''): ?>
 <form action='' method="POST">
     Add comment:<br>
@@ -174,29 +198,41 @@ if ($buguser ==$UserLoggedOn ) {
 </form>
 <?php endif; ?>
 
+<!-- If the user logged on is an admin user then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteAll" value = "Delete All Comments">
     </form>
 <?php endif; ?>
 
+
+
 <?php
+
+/** setup the SQL credentials */
 $servername =  "eu-cdbr-azure-west-d.cloudapp.net";
 $username = "b05411072e2e07";
 $password = "2e5e5133";
 $dbname = "1301070";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+/** Retrieve the BUG ID  from the URL parameter */
 $bugid=$_GET["bugid"];
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+/** If the DELETEALL button has been pressed then execute sql to delete all */
+/** comments matching this BUGID and refresh screen */
 if (isset($_POST['DeleteAll'])) {
         $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
     $result = mysqli_query($db, $deletesql);
     header("Location: BugWithComments.php?bugid=$bugid");
 }
+/** If the SUBMIT button was pressed insert the comment entered by the user into table */
+/** bug_comments */
 if(isset($_POST['submit'])) {
     $UserLoggedOn = $_SESSION["username"];
     $Comment = $_POST['Comment'];
@@ -224,6 +260,7 @@ $conn->close();
 ?>
 <br><br><br><br><br><br><br><br>
 
+<!-- Display the common Footer  -->
 <?php include 'CommonFooter.php';?>
 </body>
     </html>
