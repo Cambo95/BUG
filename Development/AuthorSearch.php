@@ -50,14 +50,10 @@ if(isset($_POST['submit'])) {
     $searchstring = "'%".$_POST['search']."%'";
     $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring OR Usr_Surname LIKE $searchstring OR Usr_Country LIKE $searchstring) ORDER BY Usr_User";
     $resultAdmin = $db->query($sql_queryAdmin);
-    echo "Inside $_POST. String = ";  
-    echo $sql_queryAdmin;
 }
 if(!isset($_POST['submit'])){
         $sql_queryAdmin = "SELECT * FROM  bug_userprofile ORDER BY Usr_User";
         $resultAdmin = $db->query($sql_queryAdmin);
-        echo "Inside else. String = ";
-        echo $sql_queryAdmin;
 }
 
 
