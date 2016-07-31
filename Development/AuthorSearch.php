@@ -39,13 +39,6 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 
 
-<!-- Set up the sql string to select all Users -->
-<?php $sql_queryAdmin = "SELECT * FROM  bug_userprofile ORDER BY Usr_User";
-
-// execute the SQL query
-$resultAdmin = $db->query($sql_queryAdmin);
-?>
-
 <p>Search for Author:</p>
 <form action='' method="POST">
     <input type="text" name="search" placeholder="Search...">
@@ -57,11 +50,15 @@ if(isset($_POST['submit'])) {
     $searchstring = "%".$_POST['search']."%";
     $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring ORDER BY Usr_User";
     $resultAdmin = $db->query($sql_queryAdmin);
+    echo "Inside $_POST. String = ";  
+    echo $sql_queryAdmin;
 }
-    else{
+if(!isset($_POST['submit'])){
         $sql_queryAdmin = "SELECT * FROM  bug_userprofile ORDER BY Usr_User";
         $resultAdmin = $db->query($sql_queryAdmin);
-    }
+        echo "Inside else. String = ";
+        echo $sql_queryAdmin;
+}
 
 
 ?>
