@@ -43,6 +43,7 @@ session_start();
 
     ?>
 <h3>Recent Bugs</h3>
+    <p>(If search is blank only 5 most recent bugs are shown. If search is used every matching search is displayed)</p>
     <table class="w3-table w3-bordered w3-striped">
         <tr class="w3-teal">
             <th>Date</th>
