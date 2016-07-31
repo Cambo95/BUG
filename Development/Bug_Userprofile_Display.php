@@ -96,8 +96,8 @@ $dispisadmin = $row['Usr_IsAdministrator'];
         echo "<td>" .$dispsurname."</td>";
         echo "<td>" .$dispcountry."</td>";
         echo "<td>" .$dispjoindate."</td>";
-        echo "<td>" .$dispisverified."</td>";
         echo "<td>" .$dispisadmin."</td>";
+        echo "<td>" .$dispisverified."</td>";
         echo "</tr>";
     ?>
 </table>
@@ -105,6 +105,36 @@ $dispisadmin = $row['Usr_IsAdministrator'];
 <h5>Bio:</h5> <?php
 echo "<td>" . $dispbio . "</td>";
 ?>
+
+<?php $sql_query = "SELECT * FROM  bug_instances where bug_user= $dispuser ORDER BY Inst_BugUniqueID DESC ";
+// execute the SQL query
+$result = $db->query($sql_query);
+?>
+
+<h3>Author Contributions</h3>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
+        <th>Date</th>
+        <th>BugID</th>
+        <th>User</th>
+        <th>Title</th>
+    </tr>
+
+    <?php
+
+    while($Bug = mysqli_fetch_assoc($result)) {
+        $bugid=$Bug['Inst_BugUniqueID'];
+        $buguser=$Bug['Inst_User'];
+        echo "<tr>";
+        echo "<td>" . $Bug['Inst_DatePosted']."</td>";
+        echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.$bugid.'</a>'."</td>";
+        echo "<td>" . '<a href="Bug_Userprofile_Display.php?paramuser='.$buguser.'">'.$buguser.'</a>'."</td>";
+        echo "<td>" . $Bug['Inst_Title']."</td>";
+        echo "</tr>";
+    }//end while
+    ?>
+</table>
+
 <br><br>
 <!-- Setup the footer  -->
 <?php include 'CommonFooter.php';?>
