@@ -25,7 +25,7 @@ session_start();
 <body>
     <?php include 'CommonHeader.php';?>
     
-<br><br>
+<br>
     <p>Bug Search</p>
     <form action='' method="POST">
         <input type="text" name="search" placeholder="Search...">
