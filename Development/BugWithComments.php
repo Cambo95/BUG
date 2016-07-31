@@ -145,16 +145,6 @@ if ($buguser ==$UserLoggedOn ) {
 }
 ?>
 <br>
-<?php
-
-/** If the person logged on is also the person who created the bug then */
-/** display the Add Attachment link to allow bug creator to upload an attachment */
-if ($buguser ==$UserLoggedOn ) {
-    echo "<td>" . '<a href="AttachmentPage.php?buguniqueid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>";
-}
-?>
-
-
 
 <!-- Setup the Comments table headers then display all rows retrieved -->
 <!-- At the end of each row put a DELETE link to allow user to delete that comment  -->
@@ -275,6 +265,14 @@ $resultAttachments = $db->query($sql_queryAttachments);
 <!-- able to delete the attachment  -->
 
 <h4>Attachments</h4>
+<?php
+
+/** If the person logged on is also the person who created the bug then */
+/** display the Add Attachment link to allow bug creator to upload an attachment */
+if ($buguser ==$UserLoggedOn ) {
+    echo "<td>" . '<a href="AttachmentPage.php?buguniqueid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>";
+}
+?>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
