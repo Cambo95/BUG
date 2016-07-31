@@ -97,9 +97,9 @@ $resultComments = $db->query($sql_queryComments);
 </table>
 <br>
 <h5>Description:</h5> <?php
-    echo "<td>" . $describe . "</td>";
+    echo $describe;
 ?>
-<br>
+<br><br><br>
 <!-- If the date fixed field is not empty that means the bug is fixed.  Setup the button   -->
 <!-- text to say FLAG AS UNFIXED so that user can set the bug status to UNFIXED -->
 <!-- If the date fixed field IS empty that means the bug is NOT fixed.  Setup the button   -->
