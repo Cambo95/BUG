@@ -24,14 +24,24 @@ session_start();
 </head>
 <body>
     <?php include 'CommonHeader.php';?>
-    <p>Search for Bugs:</p>
-    <form>
+
+    <form action='' method="POST">
         <input type="text" name="search" placeholder="Search...">
+        <input type="submit" name="submit" value="Search">
     </form>
-        <?php $sql_query = "SELECT * FROM  bug_instances ORDER BY Inst_BugUniqueID DESC limit 5";
-        // execute the SQL query
-            $result = $db->query($sql_query);
-        ?>
+    <?php
+
+    if(isset($_POST['submit'])) {
+        $searchstring = "'%".$_POST['search']."%'";
+        $sql_queryHome = "SELECT * FROM  bug_instances WHERE (Inst_User LIKE $searchstring OR Inst_Description LIKE $searchstring OR Inst_Title LIKE $searchstring) ORDER BY Inst_BugUniqueID DESC";
+        $result = $db->query($sql_queryHome);
+    }
+    if(!isset($_POST['submit'])){
+        $sql_queryHome = "SELECT * FROM  bug_instances ORDER BY Inst_BugUniqueID DESC limit 5";
+        $result = $db->query($sql_queryHome);
+    }
+
+    ?>
 <h3>Recent Bugs</h3>
     <table class="w3-table w3-bordered w3-striped">
         <tr class="w3-teal">
