@@ -61,7 +61,7 @@ if(!isset($_POST['submit'])){
 
 <!-- Setup table header and titles -->
 <h1>Author Search</h1>
-<p> This search will allow you to search for authors Profile Name, Surname and Country.</p>
+<p> This search will allow you to search for authors Profile Name, Surname and Country. Click on Username for more detail.</p>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
@@ -81,7 +81,7 @@ if(!isset($_POST['submit'])){
     while($Admin = mysqli_fetch_assoc($resultAdmin)) {
         $verifyusername=$Admin['Usr_User'];
         echo "<tr>";
-        echo "<td>" . $Admin['Usr_User']."</td>";
+        echo "<td>" . '<a href="Bug_Userprofile_Display.php?paramuser='.$verifyusername.'">'.$verifyusername.'</a>'."</td>";
         echo "<td>" . $Admin['Usr_Surname']."</td>";
         echo "<td>" . $Admin['Usr_Country']."</td>";
         echo "<td>" . $Admin['Usr_JoinedDate']."</td>";
