@@ -90,6 +90,7 @@ $resultComments = $db->query($sql_queryComments);
     echo "<td>" .$bug."</td>";
     echo "<td>" .$user."</td>";
     echo "<td>" .$date."</td>";
+    echo "<td>" .$datefixed."</td>";
     echo "</tr>";
     ?>
 </table>
