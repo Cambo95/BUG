@@ -50,7 +50,8 @@ $row = mysqli_fetch_assoc($result);
 
 /** Setup the data to be displayed on the screen */
 $dispuser = $row['Usr_User'];
-$discountry = $row['Usr_Country'];
+$dispsurname = $row['Usr_Surname'];
+$dispcountry = $row['Usr_Country'];
 $dispbio = $row['Usr_Bio'];
 $dispjoindate = $row['Usr_JoinedDate'];
 $dispisverified = $row['Usr_IsVerified'];
@@ -65,56 +66,50 @@ $dispisadmin = $row['Usr_IsAdministrator'];
 <!-- Setup the page titles and display the data retrieved from the sql table -->
 <html>
 <head>
-    <title>Bug Site</title>
     <style>
-
-        h4{
-            color: #ff0000;
-        }
         h5{
             color: #ff0000;
         }
     </style>
 </head>
+
 <body>
-<?php include 'CommonHeader.php';?>
 
-<br><br><br>
+<h1>Author Search</h1>
+<p> This search will allow you to search for authors Profile Name, Surname and Country. Click on Username for more detail.</p>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
+        <th>User</th>
+        <th>Surname</th>
+        <th>User Country</th>
+        <th>User Joined</th>
+        <th>User is Admin (1=Yes/0=No)</th>
+        <th>User Is Verified? (1=Yes/=No)</th>
+    </tr>
 
-<h5>User:</h5> <?php
-    echo "<td>" .$dispuser."</td>";
-?>
-<br>
-<br>
-<h5>Country:</h5> <?php
-    echo "<td>" .$discountry."</td>";
-?>
-<br>
+    <!-- Process through all the retrieved rows and display on screen -->
+    <!-- Setup a link field with the title 'Verify User' to allow Admin to select user for verification -->
+    <!-- The link field has a URL parameter called verifyusername and the User name is -->
+    <!-- concatenated to the URL so that when Admin clicks on the link it calls Verify.PHP and -->
+    <!-- passes the User name through to that php -->
+    <?php
+    while($Admin = mysqli_fetch_assoc($resultAdmin)) {
+        $verifyusername=$Admin['Usr_User'];
+        echo "<tr>";
+        echo "<td>" . $dispuser."</td>";
+        echo "<td>" . $dispsurname."</td>";
+        echo "<td>" . $dispcountry."</td>";
+        echo "<td>" . $dispjoindate."</td>";
+        echo "<td>" . $dispisverified."</td>";
+        echo "<td>" . $dispisadmin."</td>";
+        echo "</tr>";
+    }//end while
+    ?>
+</table>
 <br>
 <h5>Bio:</h5> <?php
-    echo "<td>" .$dispbio."</td>";
+echo "<td>" . $dispbio . "</td>";
 ?>
-<br>
-<br>
-<h5>Date Joined:</h5> <?php
-    echo "<td>" .$dispjoindate."</td>";
-?>
-<br>
-<br>
-<h5>User is Verified?</h5> <?php
-echo "<td>" .$dispisverified."</td>";
-?>
-<br>
-<br>
-<h5>User is Administrator?</h5> <?php
-echo "<td>" .$dispisadmin."</td>";
-?>
-<br>
-<br>
-1 = Yes
-<br>
-0 = No
-<br><br><br><br><br><br><br><br>
 
 <!-- Setup the footer  -->
 <?php include 'CommonFooter.php';?>
