@@ -41,7 +41,7 @@ echo $attdatetime;
 
 if ($UserLoggedOn == $attuser) {
     if (isset($_POST['DeleteSingle'])) {
-        $deletesql = "DELETE FROM bug_attachments WHERE Att_BugUniqueID = $bugid AND Att_User = $attuser AND Att_DateTime = $attdatetime";
+        $deletesql = "DELETE FROM bug_attachment WHERE Att_BugUniqueID = $bugid AND Att_User = '$attuser' AND Att_DateTime = '$attdatetime'";
         $result = mysqli_query($db, $deletesql);
         header("Location: BugWithComments.php?bugid=$bugid");
     }
