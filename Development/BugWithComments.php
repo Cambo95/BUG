@@ -106,8 +106,6 @@ $resultComments = $db->query($sql_queryComments);
 <!-- text to say FLAG AS FIXED so that user can set the bug status to FIXED -->
 <?php
     if ($datefixed){
-        echo "Bug was Fixed on ";
-        echo $datefixed;
         $bugfixed ='Y';
         $buttontext = 'Flag as Unfixed';
     }
