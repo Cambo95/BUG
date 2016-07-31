@@ -67,13 +67,16 @@ $resultComments = $db->query($sql_queryComments);
         h5{
             color: #ff0000;
         }
+        h6{
+            color: #C83838;
+        }
     </style>
 </head>
 <body>
 <br><br><br>
 
 <h5>Bug Details</h5> <?php
-    echo "Bug ID: " . $bugbug. "  Title: ".$bug. "  Description: ".$describe;
+    echo "<h6>Bug ID:</h6>" . $bugbug. "  Title: ".$bug. "  Description: ".$describe;
 ?>
 <br>
 <h5>Title:</h5> <?php
