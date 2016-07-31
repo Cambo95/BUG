@@ -73,7 +73,7 @@ $resultComments = $db->query($sql_queryComments);
 <br><br><br>
 
 <h5>Bug ID:</h5> <?php
-    echo "<td>" . $bugbug."</td>";
+    echo "<td> Bug ID:" . $bugbug."</td>";
 ?>
 <br>
 <h5>Title:</h5> <?php
