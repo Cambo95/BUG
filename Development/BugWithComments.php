@@ -71,8 +71,10 @@ $resultComments = $db->query($sql_queryComments);
 </head>
 <body>
 <br>
-<h5>Bug Details</h5> <?php
-    echo "<td> Bug ID: " . $bugbug."</td>";
+<h4>Bug Details</h4>
+<br>
+<h5>Bug ID</h5> <?php
+    echo "<td>". $bugbug."</td>";
 ?>
 <br>
 <h5>Title:</h5> <?php
@@ -84,7 +86,7 @@ $resultComments = $db->query($sql_queryComments);
 ?>
 <br>
 <h5>User:</h5> <?php
-    $buguser=$User;
+    $buguser=$user;
     $UserLoggedOn = $_SESSION["username"];
     echo "<td>" . $user."</td>";
 ?>
