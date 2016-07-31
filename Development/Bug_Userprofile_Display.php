@@ -61,7 +61,7 @@ $dispisadmin = $row['Usr_IsAdministrator'];
 /** ======================================================================= */
 
 ?>
-
+<?php include 'CommonHeader.php';?>
 
 <!-- Setup the page titles and display the data retrieved from the sql table -->
 <html>
@@ -110,7 +110,7 @@ $dispisadmin = $row['Usr_IsAdministrator'];
 <h5>Bio:</h5> <?php
 echo "<td>" . $dispbio . "</td>";
 ?>
-
+<br><br>
 <!-- Setup the footer  -->
 <?php include 'CommonFooter.php';?>
 </body>
