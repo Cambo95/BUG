@@ -75,8 +75,8 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br><br><br>
 
-<h5>Bug Details</h5> <?php
-    echo "<h6>Bug ID:</h6>" . $bugbug. "  Title: ".$bug. "  Description: ".$describe;
+<h5>Bug Details: </h5> <?php
+    echo "<p style='color:red;'>Bug ID:</p>" . $bugbug. "  Title: ".$bug. "  Description: ".$describe;
 ?>
 <br>
 <h5>Title:</h5> <?php
