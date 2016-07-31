@@ -24,7 +24,8 @@ session_start();
 </head>
 <body>
     <?php include 'CommonHeader.php';?>
-
+    
+<br><br>
     <form action='' method="POST">
         <input type="text" name="search" placeholder="Search...">
         <input type="submit" name="submit" value="Search">
