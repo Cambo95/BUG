@@ -94,14 +94,13 @@ $dispisadmin = $row['Usr_IsAdministrator'];
     while($Admin = mysqli_fetch_assoc($resultAdmin)) {
         $verifyusername=$Admin['Usr_User'];
         echo "<tr>";
-        echo "<td>" . $dispuser."</td>";
-        echo "<td>" . $dispsurname."</td>";
-        echo "<td>" . $dispcountry."</td>";
-        echo "<td>" . $dispjoindate."</td>";
-        echo "<td>" . $dispisverified."</td>";
-        echo "<td>" . $dispisadmin."</td>";
+        echo "<td>" .$dispuser."</td>";
+        echo "<td>" .$dispsurname."</td>";
+        echo "<td>" .$dispcountry."</td>";
+        echo "<td>" .$dispjoindate."</td>";
+        echo "<td>" .$dispisverified."</td>";
+        echo "<td>" .$dispisadmin."</td>";
         echo "</tr>";
-    }//end while
     ?>
 </table>
 <br>
