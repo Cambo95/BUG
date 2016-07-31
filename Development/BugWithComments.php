@@ -52,7 +52,7 @@ $datefixed= $sqlrow['Inst_DateFixed'];
 
 
 /** Retrieve all the comments rows into resultsComments ready for display further down */
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_BugUniqueID DESC limit 50";
+$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
 
 ?>
@@ -257,8 +257,52 @@ VALUES('$bugid','$UserLoggedOn','$Comment')";
 }
 $conn->close();
 ?>
-<br><br><br><br><br><br><br><br>
 
+<?php
+
+/** Retrieve all the comments rows into resultsComments ready for display further down */
+$sql_queryAttachments = "SELECT * FROM bug_attachment WHERE Att_BugUniqueID = $bugid ORDER BY Att_DateTime DESC limit 50";
+$resultAttachments = $db->query($sql_queryAttachments);
+?>
+
+<!-- Setup the Attachment table headers then display all rows retrieved -->
+<!-- At the end of each row put a DELETE link to allow user to delete that attachment  -->
+<!-- If the DELETED is clicked then the record key fields are passed in the URL to  -->
+<!-- DeleteSingleAttachment.php which will check that the person trying to delete  -->
+<!-- the attachment is the person who created it - if they arent the same they wont be -->
+<!-- able to delete the attachment  -->
+
+<h4>Attachments</h4>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
+        <th>User</th>
+        <th>Date+Time posted</th>
+        <th>Attachment name</th>
+        <th>Attachment type</th>
+        <th>Attachment size</th>
+    </tr>
+    <?php
+    while($Attachments = mysqli_fetch_assoc($resultAttachments)) {
+        echo "<tr>";
+        $attuser = $Attachments['Att_User'];
+        $attdatetime = $Attachments['Att_DateTime'];
+        $attobjname = $Attachments['Att_Objectname'];
+        $attobjtype = $Attachments['Att_Objecttype'];
+        $attobjsize = $Attachments['Att_Objectsize'];
+
+
+        echo "<td>" . $attuser."</td>";
+        echo "<td>" . $attdatetime."</td>";
+        echo "<td>" . $attobjname."</td>";
+        echo "<td>" . $attobjtype."</td>";
+        echo "<td>" . $attobjsize."</td>";
+     
+        echo "<td>" . '<a href="DeleteSingleAttachment.php?bugid='.$bugid.'&attuser='.$attuser.'&attdatetime='.$attdatetime.'">Delete</a>'."</td>";
+        echo "</tr>";
+    }//end while
+    ?>
+</table>
+<br><br>
 <!-- Display the common Footer  -->
 <?php include 'CommonFooter.php';?>
 </body>
