@@ -108,8 +108,6 @@ echo "<td>" . $dispbio . "</td>";
 
 <?php $sql_query = "SELECT * FROM  bug_instances where Inst_user= '$dispuser' ORDER BY Inst_BugUniqueID DESC ";
 // execute the SQL query
-echo 'sql query string is = ';
-echo $sql_query;
 $result = $db->query($sql_query);
 ?>
 
@@ -118,7 +116,6 @@ $result = $db->query($sql_query);
     <tr class="w3-teal">
         <th>Date</th>
         <th>BugID</th>
-        <th>User</th>
         <th>Title</th>
     </tr>
 
@@ -130,7 +127,6 @@ $result = $db->query($sql_query);
         echo "<tr>";
         echo "<td>" . $Bug['Inst_DatePosted']."</td>";
         echo "<td>" . '<a href="BugWithComments.php?bugid='.$bugid.'">'.$bugid.'</a>'."</td>";
-        echo "<td>" . '<a href="Bug_Userprofile_Display.php?paramuser='.$buguser.'">'.$buguser.'</a>'."</td>";
         echo "<td>" . $Bug['Inst_Title']."</td>";
         echo "</tr>";
     }//end while
