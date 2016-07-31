@@ -150,7 +150,7 @@ if ($buguser ==$UserLoggedOn ) {
 /** If the person logged on is also the person who created the bug then */
 /** display the Add Attachment link to allow bug creator to upload an attachment */
 if ($buguser ==$UserLoggedOn ) {
-    echo "<td>" . '<a href="AttachmentPage.php?bugid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>"; 
+    echo "<td>" . '<a href="AttachmentPage.php?buguniqueid='.$bugid.'&comuser='.$buguser.'">Add Attachment</a>'."</td>";
 }
 ?>
 
