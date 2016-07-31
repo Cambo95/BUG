@@ -100,13 +100,6 @@ $resultComments = $db->query($sql_queryComments);
     echo "<td>" . $describe . "</td>";
 ?>
 <br>
-<!-- If the person logged on is also the person who created the bug then display the  -->
-<!-- Fix/Unfix button  -->
-<?php if($buguser ==$UserLoggedOn): ?>
-    <form action='' method="POST">
-        <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
-    </form>
-<?php endif; ?>
 <!-- If the date fixed field is not empty that means the bug is fixed.  Setup the button   -->
 <!-- text to say FLAG AS UNFIXED so that user can set the bug status to UNFIXED -->
 <!-- If the date fixed field IS empty that means the bug is NOT fixed.  Setup the button   -->
@@ -125,6 +118,16 @@ $resultComments = $db->query($sql_queryComments);
     }
 ?>
 <br>
+
+
+<!-- If the person logged on is also the person who created the bug then display the  -->
+<!-- Fix/Unfix button  -->
+<?php if($buguser ==$UserLoggedOn): ?>
+<form action='' method="POST">
+    <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
+</form>
+<?php endif; ?>
+
 
 <?php
 
