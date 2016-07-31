@@ -108,6 +108,8 @@ echo "<td>" . $dispbio . "</td>";
 
 <?php $sql_query = "SELECT * FROM  bug_instances where Inst_user= $dispuser ORDER BY Inst_BugUniqueID DESC ";
 // execute the SQL query
+echo 'sql query string is = ';
+echo $sql_query;
 $result = $db->query($sql_query);
 ?>
 
