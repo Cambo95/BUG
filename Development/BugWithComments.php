@@ -72,8 +72,8 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br><br><br>
 
-<h5>Bug ID:</h5> <?php
-    echo "<td> Bug ID:" . $bugbug."</td>";
+<h5>Bug Details</h5> <?php
+    echo "Bug ID: " . $bugbug. "  Title: ".$bug;
 ?>
 <br>
 <h5>Title:</h5> <?php
