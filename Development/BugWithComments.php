@@ -283,6 +283,7 @@ if ($buguser ==$UserLoggedOn ) {
         <th>Attachment name</th>
         <th>Attachment type</th>
         <th>Attachment size</th>
+        <th></th>
     </tr>
     <?php
     while($Attachments = mysqli_fetch_assoc($resultAttachments)) {
