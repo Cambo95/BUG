@@ -78,6 +78,7 @@ $resultComments = $db->query($sql_queryComments);
         <th>Title</th>
         <th>User</th>
         <th>Date Posted</th>
+        <th>Date Fixed</th>
     </tr>
     <!-- Process through all the retrieved rows and display on screen -->
     <!-- Setup a link field with the title 'Verify User' to allow Admin to select user for verification -->
