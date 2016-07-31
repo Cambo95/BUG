@@ -85,8 +85,7 @@ if ($UserLoggedOn !== '') {
             $sql = "INSERT INTO bug_attachment(Att_BugUniqueID, Att_User, Att_Object, Att_Objectname, Att_Objecttype, Att_Objectsize)
             VALUES('$buguniqueid','$UserLoggedOn','$content','$fileName','$fileType','$fileSize')";
             if (mysqli_query($db, $sql)) {
-                echo "Records added successfully";
-                header("Location: BugWithComments.php?bugid=$bugid");
+                header("Location: BugWithComments.php?bugid=$buguniqueid");
             } else {
                 echo "Error: " . $sql . "<br>" . $db->error;
             }
