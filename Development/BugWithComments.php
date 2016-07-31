@@ -72,30 +72,32 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br>
 <h4>Bug Details</h4>
-<br>
-<h5>Bug ID</h5> <?php
-    echo "<td>". $bugbug."</td>";
-?>
-<br>
-<h5>Title:</h5> <?php
-    echo "<td>" . $bug."</td>";  echo "</tr>";
-?>
+<table class="w3-table w3-bordered w3-striped">
+    <tr class="w3-teal">
+        <th>Bug ID</th>
+        <th>Title</th>
+        <th>User</th>
+        <th>Date Posted</th>
+    </tr>
+    <!-- Process through all the retrieved rows and display on screen -->
+    <!-- Setup a link field with the title 'Verify User' to allow Admin to select user for verification -->
+    <!-- The link field has a URL parameter called verifyusername and the User name is -->
+    <!-- concatenated to the URL so that when Admin clicks on the link it calls Verify.PHP and -->
+    <!-- passes the User name through to that php -->
+    <?php
+    echo "<tr>";
+    echo "<td>" .$bugbug."</td>";
+    echo "<td>" .$bug."</td>";
+    echo "<td>" .$user."</td>";
+    echo "<td>" .$date."</td>";
+    echo "</tr>";
+    ?>
+</table>
 <br>
 <h5>Description:</h5> <?php
-    echo "<td>" . $describe."</td>";
+    echo "<td>" . $describe . "</td>";
 ?>
 <br>
-<h5>User:</h5> <?php
-    $buguser=$user;
-    $UserLoggedOn = $_SESSION["username"];
-    echo "<td>" . $user."</td>";
-?>
-<br>
-<h5>Date Posted:</h5> <?php
-    echo "<td>" . $date . "</td>";
-?>
-<br>
-
 <!-- If the date fixed field is not empty that means the bug is fixed.  Setup the button   -->
 <!-- text to say FLAG AS UNFIXED so that user can set the bug status to UNFIXED -->
 <!-- If the date fixed field IS empty that means the bug is NOT fixed.  Setup the button   -->
