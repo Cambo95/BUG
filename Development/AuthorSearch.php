@@ -48,7 +48,7 @@ $db = new mysqli(
 
 if(isset($_POST['submit'])) {
     $searchstring = "'%".$_POST['search']."%'";
-    $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring) ORDER BY Usr_User";
+    $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring OR Usr_Surname LIKE $searchstring OR Usr_Country LIKE $searchstring) ORDER BY Usr_User";
     $resultAdmin = $db->query($sql_queryAdmin);
     echo "Inside $_POST. String = ";  
     echo $sql_queryAdmin;
@@ -65,6 +65,7 @@ if(!isset($_POST['submit'])){
 
 <!-- Setup table header and titles -->
 <h1>Author Search</h1>
+<p> This search will allow you to search for authors Profile Name, Surname and Country.</p>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
