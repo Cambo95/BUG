@@ -91,8 +91,6 @@ $dispisadmin = $row['Usr_IsAdministrator'];
     <!-- concatenated to the URL so that when Admin clicks on the link it calls Verify.PHP and -->
     <!-- passes the User name through to that php -->
     <?php
-    while($Admin = mysqli_fetch_assoc($resultAdmin)) {
-        $verifyusername=$Admin['Usr_User'];
         echo "<tr>";
         echo "<td>" .$dispuser."</td>";
         echo "<td>" .$dispsurname."</td>";
