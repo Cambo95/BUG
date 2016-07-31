@@ -86,6 +86,7 @@ if ($UserLoggedOn !== '') {
             VALUES('$buguniqueid','$UserLoggedOn','$content','$fileName','$fileType','$fileSize')";
             if (mysqli_query($db, $sql)) {
                 echo "Records added successfully";
+                header("Location: BugWithComments.php?bugid=$bugid");
             } else {
                 echo "Error: " . $sql . "<br>" . $db->error;
             }
