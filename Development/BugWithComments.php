@@ -67,16 +67,12 @@ $resultComments = $db->query($sql_queryComments);
         h5{
             color: #ff0000;
         }
-        h6{
-            color: #C83838;
-        }
     </style>
 </head>
 <body>
-<br><br><br>
-
-<h5>Bug Details: </h5> <?php
-    echo "<p style='color:red;'>Bug ID:</p>" . $bugbug. "  Title: ".$bug. "  Description: ".$describe;
+<br>
+<h5>Bug Details</h5> <?php
+    echo "<td> Bug ID: " . $bugbug."</td>";
 ?>
 <br>
 <h5>Title:</h5> <?php
@@ -146,7 +142,7 @@ if ($buguser ==$UserLoggedOn ) {
     }
 }
 ?>
-<br><br>
+<br>
 <?php
 
 /** If the person logged on is also the person who created the bug then */
@@ -164,7 +160,7 @@ if ($buguser ==$UserLoggedOn ) {
 <!-- DeleteSingleComments.php which will check that the person trying to delete  -->
 <!-- the comment is the person who created it - if they arent the same they wont be -->
 <!-- able to delete the comment  -->
-<br><br>
+
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
