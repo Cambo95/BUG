@@ -65,7 +65,7 @@ $resultComments = $db->query($sql_queryComments);
             color: #ff0000;
         }
         h5{
-            color: #ff0000;
+            color: #008080;
         }
     </style>
 </head>
