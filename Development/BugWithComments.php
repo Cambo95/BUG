@@ -161,6 +161,7 @@ if ($buguser ==$UserLoggedOn ) {
         <th>User</th>
         <th>Date+Time posted</th>
         <th>Comment</th>
+        <th></th>
     </tr>
     <?php
     while($Comment = mysqli_fetch_assoc($resultComments)) {
