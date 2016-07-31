@@ -36,7 +36,7 @@ session_start();
         $sql_queryHome = "SELECT * FROM  bug_instances WHERE (Inst_User LIKE $searchstring OR Inst_Description LIKE $searchstring OR Inst_Title LIKE $searchstring) ORDER BY Inst_BugUniqueID DESC";
         $result = $db->query($sql_queryHome);
     }
-    if(!isset($_POST['submit'])){
+    if(($_POST['search']=='')){
         $sql_queryHome = "SELECT * FROM  bug_instances ORDER BY Inst_BugUniqueID DESC limit 5";
         $result = $db->query($sql_queryHome);
     }
