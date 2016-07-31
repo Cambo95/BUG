@@ -47,7 +47,7 @@ $db = new mysqli(
 <?php
 
 if(isset($_POST['submit'])) {
-    $searchstring = "%".$_POST['search']."%";
+    $searchstring = "'%".$_POST['search']."%'";
     $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring ORDER BY Usr_User";
     $resultAdmin = $db->query($sql_queryAdmin);
     echo "Inside $_POST. String = ";  
