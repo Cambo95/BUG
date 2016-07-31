@@ -29,4 +29,5 @@ if ($_SESSION["username"]== ''){
 else{
     echo '<a href="Logout.php"><span>Logout<br></span></a></li>';
 }
+    echo '<a href="AuthorSearch.php"><span>Home<br></span></a></li>';
 ?>
