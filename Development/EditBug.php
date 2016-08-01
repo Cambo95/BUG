@@ -33,6 +33,9 @@ $userReportedBy = $sqlrow['Inst_ReportedBy'];
 $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 $UserLoggedOn = $_SESSION["username"];
+
+echo "Bug title = ";
+echo $bug;
 ?>
 
 <!DOCTYPE html>
