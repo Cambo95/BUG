@@ -47,6 +47,7 @@ $bugbug   = $sqlrow['Inst_BugUniqueID'];
 $bug      = $sqlrow['Inst_Title'];
 $describe = $sqlrow['Inst_Description'];
 $user     = $sqlrow['Inst_User'];
+$userReportedBy = $sqlrow['Inst_ReportedBy'];
 $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 $UserLoggedOn = $_SESSION["username"];
@@ -77,6 +78,7 @@ $resultComments = $db->query($sql_queryComments);
         <th>Bug ID</th>
         <th>Title</th>
         <th>User</th>
+        <th>Reported By</th>
         <th>Date Posted</th>
         <th>Date Fixed</th>
     </tr>
@@ -90,6 +92,7 @@ $resultComments = $db->query($sql_queryComments);
     echo "<td>" .$bugbug."</td>";
     echo "<td>" .$bug."</td>";
     echo "<td>" .$user."</td>";
+    echo "<td>" .$userReportedBy."</td>";
     echo "<td>" .$date."</td>";
     echo "<td>" .$datefixed."</td>";
     echo "</tr>";
