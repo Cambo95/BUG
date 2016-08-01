@@ -105,7 +105,7 @@ $resultComments = $db->query($sql_queryComments);
 <br><br><br>
 <!-- If the date fixed field is not empty that means the bug is fixed.  Setup the button   -->
 <!-- text to say FLAG AS UNFIXED so that user can set the bug status to UNFIXED -->
-<!-- If the date fixed field IS empty that means the bug is NOT fixed.  Setup the button   -->
+<!-- If the date fixed field IS emptythat means the bug is NOT fixed.  Setup the button   -->
 <!-- text to say FLAG AS FIXED so that user can set the bug status to FIXED -->
 <?php
     if ($datefixed){
