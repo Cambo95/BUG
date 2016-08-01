@@ -4,9 +4,6 @@
 session_start();
 /** =====================================================================================*/
 /**
- * Created by PhpStorm.
- * User: Cambo
- * 
  * PURPOSE : This is the Administration Page - It allows administrators to Verify Users
  * SECURITY : This page is only available to Users who are tagged as "UserIsAdmin"
  */
