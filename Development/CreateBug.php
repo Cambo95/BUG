@@ -35,6 +35,9 @@ Please title your bug and provide a description...
     Description:<br>
     <input type="text" name="Description">
     <br>
+    Reported By:<br>
+    <input type="text" name="ReportedBy">
+    <br>
     <input type="submit" name="submit">
 </form>
 
@@ -43,12 +46,13 @@ Please title your bug and provide a description...
 if(isset($_POST['submit'])) {
     $BugTitle = mysqli_real_escape_string($db, $_POST["BugTitle"]);
     $BugDescription = mysqli_real_escape_string($db, $_POST["Description"]);
+    $BugReportedBy = mysqli_real_escape_string($db, $_POST["ReportedBy"]);
     $UserLoggedOn = $_SESSION["username"];
-if ($BugTitle == "" OR $BugDescription == "") {
-echo "Bug Title and Description must be filled in to submit";
+if ($BugTitle == "" OR $BugDescription == "" OR $BugReportedBy == "") {
+echo "Bug Title and Description and Reported By must be filled in to submit";
 } else {
-$sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description, Inst_User)
-        VALUES('$BugTitle','$BugDescription','$UserLoggedOn')";
+$sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description, Inst_User, Inst_ReportedBy)
+        VALUES('$BugTitle','$BugDescription','$UserLoggedOn','$BugReportedBy')";
   
 if (mysqli_query($db, $sql)) {
 echo "Records added successfully";
