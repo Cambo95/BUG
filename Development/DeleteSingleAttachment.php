@@ -32,13 +32,9 @@ $db = new mysqli(
 <?php endif; ?>
 
 <?php
-echo "User is ";
-echo $attuser;
 echo "Bug ID is ";
 echo $bugid;
-echo "Date time is ";
-echo $attdatetime;
-
+echo "<br>";
 if ($UserLoggedOn == $attuser) {
     if (isset($_POST['DeleteSingle'])) {
         $deletesql = "DELETE FROM bug_attachment WHERE Att_BugUniqueID = $bugid AND Att_User = '$attuser' AND Att_DateTime = '$attdatetime'";
