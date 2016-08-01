@@ -7,8 +7,9 @@ session_start();
  * Created by PhpStorm.
  * User: Cambo
  *
- * PURPOSE : This is the Administration Page - It allows administrators to Verify Users
- * SECURITY : This page is only available to Users who are tagged as "UserIsAdmin"
+ * PURPOSE : This is the Author Search Page - It allows users to search by authors
+ * SECURITY : This page is available to all users
+ * CODE : Code used is almost identical to code used for the admin page. Due to this I have used it again but did not change the variable names etc in order to prevent mistakes
  */
 /** =====================================================================================*/
 
@@ -28,24 +29,24 @@ $db = new mysqli(
 <!-- Set up the Tab name -->
 <!DOCTYPE html>
 <html lang="en">
-<title>SPLAT! Bug Catcher</title>
+<title>Author Search</title>
 <meta charset="UTF-8">
-<head>
-    <title>SPLAT! Bug Catcher</title>
-</head>
+
 <body>
 
 <!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
 
-
+<!-- Setting up the search bar and search button -->
 <p>Search for Author:</p>
 <form action='' method="POST">
     <input type="text" name="search" placeholder="Search...">
     <input type="submit" name="submit" value="Search">
 </form>
-<?php
 
+<!-- SQL Statement that handles the search. If they search for a user then the table displays the users -->
+<!-- When the search has not been carried out a list of all users will be displayed -->
+<?php
 if(isset($_POST['submit'])) {
     $searchstring = "'%".$_POST['search']."%'";
     $sql_queryAdmin = "SELECT * FROM  bug_userprofile WHERE (Usr_User LIKE $searchstring OR Usr_Surname LIKE $searchstring OR Usr_Country LIKE $searchstring) ORDER BY Usr_User";
@@ -55,8 +56,6 @@ if(!isset($_POST['submit'])){
         $sql_queryAdmin = "SELECT * FROM  bug_userprofile ORDER BY Usr_User";
         $resultAdmin = $db->query($sql_queryAdmin);
 }
-
-
 ?>
 
 <!-- Setup table header and titles -->
@@ -88,13 +87,13 @@ if(!isset($_POST['submit'])){
         echo "<td>" . $Admin['Usr_IsAdministrator']."</td>";
         echo "<td>" . $Admin['Usr_IsVerified']."</td>";
         echo "</tr>";
-    }//end while
+    }
     ?>
 </table>
 <br>
 
 
-<!-- Setup the footer  -->
+<!-- Bring in the common footer script  -->
 <?php include 'CommonFooter.php';?>
 
 </body>
