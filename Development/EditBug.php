@@ -71,7 +71,7 @@ if(isset($_POST['submit'])) {
         echo "Bug Title and Description and Reported By must be filled in to submit";
     } else {
         $sql = "UPDATE bug_instances SET (Inst_Title, Inst_Description, Inst_ReportedBy)
-        VALUES('$BugTitle','$BugDescription','$BugReportedBy') WHERE (Inst_BugUniqueID = $bugid AND Inst_User = $user AND Inst_DatePosted = $date)";
+        VALUES('$BugTitle','$BugDescription','$BugReportedBy') WHERE (Inst_BugUniqueID = $bugid)";
 
         if (mysqli_query($db, $sql)) {
             echo "Records added successfully";
