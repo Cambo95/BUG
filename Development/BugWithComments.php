@@ -195,7 +195,7 @@ if ($user ==$UserLoggedOn ) {
 </form>
 <?php endif; ?>
 
-<!-- If the user logged on is an admin user then display the Delete All Comments button  -->
+<!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteAll" value = "Delete All Comments">
