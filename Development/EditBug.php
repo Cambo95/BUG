@@ -56,7 +56,7 @@ Update any or all of the following fields:
     <input type="text" name="Description" value = "<?php echo $describe;?>">
     <br>
     Reported By:<br>
-    <input type="text" name="ReportedBy" placeholder = "<?php echo $userReportedBy;?>">
+    <input type="text" name="ReportedBy" value = "<?php echo $userReportedBy;?>">
     <br>
     <input type="submit" name="submit" value = "Save">
 </form>
