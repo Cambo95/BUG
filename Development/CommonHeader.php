@@ -11,6 +11,16 @@
     </header>
     </body>
     </html>
+    <!-- PURPOSE : This is the Header that sits on all pages
+                   it only displays the links that specific 
+                   users are allowed to see. This is done by 
+                   using If statements and Session -->
+
+    <!-- Admin page link is only available to those who have admin rights -->
+    <!-- Add a bug page and Profile are only available to those who are verified and logged in -->
+    <!-- Login link and a Registration link are available to those not logged in or registered -->
+    <!-- A Home link and an Author Search link are available to everyone -->
+    <!-- Logout appears to those who are logged in -->
 
 <?php
     echo '<a href="HomePage.php"><span>Home<br></span></a></li>';
