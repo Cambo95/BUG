@@ -34,8 +34,6 @@ $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 $UserLoggedOn = $_SESSION["username"];
 
-echo "Bug title = ";
-echo $bug;
 ?>
 
 <!DOCTYPE html>
@@ -55,10 +53,10 @@ Update any or all of the following fields:
     <input type ="text" name="BugTitle" value = "<?php echo $bug;?>">
     <br>
     Description:<br>
-    <input type="text" name="Description" value = "$describe">
+    <input type="text" name="Description" value = "<?php echo $describe;?>">
     <br>
     Reported By:<br>
-    <input type="text" name="ReportedBy" placeholder = "$userReportedBy">
+    <input type="text" name="ReportedBy" placeholder = "<?php echo $userReportedBy;?>">
     <br>
     <input type="submit" name="submit" value = "Save">
 </form>
