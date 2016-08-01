@@ -1,26 +1,32 @@
 <?php
+/** =====================================================================================*/
 /**
- * Created by PhpStorm.
- * User: Cambo
- * Date: 13/07/2016
- * Time: 16:25
+ * PURPOSE : This is the Login Page - It allows users to log in
+ * SECURITY : This page is available to all users but only those who are verified by the
+ *            admin can log in once on this page.
  */
+/** =====================================================================================*/
 
+/** Setup the SQL login credentials*/
 $db = new mysqli(
     "eu-cdbr-azure-west-d.cloudapp.net",
     "b05411072e2e07",
     "2e5e5133",
     "1301070"
 );
-
 ?>
+<!--=====================================================================================-->
 
 <!DOCTYPE html>
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <body>
+
+<!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
+
+<!-- Start the session -->
 <?php
 session_start();
 if(isset($_POST['submit'])){
