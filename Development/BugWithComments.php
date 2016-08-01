@@ -52,7 +52,7 @@ $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 $UserLoggedOn = $_SESSION["username"];
 
-/** Retrieve all the comments rows into resultsComments ready for display further down */
+/** Retriev all the comments rows into resultsComments ready for display further down */
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
 $resultComments = $db->query($sql_queryComments);
 
