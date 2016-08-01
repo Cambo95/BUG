@@ -73,6 +73,7 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br>
 <h4>Bug Details</h4>
+echo '<a href="EditBug.php?bugid=$bugbug"><span>Edit Bug<br></span></a></li>';
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>Bug ID</th>
