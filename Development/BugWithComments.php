@@ -120,7 +120,7 @@ $resultComments = $db->query($sql_queryComments);
 
 <!-- If the person logged on is also the person who created the bug then display the  -->
 <!-- Fix/Unfix button  -->
-<?php if($buguser ==$UserLoggedOn): ?>
+<?php if($user ==$UserLoggedOn): ?>
 <form action='' method="POST">
     <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
@@ -131,7 +131,7 @@ $resultComments = $db->query($sql_queryComments);
 
 /** If the person logged on is also the person who created the bug AND */
 /** they pressed the button then toggle the Inst_DateFixed */
-if ($buguser ==$UserLoggedOn ) {
+if ($user ==$UserLoggedOn ) {
     
     if (isset($_POST['Fixed'])) {
         if ($bugfixed == 'Y') {
