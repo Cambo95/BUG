@@ -49,7 +49,7 @@ $describe = $sqlrow['Inst_Description'];
 $user     = $sqlrow['Inst_User'];
 $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
-
+$UserLoggedOn = $_SESSION["username"];
 
 /** Retrieve all the comments rows into resultsComments ready for display further down */
 $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
@@ -120,7 +120,7 @@ $resultComments = $db->query($sql_queryComments);
 
 <!-- If the person logged on is also the person who created the bug then display the  -->
 <!-- Fix/Unfix button  -->
-<?php if($bugid ==$UserLoggedOn): ?>
+<?php if($user == $UserLoggedOn): ?>
 <form action='' method="POST">
     <input type="submit" name="Fixed" value = "<?php echo $buttontext;?>">
 </form>
@@ -131,7 +131,7 @@ $resultComments = $db->query($sql_queryComments);
 
 /** If the person logged on is also the person who created the bug AND */
 /** they pressed the button then toggle the Inst_DateFixed */
-if ($bugid ==$UserLoggedOn ) {
+if ($user ==$UserLoggedOn ) {
     
     if (isset($_POST['Fixed'])) {
         if ($bugfixed == 'Y') {
