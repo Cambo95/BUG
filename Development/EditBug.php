@@ -49,10 +49,10 @@ Update any or all of the following fields:
 <br><br>
 <form action='' method="POST">
     Bug Title:<br>
-    <input type ="text" name="BugTitle" placeholder = "$bug">
+    <input type ="text" name="BugTitle" value = $bug>
     <br>
     Description:<br>
-    <input type="text" name="Description" placeholder = "$describe">
+    <input type="text" name="Description" value = "$describe">
     <br>
     Reported By:<br>
     <input type="text" name="ReportedBy" placeholder = "$userReportedBy">
