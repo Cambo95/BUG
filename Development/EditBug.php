@@ -73,7 +73,7 @@ if(isset($_POST['submit'])) {
     } else {
         $sql = "UPDATE bug_instances SET Inst_Title='$BugTitle', Inst_Description='$BugDescription', Inst_ReportedBy='$BugReportedBy' WHERE Inst_BugUniqueID = $bugbug";
         if (mysqli_query($db, $sql)) {
-            echo "Records added successfully";
+            header("Location: BugWithComments.php?bugid=$bugid");
         } else {
             echo "Error: " . $sql . "<br>" . $db->error;
         }
