@@ -20,7 +20,7 @@ $bugid=$_GET["bugid"];
 /** Setup the SQL statement */
 $sql_query = "SELECT * FROM bug_instances WHERE Inst_BugUniqueID = $bugid";
 
-/** Retrieve the record from the table */
+/** Retrieve the record from the tabl */
 $result = $db->query($sql_query);
 $sqlrow   = mysqli_fetch_assoc($result);
 
