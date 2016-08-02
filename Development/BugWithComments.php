@@ -198,7 +198,6 @@ if ($user ==$UserLoggedOn ) {
     }//end while
     ?>
 </table>
-<br>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
