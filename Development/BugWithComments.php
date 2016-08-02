@@ -179,7 +179,7 @@ if ($user ==$UserLoggedOn ) {
 
 
   //  while($Comment = mysqli_fetch_assoc($resultComments)) {
-    while($Comment = mysqli_fetch_row($resultComments)) {
+    while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
         $comuser = $Comment['Com_User'];
         $comdatetime = $Comment['Com_DateTime'];
