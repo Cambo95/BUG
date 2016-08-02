@@ -32,11 +32,13 @@ $db = new mysqli(
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
 <head>
-    <title>SPLAT! Bug Catcher</title>
+    <style>
+        {text-align:center;} 
+    </style>
 </head>
 <body>
 
-<!-- Bring in the common header script -->
+!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
 
 <br><br>
