@@ -70,7 +70,9 @@ $UserLoggedOn = $_SESSION["username"];
 <br>
 <h4>Bug Details</h4>
 <?php
+if($UserLoggedOn == $user) {
     echo "<td>" . '<a href="EditBug.php?bugid=' . $bugbug . '">Edit Bug</a>' . "</td>";
+}
 ?>
 
 <table class="w3-table w3-bordered w3-striped">
@@ -174,7 +176,7 @@ if ($user ==$UserLoggedOn ) {
     $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
     $resultComments = $db->query($sql_queryComments);
     echo "Result comments";
-    echo $resultComments;
+    echo $sql_queryComments;
 
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
