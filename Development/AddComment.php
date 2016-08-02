@@ -31,14 +31,9 @@ $db = new mysqli(
 <html lang="en">
 <title>SPLAT! Bug Catcher</title>
 <meta charset="UTF-8">
-<head>
-    <style>
-        {text-align:center;} 
-    </style>
-</head>
 <body>
 
-!-- Bring in the common header script -->
+<!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
 
 <br><br>
