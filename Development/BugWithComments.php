@@ -199,7 +199,8 @@ if ($user ==$UserLoggedOn ) {
     ?>
 </table>
 
-<!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
+<!-- If the user logged on is an admin user then display the Delete All Comments button  -->
+
 <?php if($isadmin == 1): ?>
     <form action='' method="POST">
         <input type="submit" name="DeleteAll" value = "Delete All Comments">
@@ -207,10 +208,12 @@ if ($user ==$UserLoggedOn ) {
 <?php endif; ?>
 
 <?php
+/** If the DELETEALL button has been pressed then execute sql to delete all */
+/** comments matching this BUGID and refresh screen */
 if ($UserLoggedOn == $isadmin) {
     if (isset($_POST['DeleteAll'])) {
-        $deletesql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugid";
-        $result = mysqli_query($db, $deletesql);
+        $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugid";
+        $result = mysqli_query($db, $deleteallsql);
         header("Location: BugWithComments.php?bugid=$bugid");
     }
 }
@@ -228,14 +231,6 @@ $bugid=$_GET["bugid"];
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
-
-/** If the DELETEALL button has been pressed then execute sql to delete all */
-/** comments matching this BUGID and refresh screen */
-if (isset($_POST['DeleteAll'])) {
-        $deletesql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
-    $result = mysqli_query($db, $deletesql);
-    header("Location: BugWithComments.php?bugid=$bugid");
 }
 
 /** Retrieve all the attachments rows into resultsCAttachments ready for display further down */
