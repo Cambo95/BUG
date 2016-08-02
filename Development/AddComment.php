@@ -49,7 +49,7 @@ $UserLoggedOn = $_SESSION["username"];
 if($UserLoggedOn!==''): ?>
     <form action='' method="POST">
         Add comment:<br>
-        <input type="text" name="Comment" height = 200px width = 150px>
+        <input type="text" name="Comment">
         <br>
         <br>
         <input type="submit" name="submit">
