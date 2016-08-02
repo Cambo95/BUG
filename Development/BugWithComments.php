@@ -212,25 +212,17 @@ if ($user ==$UserLoggedOn ) {
 /** comments matching this BUGID and refresh screen */
 if ($UserLoggedOn == $isadmin) {
     if (isset($_POST['DeleteAll'])) {
-        $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugbug";
+        $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = 42";
         $result = mysqli_query($db, $deleteallsql);
-        header("Location: BugWithComments.php?bugid=$bugbug");
+        header("Location: BugWithComments.php?bugid=$bugid");
     }
 }
-
-/** setup the SQL credentials */
-$servername =  "eu-cdbr-azure-west-d.cloudapp.net";
-$username = "b05411072e2e07";
-$password = "2e5e5133";
-$dbname = "1301070";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 /** Retrieve the BUG ID  from the URL parameter */
 $bugid=$_GET["bugid"];
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
 
 /** Retrieve all the attachments rows into resultsCAttachments ready for display further down */
