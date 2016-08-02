@@ -161,16 +161,7 @@ if ($user ==$UserLoggedOn ) {
 <!-- able to delete the comment  -->
 
 
-<!-- If the User is logged on then display the Add Comments box and button  -->
-<?php if($UserLoggedOn!==''): ?>
-    <form action='' method="POST">
-        Add comment:<br>
-        <input type="text" name="Comment">
-        <br>
-        <br>
-        <input type="submit" name="submit">
-    </form>
-<?php endif; ?>
+
 
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
@@ -205,7 +196,16 @@ if ($user ==$UserLoggedOn ) {
 </table>
 <br>
 
-
+<!-- If the User is logged on then display the Add Comments box and button  -->
+<?php if($UserLoggedOn!==''): ?>
+    <form action='' method="POST">
+        Add comment:<br>
+        <input type="text" name="Comment">
+        <br>
+        <br>
+        <input type="submit" name="submit">
+    </form>
+<?php endif; ?>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
@@ -256,7 +256,7 @@ if ($UserLoggedOn == ""){
                     VALUES('$bugid','$UserLoggedOn','$Comment')";
 
             if (mysqli_query($conn, $sql)) {
-                $Comment = "";
+                $_POST['Comment']='';
                 header("Location: BugWithComments.php?bugid=$bugid");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
@@ -269,7 +269,7 @@ $conn->close();
 
 <?php
 
-/** Retrieve all the comments rows into resultsComments ready for display further down */
+/** Retrieve all the attachments rows into resultsCAttachments ready for display further down */
 $sql_queryAttachments = "SELECT * FROM bug_attachment WHERE Att_BugUniqueID = $bugid ORDER BY Att_DateTime DESC limit 50";
 $resultAttachments = $db->query($sql_queryAttachments);
 ?>
