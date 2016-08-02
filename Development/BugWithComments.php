@@ -161,6 +161,16 @@ if ($user ==$UserLoggedOn ) {
 <!-- able to delete the comment  -->
 
 
+<!-- If the User is logged on then display the Add Comments box and button  -->
+<?php if($UserLoggedOn!==''): ?>
+    <form action='' method="POST">
+        Add comment:<br>
+        <input type="text" name="Comment">
+        <br>
+        <br>
+        <input type="submit" name="submit">
+    </form>
+<?php endif; ?>
 
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
@@ -196,16 +206,6 @@ if ($user ==$UserLoggedOn ) {
 <br>
 
 
-<!-- If the User is logged on then display the Add Comments box and button  -->
-<?php if($UserLoggedOn!==''): ?>
-<form action='' method="POST">
-    Add comment:<br>
-    <input type="text" name="Comment">
-    <br>
-    <br>
-    <input type="submit" name="submit">
-</form>
-<?php endif; ?>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
