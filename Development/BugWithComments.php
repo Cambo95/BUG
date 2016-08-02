@@ -199,26 +199,8 @@ if ($user ==$UserLoggedOn ) {
     ?>
 </table>
 
-<!-- If the user logged on is an admin user then display the Delete All Comments button  -->
-
-<?php if($isadmin == 1): ?>
-    <form action='' method="POST">
-        <input type="submit" name="DeleteAll" value = "Delete All Comments">
-    </form>
-<?php endif; ?>
-
 <?php
-/** If the DELETEALL button has been pressed then execute sql to delete all */
-/** comments matching this BUGID and refresh screen */
-if ($isadmin== 1) {
-    if (isset($_POST['DeleteAll'])) {
-        $deleteallsql = "DELETE FROM bug_comments WHERE Com_BugUniqueID = $bugid";
-        $result = mysqli_query($db, $deleteallsql);
-        echo $deleteallsql;
-        header("Location: BugWithComments.php?bugid=$bugid");
-    }
-}
-
+echo "<td>" . '<a href="DeleteAllComments.php?bugid='.$bugid.'">Delete All Comments</a>'."</td>";
 /** Retrieve the BUG ID  from the URL parameter */
 $bugid=$_GET["bugid"];
 
