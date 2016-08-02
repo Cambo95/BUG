@@ -56,7 +56,7 @@ if($UserLoggedOn!==''): ?>
 <!-- ============================================================================== -->
 <?php
 // Retrieve the BugUniqueID that the User selected in previous screen from the URL parameter
-$buguniqueid=$_GET["buguniqueid"];
+$bugid=$_GET["bugid"];
 
 /** If the SUBMIT button was pressed insert the comment entered by the user into table */
 /** bug_comments */
