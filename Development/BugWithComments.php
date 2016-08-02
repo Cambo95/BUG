@@ -248,7 +248,7 @@ if ($UserLoggedOn == ""){
 VALUES('$bugid','$UserLoggedOn','$Comment')";
 
             if (mysqli_query($conn, $sql)) {
-                echo "Comment added successfully";
+                header("Location: BugWithComments.php?bugid=$bugid");
                 $Comment = "";
                 header("Location: BugWithComments.php?bugid=$bugid");
             } else {
