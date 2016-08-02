@@ -38,11 +38,8 @@ $UserLoggedOn = $_SESSION["username"];
 
 <!DOCTYPE html>
 <html lang="en">
-<title>SPLAT! Bug Catcher</title>
+<title>Edit Your Bug</title>
 <meta charset="UTF-8">
-<head>
-    <title>SPLAT! Bug Catcher</title>
-</head>
 <body>
 <?php include 'CommonHeader.php';?>
 <br><br><br>
