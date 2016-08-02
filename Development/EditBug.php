@@ -53,7 +53,7 @@ Update any or all of the following fields:
     <input type ="text" name="BugTitle" value = "<?php echo $bug;?>">
     <br>
     Description:<br>
-    <textarea name="Description" id = "Description" value = "<?php echo $describe;?>"></textarea>
+    <textarea name="Description" id = "Description" placeholder = "<?php echo $describe;?>"></textarea>
     <br>
     Reported By:<br>
     <input type="text" name="ReportedBy" value = "<?php echo $userReportedBy;?>">
