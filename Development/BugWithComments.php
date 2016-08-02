@@ -177,6 +177,7 @@ if ($user ==$UserLoggedOn ) {
     $resultComments = $db->query($sql_queryComments);
     echo "Result comments";
     echo $sql_queryComments;
+    echo "The time is " . date("h:i:sa");
 
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
