@@ -173,6 +173,8 @@ if ($user ==$UserLoggedOn ) {
     /** Retriev all the comments rows into resultsComments ready for display further down */
     $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
     $resultComments = $db->query($sql_queryComments);
+    echo "Result comments";
+    echo $resultComments;
 
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
