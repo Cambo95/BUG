@@ -259,12 +259,8 @@ if ($user ==$UserLoggedOn ) {
     }//end while
     ?>
 </table>
-<!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
-<?php if($isadmin == 1): ?>
-    <form action='' method="POST">
-        <input type="submit" name="DeleteAllAttachments" value = "Delete All Attachments">
-    </form>
-<?php endif; ?>
+<!-- If the user logged on is an admin ulser then display the Delete All Attachments button  -->
+<?php echo "<td>" . '<a href="DeleteAllAttachments.php?bugid='.$bugid.'">Delete All Attachments</a>'."</td>"; ?>
 <br><br>
 <!-- Display the common Footer  -->
 <?php include 'CommonFooter.php';?>
