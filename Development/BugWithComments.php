@@ -52,10 +52,6 @@ $date     = $sqlrow['Inst_DatePosted'];
 $datefixed= $sqlrow['Inst_DateFixed'];
 $UserLoggedOn = $_SESSION["username"];
 
-/** Retriev all the comments rows into resultsComments ready for display further down */
-$sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
-$resultComments = $db->query($sql_queryComments);
-
 ?>
 <?php include 'CommonHeader.php';?>
     <html>
@@ -162,6 +158,8 @@ if ($user ==$UserLoggedOn ) {
 <!-- the comment is the person who created it - if they arent the same they wont be -->
 <!-- able to delete the comment  -->
 
+
+
 <h4>Comments</h4>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
@@ -171,6 +169,11 @@ if ($user ==$UserLoggedOn ) {
         <th></th>
     </tr>
     <?php
+
+    /** Retriev all the comments rows into resultsComments ready for display further down */
+    $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
+    $resultComments = $db->query($sql_queryComments);
+
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
         $comuser = $Comment['Com_User'];
