@@ -164,6 +164,10 @@ if ($user ==$UserLoggedOn ) {
 
 
 <h4>Comments</h4>
+<!-- If the User is logged on then display the Add Comments box and button  -->
+<?php if($UserLoggedOn!==''): ?>
+    <?php    echo "<td>" . '<a href="AddComment.php?bugid='.$bugid.'">Add Comment</a>'."</td>"; ?>
+<?php endif; ?>
 <table class="w3-table w3-bordered w3-striped">
     <tr class="w3-teal">
         <th>User</th>
@@ -195,11 +199,6 @@ if ($user ==$UserLoggedOn ) {
     ?>
 </table>
 <br>
-
-<!-- If the User is logged on then display the Add Comments box and button  -->
-<?php if($UserLoggedOn!==''): ?>
-<?php    echo "<td>" . '<a href="AddComment.php?bugid='.$bugid.'">Add Comment</a>'."</td>"; ?>
-<?php endif; ?>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
 <?php if($isadmin == 1): ?>
