@@ -176,12 +176,10 @@ if ($user ==$UserLoggedOn ) {
     $sql_queryComments = "SELECT * FROM bug_comments WHERE Com_BugUniqueID = $bugid ORDER BY Com_DateTime DESC limit 50";
     //$resultComments = $db->query($sql_queryComments);
     $resultComments = mysqli_query($db,$sql_queryComments );
-    echo "Result comments";
-    echo $sql_queryComments;
-    echo "The time is " . date("h:i:sa");
+
 
   //  while($Comment = mysqli_fetch_assoc($resultComments)) {
-    while($Comment = mysqli_fetch_array($resultComments)) {
+    while($Comment = mysqli_fetch_row($resultComments)) {
         echo "<tr>";
         $comuser = $Comment['Com_User'];
         $comdatetime = $Comment['Com_DateTime'];
