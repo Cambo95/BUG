@@ -22,7 +22,7 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 <br><br><br><br>
 
-<h3>You have requested to delete all comments for this bug</h3>
+You have requested to delete all comments for this bug
 <br>
 <br>
 
