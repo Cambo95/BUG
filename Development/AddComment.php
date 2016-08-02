@@ -39,14 +39,17 @@ $db = new mysqli(
 <!-- Bring in the common header script -->
 <?php include 'CommonHeader.php';?>
 
+<br><br>
 <!-- Set up a button to allow User to search for an object to be attached to the bug -->
 <!-- Set up a save button for User to press once file is selected  -->
 <?php
+// Retrieve the BugUniqueID that the User selected in previous screen from the URL parameter
+$bugid=$_GET["bugid"];
 $UserLoggedOn = $_SESSION["username"];
 if($UserLoggedOn!==''): ?>
     <form action='' method="POST">
         Add comment:<br>
-        <input type="text" name="Comment">
+        <input type="text" name="Comment" height = 200px width = 150px>
         <br>
         <br>
         <input type="submit" name="submit">
@@ -55,8 +58,7 @@ if($UserLoggedOn!==''): ?>
 
 <!-- ============================================================================== -->
 <?php
-// Retrieve the BugUniqueID that the User selected in previous screen from the URL parameter
-$bugid=$_GET["bugid"];
+
 
 /** If the SUBMIT button was pressed insert the comment entered by the user into table */
 /** bug_comments */
