@@ -215,10 +215,6 @@ if ($UserLoggedOn == $isadmin) {
     }
 }
 
-
-
-<?php
-
 /** setup the SQL credentials */
 $servername =  "eu-cdbr-azure-west-d.cloudapp.net";
 $username = "b05411072e2e07";
