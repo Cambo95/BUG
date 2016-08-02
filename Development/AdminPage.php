@@ -53,6 +53,7 @@ $resultAdmin = $db->query($sql_queryAdmin);
         <th>User Joined</th>
         <th>User is Admin (1=Yes/0=No)</th>
         <th>User Is Verified? (1=Yes/=No)</th>
+        <th></th>
     </tr>
 
     <!-- Process through all the retrieved rows and display on screen -->
