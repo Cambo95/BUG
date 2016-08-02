@@ -214,7 +214,7 @@ if ($UserLoggedOn == $isadmin) {
     if (isset($_POST['DeleteAll'])) {
         $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugbug";
         $result = mysqli_query($db, $deleteallsql);
-        header("Location: BugWithComments.php?bugid=$bugid");
+        header("Location: BugWithComments.php?bugid=$bugbug");
     }
 }
 
