@@ -8,6 +8,7 @@
     <body>
     <header class="w3-container w3-teal">
         <H1> SPLAT! Bug Catcher</H1>
+        <img src="computer-bug.png" alt="Computer bug" style = "width: 200px; height: 100px;"
     </header>
     </body>
     </html>
