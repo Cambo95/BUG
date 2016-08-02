@@ -212,7 +212,7 @@ if ($user ==$UserLoggedOn ) {
 /** comments matching this BUGID and refresh screen */
 if ($isadmin== 1) {
     if (isset($_POST['DeleteAll'])) {
-        $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = 42";
+        $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugid";
         $result = mysqli_query($db, $deleteallsql);
         echo $deleteallsql;
         header("Location: BugWithComments.php?bugid=$bugid");
