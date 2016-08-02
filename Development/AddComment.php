@@ -73,16 +73,15 @@ echo "Please insert a comment";
 $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_Comment)
 VALUES($bugid,'$UserLoggedOn','$Comment')";
 
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($db, $sql)) {
 $_POST['Comment']='';
     header("Location: BugWithComments.php?bugid=$bugid");
 } else {
-echo "Error: " . $sql . "<br>" . $conn->error;
+echo "Error: " . $sql . "<br>" . $db->error;
 }
 }
 }
 }
-$conn->close();
 ?>
 
 
