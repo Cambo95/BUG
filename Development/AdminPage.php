@@ -25,11 +25,8 @@ $db = new mysqli(
 <!-- Set up the Tab name -->
 <!DOCTYPE html>
 <html lang="en">
-<title>SPLAT! Bug Catcher</title>
+<title>Admin Page</title>
 <meta charset="UTF-8">
-<head>
-    <title>SPLAT! Bug Catcher</title>
-</head>
     <body>
 
     <!-- Bring in the common header script -->
