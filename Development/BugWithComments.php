@@ -206,6 +206,15 @@ if ($user ==$UserLoggedOn ) {
     </form>
 <?php endif; ?>
 
+<?php
+if ($UserLoggedOn == $isadmin) {
+    if (isset($_POST['DeleteAll'])) {
+        $deletesql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = $bugid";
+        $result = mysqli_query($db, $deletesql);
+        header("Location: BugWithComments.php?bugid=$bugid");
+    }
+}
+
 
 
 <?php
