@@ -198,13 +198,7 @@ if ($user ==$UserLoggedOn ) {
 
 <!-- If the User is logged on then display the Add Comments box and button  -->
 <?php if($UserLoggedOn!==''): ?>
-    <form action='' method="POST">
-        Add comment:<br>
-        <input type="text" name="Comment">
-        <br>
-        <br>
-        <input type="submit" name="submit">
-    </form>
+    echo "<td>" . '<a href="AddComment.php?bugid='.$bugid.'">Add Comment</a>'."</td>";
 <?php endif; ?>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
@@ -240,35 +234,6 @@ if (isset($_POST['DeleteAll'])) {
     $result = mysqli_query($db, $deletesql);
     header("Location: BugWithComments.php?bugid=$bugid");
 }
-/** If the SUBMIT button was pressed insert the comment entered by the user into table */
-/** bug_comments */
-if(isset($_POST['submit'])) {
-    $UserLoggedOn = $_SESSION["username"];
-    $Comment = $_POST['Comment'];
-if ($UserLoggedOn == ""){
-    echo "Please log on to add comments";
-}
-    else {
-        if ($Comment == "") {
-            echo "Please insert a comment";
-        } else {
-            $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_Comment)
-                    VALUES('$bugid','$UserLoggedOn','$Comment')";
-
-            if (mysqli_query($conn, $sql)) {
-                $_POST['Comment']='';
-                header("Refresh:0");
-               // header("Location: BugWithComments.php?bugid=$bugid");
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-        }
-    }
-}
-$conn->close();
-?>
-
-<?php
 
 /** Retrieve all the attachments rows into resultsCAttachments ready for display further down */
 $sql_queryAttachments = "SELECT * FROM bug_attachment WHERE Att_BugUniqueID = $bugid ORDER BY Att_DateTime DESC limit 50";
