@@ -257,7 +257,8 @@ if ($UserLoggedOn == ""){
 
             if (mysqli_query($conn, $sql)) {
                 $_POST['Comment']='';
-                header("Location: BugWithComments.php?bugid=$bugid");
+                header("Refresh:0");
+               // header("Location: BugWithComments.php?bugid=$bugid");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
