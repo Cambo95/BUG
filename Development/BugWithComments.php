@@ -198,7 +198,7 @@ if ($user ==$UserLoggedOn ) {
 
 <!-- If the User is logged on then display the Add Comments box and button  -->
 <?php if($UserLoggedOn!==''): ?>
-    echo "<td>" . '<a href="AddComment.php?bugid='.$bugid.'">Add Comment</a>'."</td>";
+<?php    echo "<td>" . '<a href="AddComment.php?bugid='.$bugid.'">Add Comment</a>'."</td>"; ?>
 <?php endif; ?>
 
 <!-- If the user logged on is an admin ulser then display the Delete All Comments button  -->
