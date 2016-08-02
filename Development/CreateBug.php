@@ -55,7 +55,7 @@ $sql = "INSERT INTO bug_instances(Inst_Title, Inst_Description, Inst_User, Inst_
         VALUES('$BugTitle','$BugDescription','$UserLoggedOn','$BugReportedBy')";
   
 if (mysqli_query($db, $sql)) {
-echo "Records added successfully";
+    header("Location: HomePage.php?bugid=$bugid");
 } else {
 echo "Error: " . $sql . "<br>" . $db->error;
 }
