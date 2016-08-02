@@ -1,7 +1,7 @@
 <?php
 session_start();
 $UserLoggedOn = $_SESSION["username"];
-$isadmin = $_SESSION['isadmin']
+$isadmin = $_SESSION['isadmin'];
 $bugid=$_GET["bugid"];
 $comuser = $_GET["comuser"];
 $comdatetime = $_GET["comdatetime"];
@@ -22,7 +22,7 @@ $db = new mysqli(
 <?php include 'CommonHeader.php';?>
 <br><br><br><br>
 
-You have requested to delete all comments for this bug
+<h3>You have requested to delete all comments for this bug</h3>
 <br>
 <br>
 
