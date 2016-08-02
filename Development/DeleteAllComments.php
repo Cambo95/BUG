@@ -42,7 +42,7 @@ if ($isadmin == 1) {
 }
 
 
-if ($isadmin !== 1) {
+if ($isadmin == 0) {
     $errormessage = "Sorry, you are not authorised to delete these comment as you are not an administrator.Press return to continue. ";
     echo "<br>";
     echo "<strong>";
