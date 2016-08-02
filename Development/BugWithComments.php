@@ -245,10 +245,9 @@ if ($UserLoggedOn == ""){
             echo "Please insert a comment";
         } else {
             $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_Comment)
-VALUES('$bugid','$UserLoggedOn','$Comment')";
+                    VALUES('$bugid','$UserLoggedOn','$Comment')";
 
             if (mysqli_query($conn, $sql)) {
-                header("Location: BugWithComments.php?bugid=$bugid");
                 $Comment = "";
                 header("Location: BugWithComments.php?bugid=$bugid");
             } else {
