@@ -178,6 +178,7 @@ if ($user ==$UserLoggedOn ) {
     echo "Result comments";
     echo $sql_queryComments;
     echo "The time is " . date("h:i:sa");
+    mysqli_data_seek($resultComments,0); //Reset the result pointer
 
     while($Comment = mysqli_fetch_assoc($resultComments)) {
         echo "<tr>";
