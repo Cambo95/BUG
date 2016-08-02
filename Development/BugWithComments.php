@@ -73,10 +73,8 @@ $resultComments = $db->query($sql_queryComments);
 <body>
 <br>
 <h4>Bug Details</h4>
-<?php 
-if($userLoggedOn == $user) {
+<?php
     echo "<td>" . '<a href="EditBug.php?bugid=' . $bugbug . '">Edit Bug</a>' . "</td>";
-}
 ?>
 
 <table class="w3-table w3-bordered w3-striped">
