@@ -210,7 +210,7 @@ if ($user ==$UserLoggedOn ) {
 <?php
 /** If the DELETEALL button has been pressed then execute sql to delete all */
 /** comments matching this BUGID and refresh screen */
-if ($UserLoggedOn == $isadmin) {
+if ($isadmin== 1) {
     if (isset($_POST['DeleteAll'])) {
         $deleteallsql = "DELETE * FROM bug_comments WHERE Com_BugUniqueID = 42";
         $result = mysqli_query($db, $deleteallsql);
