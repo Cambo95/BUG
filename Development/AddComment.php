@@ -69,8 +69,10 @@ else {
 if ($Comment == "") {
 echo "Please insert a comment";
 } else {
+    $cleancomment = mysqli_real_escape_string($db, $Comment);
 $sql = "INSERT INTO bug_comments(Com_BugUniqueID, Com_User, Com_Comment)
-VALUES($bugid,'$UserLoggedOn','$Comment')";
+VALUES($bugid,'$UserLoggedOn','$cleancomment')";
+   
 
 if (mysqli_query($db, $sql)) {
 $_POST['Comment']='';
