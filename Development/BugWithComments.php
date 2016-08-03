@@ -73,6 +73,7 @@ $UserLoggedOn = $_SESSION["username"];
 if($UserLoggedOn == $user) {
     echo "<td>" . '<a href="EditBug.php?bugid=' . $bugbug . '">Edit Bug</a>' . "</td>";
 }
+echo "<br>";
 if($isadmin == 1){
     echo "<td>" . '<a href="DeleteBug.php?bugid=' . $bugbug . '">Delete Bug</a>' . "</td>";
 }
