@@ -27,10 +27,8 @@ own bugs and add attachments that you find applicable. Our dedicated administrat
 your account and then you will be free to contribute.<br>
 Below you will find statistics about the site.<br>
 Thank you for visiting.</p>
-<br>
 <h2>Site statistics</h2>
 <br>
-
 <?php
 // ****************************************************************************
 $sql = "SELECT COUNT(Usr_User) as total from bug_userprofile where Usr_IsVerified = 1";
