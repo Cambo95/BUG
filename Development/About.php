@@ -28,7 +28,7 @@ $db = new mysqli(
 
 <?php
         $NumberVerified = 0;
-        $sql = "SELECT COUNT(*) as NumberVerified from bug_userprofile where Usr_IsVerified == 1";
+        $sql = "SELECT COUNT(Usr_User) as NumberVerified from bug_userprofile where Usr_IsVerified = 1";
         $result = mysqli_query($db, $sql);
         $Bug = mysqli_fetch_assoc($result);
         $NumberVerified = $Bug['NumberVerified'];
