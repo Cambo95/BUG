@@ -19,9 +19,8 @@ $db = new mysqli(
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 <?php include 'CommonHeader.php';?>
-<br><br>
-
-<h3>Site statistics</h3>
+<br>
+<h1>Site statistics</h1>
 <br>
 
 <?php
