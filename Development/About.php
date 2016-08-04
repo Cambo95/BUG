@@ -74,13 +74,14 @@ $Inst_User = $answer['Inst_User'];
 $count = $answer['total'];
 echo "...3:",$Inst_User, " With ", $count, " posts.";
 echo "<br>";
+echo "<br>";
 // ****************************************************************************
 $sql = "SELECT Com_User, COUNT(*) as total from bug_comments group by Com_User order by count(*) desc limit 3";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $Com_User = $answer['Com_User'];
 $count = $answer['total'];
-echo "TOP COMMENTERS";
+echo "<strong>TOP COMMENTERS</strong>";
 echo "<br>";
 echo "...1:",$Com_User, " With ", $count, " comments.";
 echo "<br>";
