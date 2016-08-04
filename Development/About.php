@@ -23,8 +23,6 @@ $db = new mysqli(
 
 <h3>Site statistics</h3>
 <br>
-<br>
-
 
 <?php
 // ****************************************************************************
@@ -42,14 +40,14 @@ $total = $answer['total'];
 echo "Number of users awaiting verification: ",$total;
 echo "<br>";
 // ****************************************************************************
-$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed = 'NULL'";
+$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed IS NULL";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of open bugs: ",$total;
 echo "<br>";
 // ****************************************************************************
-$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed <> NULL";
+$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed IS NOT NULL";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
