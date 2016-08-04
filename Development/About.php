@@ -30,6 +30,7 @@ $sql = "SELECT COUNT(Usr_User) as total from bug_userprofile where Usr_IsVerifie
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
+echo "<strong>USER STATISTICS</strong>";
 echo "Number of verified users: ",$total;
 echo "<br>";
 // ****************************************************************************
@@ -39,11 +40,13 @@ $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of users awaiting verification: ",$total;
 echo "<br>";
+echo "<br>";
 // ****************************************************************************
 $sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed IS NULL";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
+echo "<strong>BUG STATISTICS</strong>";
 echo "Number of open bugs: ",$total;
 echo "<br>";
 // ****************************************************************************
@@ -60,7 +63,7 @@ $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $Inst_User = $answer['Inst_User'];
 $count = $answer['total'];
-echo "TOP BUG CREATORS";
+echo "<strong>TOP BUG CREATORS</strong>";
 echo "<br>";
 echo "...1:",$Inst_User, " With ", $count, " posts.";
 echo "<br>";
