@@ -61,6 +61,7 @@ $answer = mysqli_fetch_assoc($result);
 $Inst_User = $answer['Inst_User'];
 $count = $answer['total'];
 echo "TOP BUG CREATORS";
+echo "<br>";
 echo "  1:",$Inst_User, " With ", $count, " posts.";
 echo "<br>";
 $answer = mysqli_fetch_assoc($result);
