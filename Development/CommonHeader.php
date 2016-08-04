@@ -13,7 +13,7 @@
     </html>
     <!-- PURPOSE : This is the Header that sits on all pages
                    it only displays the links that specific 
-                   users are allowed to see. This is done by 
+                   users are alloweed to see. This is done by
                    using If statements and Session -->
 
     <!-- Admin page link is only available to those who have admin rights -->
