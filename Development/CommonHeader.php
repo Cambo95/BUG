@@ -19,11 +19,12 @@
     <!-- Admin page link is only available to those who have admin rights -->
     <!-- Add a bug page and Profile are only available to those who are verified and logged in -->
     <!-- Login link and a Registration link are available to those not logged in or registered -->
-    <!-- A Home link and an Author Search link are available to everyone -->
+    <!-- A Home link, About link and an Author Search link are available to everyone -->
     <!-- Logout appears to those who are logged in -->
 
 <?php
     echo '<a href="HomePage.php"><span>Home<br></span></a></li>';
+    echo '<a href="About.php"><span>About<br></span></a></li>';
 
 if ($_SESSION["isadmin"]== '1'){
     echo '<a href="AdminPage.php"><span>Administrative Page<br></span></a></li>';
