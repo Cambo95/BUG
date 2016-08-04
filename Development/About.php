@@ -33,14 +33,28 @@ $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of verified users: ",$total;
+echo "<br>";
 // ****************************************************************************
 $sql = "SELECT COUNT(Usr_User) as total from bug_userprofile where Usr_IsVerified = 0";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of users awaiting verification: ",$total;
-
-
+echo "<br>";
+// ****************************************************************************
+$sql = "SELECT COUNT(*) as total from bug_instances where Inst_DateFixed = null";
+$result = mysqli_query($db, $sql);
+$answer = mysqli_fetch_assoc($result);
+$total = $answer['total'];
+echo "Number of open bugs: ",$total;
+echo "<br>";
+// ****************************************************************************
+$sql = "SELECT COUNT(*) as total from bug_instances where Inst_DateFixed <> null";
+$result = mysqli_query($db, $sql);
+$answer = mysqli_fetch_assoc($result);
+$total = $answer['total'];
+echo "Number of fixed bugs: ",$total;
+echo "<br>";
 ?>
 <br><br><br><br>
 <?php include 'CommonFooter.php';?>
