@@ -23,6 +23,14 @@ session_start();
     <title>SPLAT! Bug Catcher</title>
 </head>
 <body>
+<?php
+function incr_a($inc){
+    $a=$a+$inc;
+}
+$a = 0;
+incr_a(10);
+echo $a;
+?>
     <?php include 'CommonHeader.php';?>
     
 <br>
