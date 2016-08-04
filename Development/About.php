@@ -53,6 +53,18 @@ $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of fixed bugs: ",$total;
 echo "<br>";
+// ****************************************************************************
+$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed IS NOT NULL";
+$sql = "SELECT Inst_User, COUNT(*) from bug_instances group by Inst_User order by count(*) desc limit 3";
+$result = mysqli_query($db, $sql);
+$answer = mysqli_fetch_assoc($result);
+$Inst_User = $answer['Inst_User'];
+echo "Top bug creator: ",$Inst_User;
+echo "<br>";
+$answer = mysqli_fetch_assoc($result);
+$Inst_User = $answer['Inst_User'];
+echo "Second highest bug creator: ",$Inst_User;
+echo "<br>";
 ?>
 <br><br><br><br>
 <?php include 'CommonFooter.php';?>
