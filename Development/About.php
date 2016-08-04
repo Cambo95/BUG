@@ -53,17 +53,25 @@ $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "Number of fixed bugs: ",$total;
 echo "<br>";
+echo "<br>";
 // ****************************************************************************
-$sql = "SELECT COUNT(Inst_BugUniqueID) as total from bug_instances where Inst_DateFixed IS NOT NULL";
-$sql = "SELECT Inst_User, COUNT(*) from bug_instances group by Inst_User order by count(*) desc limit 3";
+$sql = "SELECT Inst_User, COUNT(*) as total from bug_instances group by Inst_User order by count(*) desc limit 3";
 $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $Inst_User = $answer['Inst_User'];
-echo "Top bug creator: ",$Inst_User;
+$count = $answer['total'];
+echo "TOP BUG CREATORS";
+echo "  1:",$Inst_User, " With ", $count, " posts.";
 echo "<br>";
 $answer = mysqli_fetch_assoc($result);
 $Inst_User = $answer['Inst_User'];
-echo "Second highest bug creator: ",$Inst_User;
+$count = $answer['total'];
+echo "  2:",$Inst_User, " With ", $count, " posts.";
+echo "<br>";
+$answer = mysqli_fetch_assoc($result);
+$Inst_User = $answer['Inst_User'];
+$count = $answer['total'];
+echo "  3:",$Inst_User, " With ", $count, " posts.";
 echo "<br>";
 ?>
 <br><br><br><br>
