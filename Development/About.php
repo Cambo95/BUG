@@ -19,7 +19,7 @@ $db = new mysqli(
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 <?php include 'CommonHeader.php';?>
-<br><br><br><br>
+<br><br>
 
 <h3>Site statistics</h3>
 <br>
@@ -30,6 +30,7 @@ $db = new mysqli(
         $NumberVerified = 0;
         $sql = "SELECT COUNT(*) as $NumberVerified from bug_userprofile where Usr_IsVerified == 1";
         $result = mysqli_query($db, $sql);
+        echo $result;
         echo "Number of verified users: ",$NumberVerified;
 
 
