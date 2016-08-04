@@ -20,7 +20,7 @@
     <!-- Add a bug page and Profile are only available to those who are verified and logged in -->
     <!-- Login link and a Registration link are available to those not logged in or registered -->
     <!-- A Home link, About link and an Author Search link are available to everyone -->
-    <!-- Logout appears to those who are logged in -->
+    <!-- Logout appears to those who are logged in ->
 
 <?php
     echo '<a href="HomePage.php"><span>Home<br></span></a></li>';
