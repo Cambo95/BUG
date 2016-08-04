@@ -31,6 +31,7 @@ $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "<strong>USER STATISTICS</strong>";
+echo "<br>";
 echo "Number of verified users: ",$total;
 echo "<br>";
 // ****************************************************************************
@@ -47,6 +48,7 @@ $result = mysqli_query($db, $sql);
 $answer = mysqli_fetch_assoc($result);
 $total = $answer['total'];
 echo "<strong>BUG STATISTICS</strong>";
+echo "<br>";
 echo "Number of open bugs: ",$total;
 echo "<br>";
 // ****************************************************************************
