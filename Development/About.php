@@ -27,13 +27,18 @@ $db = new mysqli(
 
 
 <?php
-        $NumberVerified = 0;
-        $sql = "SELECT COUNT(Usr_User) as NumberVerified from bug_userprofile where Usr_IsVerified = 1";
-        $result = mysqli_query($db, $sql);
-        $Bug = mysqli_fetch_assoc($result);
-        $NumberVerified = $Bug['NumberVerified'];
-        echo "Number of verified users: ",$NumberVerified;
-
+// ****************************************************************************
+$sql = "SELECT COUNT(Usr_User) as total from bug_userprofile where Usr_IsVerified = 1";
+$result = mysqli_query($db, $sql);
+$answer = mysqli_fetch_assoc($result);
+$total = $answer['total'];
+echo "Number of verified users: ",$total;
+// ****************************************************************************
+$sql = "SELECT COUNT(Usr_User) as total from bug_userprofile where Usr_IsVerified = 0";
+$result = mysqli_query($db, $sql);
+$answer = mysqli_fetch_assoc($result);
+$total = $answer['total'];
+echo "Number of users awaiting verification: ",$total;
 
 
 ?>
