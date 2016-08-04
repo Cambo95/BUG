@@ -20,7 +20,15 @@ $db = new mysqli(
 <body>
 <?php include 'CommonHeader.php';?>
 <br>
-<h1>Site statistics</h1>
+<h1>Welcome</h1>
+<p>Welcome to Splat! Bug Catcher. This site is where you will find the answer to all your online<br>
+computer bug problems. Register as a user to add comments on pre-existing bugs or create your<br>
+own bugs and add attachments that you find applicable. Our dedicated administrators will verify<br>
+your account and then you will be free to contribute.<br>
+Below you will find statistics about the site.<br>
+Thank you for visiting.</p>
+<br>
+<h2>Site statistics</h2>
 <br>
 
 <?php
